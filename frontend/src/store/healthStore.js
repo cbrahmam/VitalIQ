@@ -1,0 +1,75 @@
+import { create } from 'zustand';
+import * as api from '../api/client';
+
+const useHealthStore = create((set, get) => ({
+  // Profile
+  profile: null,
+  fetchProfile: async () => {
+    try {
+      const data = await api.getProfile();
+      set({ profile: data });
+    } catch {
+      set({ profile: null });
+    }
+  },
+  saveProfile: async (data) => {
+    const result = await api.saveProfile(data);
+    set({ profile: result });
+    return result;
+  },
+
+  // Blood work
+  reports: [],
+  currentReport: null,
+  fetchReports: async () => {
+    const data = await api.getBloodWorkReports();
+    set({ reports: data });
+  },
+  fetchReport: async (id) => {
+    const data = await api.getBloodWorkReport(id);
+    set({ currentReport: data });
+    return data;
+  },
+  uploadBloodWork: async (file) => {
+    const result = await api.uploadBloodWork(file);
+    await get().fetchReports();
+    return result;
+  },
+
+  // Supplements
+  supplements: [],
+  interactions: [],
+  supplementHistory: [],
+  fetchSupplements: async () => {
+    const data = await api.getSupplements();
+    set({ supplements: data.supplements, interactions: data.interactions });
+  },
+  addSupplement: async (data) => {
+    const result = await api.addSupplement(data);
+    set({ supplements: result.interactions ? await api.getSupplements().then(r => r.supplements) : get().supplements, interactions: result.interactions || [] });
+    await get().fetchSupplements();
+    return result;
+  },
+  updateSupplement: async (id, data) => {
+    const result = await api.updateSupplement(id, data);
+    await get().fetchSupplements();
+    return result;
+  },
+  deleteSupplement: async (id) => {
+    await api.deleteSupplement(id);
+    await get().fetchSupplements();
+  },
+  fetchSupplementHistory: async () => {
+    const data = await api.getSupplementHistory();
+    set({ supplementHistory: data });
+  },
+
+  // UI state
+  toast: null,
+  showToast: (message, type = 'success') => {
+    set({ toast: { message, type } });
+    setTimeout(() => set({ toast: null }), 3000);
+  },
+}));
+
+export default useHealthStore;

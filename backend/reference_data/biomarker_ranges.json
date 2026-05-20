@@ -1,0 +1,502 @@
+{
+  "Ferritin": {
+    "unit": "ng/mL",
+    "category": "iron",
+    "lab_range": {"male": [20, 250], "female": [10, 120]},
+    "optimal_range": {"male": [70, 150], "female": [50, 100]},
+    "description": "Iron storage protein. Low levels indicate depleted iron stores.",
+    "related_supplements": ["Iron Bisglycinate", "Vitamin C"],
+    "affected_by": ["heavy exercise", "menstruation", "vegetarian diet", "chronic inflammation"],
+    "aliases": ["Ferritin, Serum", "S. Ferritin", "FERRITIN"]
+  },
+  "Serum Iron": {
+    "unit": "mcg/dL",
+    "category": "iron",
+    "lab_range": {"male": [65, 175], "female": [50, 170]},
+    "optimal_range": {"male": [90, 150], "female": [80, 140]},
+    "description": "Amount of iron circulating in the blood.",
+    "related_supplements": ["Iron Bisglycinate", "Vitamin C"],
+    "affected_by": ["recent meals", "time of day", "inflammation"],
+    "aliases": ["Iron, Serum", "S. Iron", "Iron", "IRON", "Iron (Fe)"]
+  },
+  "TIBC": {
+    "unit": "mcg/dL",
+    "category": "iron",
+    "lab_range": {"male": [250, 400], "female": [250, 400]},
+    "optimal_range": {"male": [275, 375], "female": [275, 375]},
+    "description": "Total iron-binding capacity. High TIBC suggests iron deficiency.",
+    "related_supplements": ["Iron Bisglycinate"],
+    "affected_by": ["iron status", "liver function", "inflammation"],
+    "aliases": ["Total Iron Binding Capacity", "Iron Binding Capacity", "T.I.B.C."]
+  },
+  "Transferrin Saturation": {
+    "unit": "%",
+    "category": "iron",
+    "lab_range": {"male": [20, 50], "female": [15, 50]},
+    "optimal_range": {"male": [25, 40], "female": [25, 40]},
+    "description": "Percentage of transferrin bound with iron. Low values indicate iron deficiency.",
+    "related_supplements": ["Iron Bisglycinate", "Vitamin C"],
+    "affected_by": ["iron intake", "inflammation"],
+    "aliases": ["% Transferrin Saturation", "TSAT", "Transferrin Sat", "Iron Saturation"]
+  },
+  "Vitamin D (25-OH)": {
+    "unit": "ng/mL",
+    "category": "vitamins",
+    "lab_range": {"male": [30, 100], "female": [30, 100]},
+    "optimal_range": {"male": [50, 80], "female": [50, 80]},
+    "description": "Essential for bone health, immunity, and mood.",
+    "related_supplements": ["Vitamin D3", "Vitamin K2"],
+    "affected_by": ["sun exposure", "skin tone", "latitude", "body fat percentage"],
+    "aliases": ["Vitamin D", "25-Hydroxy Vitamin D", "25(OH)D", "Vit D", "VITAMIN D TOTAL", "Vitamin D, 25-Hydroxy", "25-OH Vitamin D", "Cholecalciferol"]
+  },
+  "Vitamin B12": {
+    "unit": "pg/mL",
+    "category": "vitamins",
+    "lab_range": {"male": [200, 900], "female": [200, 900]},
+    "optimal_range": {"male": [500, 800], "female": [500, 800]},
+    "description": "Essential for nerve function, red blood cell formation, and DNA synthesis.",
+    "related_supplements": ["Vitamin B12", "Methylcobalamin"],
+    "affected_by": ["vegetarian diet", "age", "gut absorption", "metformin use"],
+    "aliases": ["B12", "Cobalamin", "Cyanocobalamin", "VITAMIN B12", "Vit B12"]
+  },
+  "Folate": {
+    "unit": "ng/mL",
+    "category": "vitamins",
+    "lab_range": {"male": [3.0, 20.0], "female": [3.0, 20.0]},
+    "optimal_range": {"male": [10.0, 20.0], "female": [10.0, 20.0]},
+    "description": "Essential for DNA synthesis and red blood cell formation. Critical during pregnancy.",
+    "related_supplements": ["Methylfolate", "Folic Acid"],
+    "affected_by": ["diet", "MTHFR variants", "alcohol", "certain medications"],
+    "aliases": ["Folic Acid", "Serum Folate", "FOLATE", "Folate, Serum", "Vit B9"]
+  },
+  "Vitamin B6": {
+    "unit": "ng/mL",
+    "category": "vitamins",
+    "lab_range": {"male": [5.0, 50.0], "female": [5.0, 50.0]},
+    "optimal_range": {"male": [15.0, 40.0], "female": [15.0, 40.0]},
+    "description": "Important for brain development and immune function.",
+    "related_supplements": ["Vitamin B6", "P-5-P"],
+    "affected_by": ["diet", "oral contraceptives", "alcohol"],
+    "aliases": ["Pyridoxine", "VITAMIN B6", "Vit B6", "Pyridoxal Phosphate"]
+  },
+  "Total Cholesterol": {
+    "unit": "mg/dL",
+    "category": "lipids",
+    "lab_range": {"male": [0, 200], "female": [0, 200]},
+    "optimal_range": {"male": [150, 190], "female": [150, 190]},
+    "description": "Total amount of cholesterol in the blood.",
+    "related_supplements": ["Omega-3", "Berberine", "Red Yeast Rice"],
+    "affected_by": ["diet", "exercise", "genetics", "thyroid function"],
+    "aliases": ["Cholesterol, Total", "TC", "CHOLESTEROL", "Cholesterol Total"]
+  },
+  "LDL Cholesterol": {
+    "unit": "mg/dL",
+    "category": "lipids",
+    "lab_range": {"male": [0, 130], "female": [0, 130]},
+    "optimal_range": {"male": [0, 100], "female": [0, 100]},
+    "description": "Low-density lipoprotein. Elevated LDL increases cardiovascular risk.",
+    "related_supplements": ["Omega-3", "Berberine", "CoQ10"],
+    "affected_by": ["diet", "exercise", "genetics", "statins"],
+    "aliases": ["LDL", "LDL-C", "LDL CHOLESTEROL", "LDL Cholesterol, Calculated", "Low Density Lipoprotein"]
+  },
+  "HDL Cholesterol": {
+    "unit": "mg/dL",
+    "category": "lipids",
+    "lab_range": {"male": [40, 100], "female": [50, 100]},
+    "optimal_range": {"male": [55, 90], "female": [65, 90]},
+    "description": "High-density lipoprotein. Higher HDL is protective against cardiovascular disease.",
+    "related_supplements": ["Omega-3", "Niacin"],
+    "affected_by": ["exercise", "diet", "genetics", "smoking"],
+    "aliases": ["HDL", "HDL-C", "HDL CHOLESTEROL", "High Density Lipoprotein"]
+  },
+  "Triglycerides": {
+    "unit": "mg/dL",
+    "category": "lipids",
+    "lab_range": {"male": [0, 150], "female": [0, 150]},
+    "optimal_range": {"male": [0, 100], "female": [0, 100]},
+    "description": "Type of fat in the blood. Elevated levels increase cardiovascular risk.",
+    "related_supplements": ["Omega-3", "Berberine"],
+    "affected_by": ["diet", "alcohol", "sugar intake", "exercise"],
+    "aliases": ["TG", "TRIGLYCERIDES", "Triglyceride", "Trigs"]
+  },
+  "VLDL Cholesterol": {
+    "unit": "mg/dL",
+    "category": "lipids",
+    "lab_range": {"male": [5, 40], "female": [5, 40]},
+    "optimal_range": {"male": [5, 25], "female": [5, 25]},
+    "description": "Very low-density lipoprotein. Carries triglycerides in the blood.",
+    "related_supplements": ["Omega-3"],
+    "affected_by": ["diet", "triglyceride levels"],
+    "aliases": ["VLDL", "VLDL-C", "VLDL CHOLESTEROL", "Very Low Density Lipoprotein"]
+  },
+  "TC/HDL Ratio": {
+    "unit": "ratio",
+    "category": "lipids",
+    "lab_range": {"male": [0, 5.0], "female": [0, 5.0]},
+    "optimal_range": {"male": [0, 3.5], "female": [0, 3.5]},
+    "description": "Ratio of total cholesterol to HDL. Lower is better for cardiovascular health.",
+    "related_supplements": ["Omega-3"],
+    "affected_by": ["diet", "exercise"],
+    "aliases": ["Cholesterol/HDL Ratio", "TC:HDL", "Total Cholesterol/HDL Ratio", "CHOL/HDL RATIO"]
+  },
+  "TSH": {
+    "unit": "mIU/L",
+    "category": "thyroid",
+    "lab_range": {"male": [0.4, 4.5], "female": [0.4, 4.5]},
+    "optimal_range": {"male": [1.0, 2.5], "female": [1.0, 2.5]},
+    "description": "Thyroid-stimulating hormone. Primary marker for thyroid function.",
+    "related_supplements": ["Selenium", "Zinc", "Iodine"],
+    "affected_by": ["stress", "sleep", "iodine intake", "autoimmune conditions"],
+    "aliases": ["Thyroid Stimulating Hormone", "TSH, Serum", "S. TSH", "THYROID STIMULATING HORMONE"]
+  },
+  "Free T3": {
+    "unit": "pg/mL",
+    "category": "thyroid",
+    "lab_range": {"male": [2.0, 4.4], "female": [2.0, 4.4]},
+    "optimal_range": {"male": [3.0, 4.0], "female": [3.0, 4.0]},
+    "description": "Active thyroid hormone. Critical for metabolism and energy.",
+    "related_supplements": ["Selenium", "Zinc"],
+    "affected_by": ["T4 conversion", "selenium status", "stress", "caloric restriction"],
+    "aliases": ["FT3", "Free Triiodothyronine", "FREE T3"]
+  },
+  "Free T4": {
+    "unit": "ng/dL",
+    "category": "thyroid",
+    "lab_range": {"male": [0.8, 1.8], "female": [0.8, 1.8]},
+    "optimal_range": {"male": [1.1, 1.5], "female": [1.1, 1.5]},
+    "description": "Unbound thyroxine. Converted to active T3 in tissues.",
+    "related_supplements": ["Selenium", "Iodine"],
+    "affected_by": ["iodine intake", "medications", "pregnancy"],
+    "aliases": ["FT4", "Free Thyroxine", "FREE T4", "Thyroxine, Free"]
+  },
+  "Total T3": {
+    "unit": "ng/dL",
+    "category": "thyroid",
+    "lab_range": {"male": [80, 200], "female": [80, 200]},
+    "optimal_range": {"male": [100, 170], "female": [100, 170]},
+    "description": "Total triiodothyronine including bound and free.",
+    "related_supplements": ["Selenium", "Zinc"],
+    "affected_by": ["binding proteins", "liver function"],
+    "aliases": ["T3", "Triiodothyronine, Total", "T3, Total", "TRIIODOTHYRONINE"]
+  },
+  "Total T4": {
+    "unit": "mcg/dL",
+    "category": "thyroid",
+    "lab_range": {"male": [4.5, 12.0], "female": [4.5, 12.0]},
+    "optimal_range": {"male": [6.0, 10.0], "female": [6.0, 10.0]},
+    "description": "Total thyroxine including bound and free.",
+    "related_supplements": ["Iodine", "Selenium"],
+    "affected_by": ["binding proteins", "estrogen levels"],
+    "aliases": ["T4", "Thyroxine, Total", "T4, Total", "THYROXINE"]
+  },
+  "ALT": {
+    "unit": "U/L",
+    "category": "liver",
+    "lab_range": {"male": [7, 56], "female": [7, 45]},
+    "optimal_range": {"male": [10, 30], "female": [10, 25]},
+    "description": "Alanine aminotransferase. Elevated levels indicate liver stress or damage.",
+    "related_supplements": ["NAC", "Milk Thistle"],
+    "affected_by": ["alcohol", "medications", "intense exercise", "fatty liver"],
+    "aliases": ["SGPT", "Alanine Aminotransferase", "ALT (SGPT)", "SGPT/ALT"]
+  },
+  "AST": {
+    "unit": "U/L",
+    "category": "liver",
+    "lab_range": {"male": [10, 40], "female": [9, 32]},
+    "optimal_range": {"male": [10, 26], "female": [10, 25]},
+    "description": "Aspartate aminotransferase. Found in liver, heart, and muscle tissues.",
+    "related_supplements": ["NAC", "Milk Thistle"],
+    "affected_by": ["alcohol", "intense exercise", "medications", "heart disease"],
+    "aliases": ["SGOT", "Aspartate Aminotransferase", "AST (SGOT)", "SGOT/AST"]
+  },
+  "ALP": {
+    "unit": "U/L",
+    "category": "liver",
+    "lab_range": {"male": [44, 147], "female": [44, 147]},
+    "optimal_range": {"male": [50, 100], "female": [50, 100]},
+    "description": "Alkaline phosphatase. Found in liver, bone, and bile ducts.",
+    "related_supplements": ["Zinc"],
+    "affected_by": ["bone growth", "liver disease", "bile duct obstruction"],
+    "aliases": ["Alkaline Phosphatase", "ALK PHOS", "ALKALINE PHOSPHATASE"]
+  },
+  "GGT": {
+    "unit": "U/L",
+    "category": "liver",
+    "lab_range": {"male": [8, 61], "female": [5, 36]},
+    "optimal_range": {"male": [10, 30], "female": [5, 20]},
+    "description": "Gamma-glutamyl transferase. Sensitive marker for liver and bile duct issues.",
+    "related_supplements": ["NAC", "Milk Thistle"],
+    "affected_by": ["alcohol", "medications", "obesity", "fatty liver"],
+    "aliases": ["Gamma GT", "Gamma-Glutamyl Transferase", "GGTP", "GGT (Gamma GT)"]
+  },
+  "Total Bilirubin": {
+    "unit": "mg/dL",
+    "category": "liver",
+    "lab_range": {"male": [0.1, 1.2], "female": [0.1, 1.2]},
+    "optimal_range": {"male": [0.3, 1.0], "female": [0.3, 1.0]},
+    "description": "Byproduct of red blood cell breakdown. Mildly elevated can be protective (Gilbert's syndrome).",
+    "related_supplements": [],
+    "affected_by": ["liver function", "hemolysis", "fasting", "Gilbert's syndrome"],
+    "aliases": ["Bilirubin, Total", "Bilirubin Total", "T. Bilirubin", "BILIRUBIN TOTAL", "Bilirubin"]
+  },
+  "Albumin": {
+    "unit": "g/dL",
+    "category": "liver",
+    "lab_range": {"male": [3.5, 5.5], "female": [3.5, 5.5]},
+    "optimal_range": {"male": [4.2, 5.0], "female": [4.2, 5.0]},
+    "description": "Major protein made by the liver. Low levels indicate liver dysfunction or malnutrition.",
+    "related_supplements": [],
+    "affected_by": ["protein intake", "liver function", "kidney disease", "inflammation"],
+    "aliases": ["Serum Albumin", "ALBUMIN", "Albumin, Serum"]
+  },
+  "Creatinine": {
+    "unit": "mg/dL",
+    "category": "kidney",
+    "lab_range": {"male": [0.7, 1.3], "female": [0.6, 1.1]},
+    "optimal_range": {"male": [0.8, 1.1], "female": [0.6, 0.9]},
+    "description": "Waste product from muscle metabolism. Marker for kidney function.",
+    "related_supplements": ["Creatine Monohydrate"],
+    "affected_by": ["muscle mass", "diet", "creatine supplementation", "dehydration"],
+    "aliases": ["Serum Creatinine", "CREATININE", "Creatinine, Serum", "S. Creatinine"]
+  },
+  "BUN": {
+    "unit": "mg/dL",
+    "category": "kidney",
+    "lab_range": {"male": [7, 20], "female": [7, 20]},
+    "optimal_range": {"male": [10, 16], "female": [10, 16]},
+    "description": "Blood urea nitrogen. Reflects kidney function and protein metabolism.",
+    "related_supplements": [],
+    "affected_by": ["protein intake", "dehydration", "kidney function", "GI bleeding"],
+    "aliases": ["Blood Urea Nitrogen", "Urea Nitrogen", "BLOOD UREA NITROGEN", "Urea"]
+  },
+  "eGFR": {
+    "unit": "mL/min/1.73m2",
+    "category": "kidney",
+    "lab_range": {"male": [60, 120], "female": [60, 120]},
+    "optimal_range": {"male": [90, 120], "female": [90, 120]},
+    "description": "Estimated glomerular filtration rate. Best overall measure of kidney function.",
+    "related_supplements": [],
+    "affected_by": ["age", "muscle mass", "diet", "medications"],
+    "aliases": ["GFR", "Estimated GFR", "eGFR (CKD-EPI)", "ESTIMATED GFR"]
+  },
+  "Uric Acid": {
+    "unit": "mg/dL",
+    "category": "kidney",
+    "lab_range": {"male": [3.5, 7.2], "female": [2.6, 6.0]},
+    "optimal_range": {"male": [4.0, 6.0], "female": [3.0, 5.0]},
+    "description": "Byproduct of purine metabolism. High levels can cause gout and kidney stones.",
+    "related_supplements": ["Vitamin C", "Quercetin"],
+    "affected_by": ["diet", "alcohol", "fructose intake", "kidney function"],
+    "aliases": ["Serum Uric Acid", "URIC ACID", "Uric Acid, Serum", "S. Uric Acid"]
+  },
+  "Fasting Glucose": {
+    "unit": "mg/dL",
+    "category": "metabolic",
+    "lab_range": {"male": [70, 100], "female": [70, 100]},
+    "optimal_range": {"male": [75, 90], "female": [75, 90]},
+    "description": "Blood sugar level after fasting. Key marker for metabolic health and diabetes risk.",
+    "related_supplements": ["Berberine", "Chromium", "Alpha Lipoic Acid"],
+    "affected_by": ["diet", "exercise", "stress", "sleep quality", "dawn phenomenon"],
+    "aliases": ["Glucose, Fasting", "FBS", "Fasting Blood Sugar", "GLUCOSE", "Glucose", "Blood Sugar, Fasting", "Blood Glucose"]
+  },
+  "HbA1c": {
+    "unit": "%",
+    "category": "metabolic",
+    "lab_range": {"male": [4.0, 5.7], "female": [4.0, 5.7]},
+    "optimal_range": {"male": [4.5, 5.2], "female": [4.5, 5.2]},
+    "description": "Average blood sugar over 2-3 months. Gold standard for long-term glucose control.",
+    "related_supplements": ["Berberine", "Chromium"],
+    "affected_by": ["diet", "exercise", "red blood cell turnover", "hemoglobin variants"],
+    "aliases": ["Glycated Hemoglobin", "A1c", "Hemoglobin A1c", "HBA1C", "Glycosylated Hemoglobin"]
+  },
+  "Fasting Insulin": {
+    "unit": "uIU/mL",
+    "category": "metabolic",
+    "lab_range": {"male": [2.6, 25.0], "female": [2.6, 25.0]},
+    "optimal_range": {"male": [3.0, 8.0], "female": [3.0, 8.0]},
+    "description": "Insulin level after fasting. Early marker for insulin resistance before glucose rises.",
+    "related_supplements": ["Berberine", "Chromium", "Alpha Lipoic Acid"],
+    "affected_by": ["diet", "exercise", "body fat", "sleep"],
+    "aliases": ["Insulin, Fasting", "INSULIN", "Insulin", "Fasting Serum Insulin"]
+  },
+  "Testosterone (Total)": {
+    "unit": "ng/dL",
+    "category": "hormones",
+    "lab_range": {"male": [264, 916], "female": [15, 70]},
+    "optimal_range": {"male": [500, 800], "female": [25, 60]},
+    "description": "Primary male sex hormone. Important for muscle, bone, mood, and libido.",
+    "related_supplements": ["Zinc", "Vitamin D3", "Ashwagandha", "DHEA", "Boron"],
+    "affected_by": ["sleep", "exercise", "stress", "body fat", "age"],
+    "aliases": ["Testosterone", "Total Testosterone", "TESTOSTERONE", "Testosterone, Total"]
+  },
+  "Testosterone (Free)": {
+    "unit": "pg/mL",
+    "category": "hormones",
+    "lab_range": {"male": [8.7, 25.1], "female": [0.2, 5.0]},
+    "optimal_range": {"male": [15.0, 25.0], "female": [1.0, 3.5]},
+    "description": "Unbound testosterone available for use. More clinically relevant than total.",
+    "related_supplements": ["Zinc", "Boron", "Vitamin D3"],
+    "affected_by": ["SHBG levels", "body fat", "age", "exercise"],
+    "aliases": ["Free Testosterone", "FREE TESTOSTERONE", "Free T"]
+  },
+  "Estradiol": {
+    "unit": "pg/mL",
+    "category": "hormones",
+    "lab_range": {"male": [10, 40], "female": [15, 350]},
+    "optimal_range": {"male": [15, 30], "female": [50, 200]},
+    "description": "Primary estrogen. Important for bone health and cardiovascular protection.",
+    "related_supplements": ["DIM", "Calcium D-Glucarate"],
+    "affected_by": ["body fat", "aromatase activity", "liver function", "menstrual cycle"],
+    "aliases": ["E2", "Estrogen", "ESTRADIOL", "Oestradiol"]
+  },
+  "DHEA-S": {
+    "unit": "mcg/dL",
+    "category": "hormones",
+    "lab_range": {"male": [80, 560], "female": [35, 430]},
+    "optimal_range": {"male": [200, 450], "female": [150, 350]},
+    "description": "Precursor hormone to testosterone and estrogen. Declines with age.",
+    "related_supplements": ["DHEA"],
+    "affected_by": ["age", "stress", "adrenal function"],
+    "aliases": ["DHEA Sulfate", "DHEA-Sulfate", "DHEAS", "DHEA-SO4"]
+  },
+  "Hemoglobin": {
+    "unit": "g/dL",
+    "category": "blood_count",
+    "lab_range": {"male": [13.0, 17.0], "female": [12.0, 15.0]},
+    "optimal_range": {"male": [14.5, 16.0], "female": [13.0, 14.5]},
+    "description": "Oxygen-carrying protein in red blood cells. Key marker for anemia.",
+    "related_supplements": ["Iron Bisglycinate", "Vitamin B12", "Folate"],
+    "affected_by": ["iron status", "altitude", "dehydration", "B12/folate status"],
+    "aliases": ["Hb", "HGB", "Haemoglobin", "HEMOGLOBIN", "Hgb"]
+  },
+  "RBC Count": {
+    "unit": "million/uL",
+    "category": "blood_count",
+    "lab_range": {"male": [4.5, 5.5], "female": [4.0, 5.0]},
+    "optimal_range": {"male": [4.7, 5.3], "female": [4.2, 4.8]},
+    "description": "Red blood cell count. Reflects oxygen-carrying capacity.",
+    "related_supplements": ["Iron Bisglycinate", "Vitamin B12", "Folate"],
+    "affected_by": ["iron status", "altitude", "dehydration"],
+    "aliases": ["RBC", "Red Blood Cell Count", "Red Blood Cells", "R.B.C.", "Erythrocyte Count"]
+  },
+  "WBC Count": {
+    "unit": "thousand/uL",
+    "category": "blood_count",
+    "lab_range": {"male": [4.0, 11.0], "female": [4.0, 11.0]},
+    "optimal_range": {"male": [5.0, 8.0], "female": [5.0, 8.0]},
+    "description": "White blood cell count. Reflects immune system activity.",
+    "related_supplements": ["Vitamin C", "Zinc", "Vitamin D3"],
+    "affected_by": ["infection", "stress", "exercise", "medications"],
+    "aliases": ["WBC", "White Blood Cell Count", "White Blood Cells", "W.B.C.", "Leucocyte Count", "Leukocyte Count"]
+  },
+  "Platelet Count": {
+    "unit": "thousand/uL",
+    "category": "blood_count",
+    "lab_range": {"male": [150, 400], "female": [150, 400]},
+    "optimal_range": {"male": [200, 350], "female": [200, 350]},
+    "description": "Blood clotting cells. Abnormal levels indicate clotting or bone marrow issues.",
+    "related_supplements": [],
+    "affected_by": ["infection", "inflammation", "bone marrow disorders"],
+    "aliases": ["Platelets", "PLT", "PLATELET COUNT", "Thrombocyte Count"]
+  },
+  "MCV": {
+    "unit": "fL",
+    "category": "blood_count",
+    "lab_range": {"male": [80, 100], "female": [80, 100]},
+    "optimal_range": {"male": [85, 95], "female": [85, 95]},
+    "description": "Mean corpuscular volume. Size of red blood cells. High in B12/folate deficiency, low in iron deficiency.",
+    "related_supplements": ["Iron Bisglycinate", "Vitamin B12", "Folate"],
+    "affected_by": ["iron status", "B12 status", "folate status", "alcohol"],
+    "aliases": ["Mean Corpuscular Volume", "Mean Cell Volume", "M.C.V."]
+  },
+  "MCH": {
+    "unit": "pg",
+    "category": "blood_count",
+    "lab_range": {"male": [27, 33], "female": [27, 33]},
+    "optimal_range": {"male": [28, 32], "female": [28, 32]},
+    "description": "Mean corpuscular hemoglobin. Amount of hemoglobin per red blood cell.",
+    "related_supplements": ["Iron Bisglycinate", "Vitamin B12"],
+    "affected_by": ["iron status", "B12 status"],
+    "aliases": ["Mean Corpuscular Hemoglobin", "Mean Cell Hemoglobin", "M.C.H."]
+  },
+  "CRP": {
+    "unit": "mg/L",
+    "category": "inflammation",
+    "lab_range": {"male": [0, 10.0], "female": [0, 10.0]},
+    "optimal_range": {"male": [0, 1.0], "female": [0, 1.0]},
+    "description": "C-reactive protein. General marker for inflammation in the body.",
+    "related_supplements": ["Omega-3", "Curcumin", "NAC"],
+    "affected_by": ["infection", "injury", "chronic disease", "obesity", "stress"],
+    "aliases": ["C-Reactive Protein", "CRP, Quantitative", "C REACTIVE PROTEIN"]
+  },
+  "hs-CRP": {
+    "unit": "mg/L",
+    "category": "inflammation",
+    "lab_range": {"male": [0, 3.0], "female": [0, 3.0]},
+    "optimal_range": {"male": [0, 1.0], "female": [0, 1.0]},
+    "description": "High-sensitivity CRP. Best marker for cardiovascular inflammation risk.",
+    "related_supplements": ["Omega-3", "Curcumin", "NAC"],
+    "affected_by": ["cardiovascular disease", "obesity", "metabolic syndrome"],
+    "aliases": ["High Sensitivity CRP", "hsCRP", "Cardio CRP", "HS-CRP", "Ultra Sensitive CRP"]
+  },
+  "ESR": {
+    "unit": "mm/hr",
+    "category": "inflammation",
+    "lab_range": {"male": [0, 15], "female": [0, 20]},
+    "optimal_range": {"male": [0, 10], "female": [0, 12]},
+    "description": "Erythrocyte sedimentation rate. Non-specific marker for inflammation.",
+    "related_supplements": ["Omega-3", "Curcumin"],
+    "affected_by": ["infection", "autoimmune disease", "cancer", "anemia", "age"],
+    "aliases": ["Sed Rate", "Sedimentation Rate", "Erythrocyte Sedimentation Rate", "E.S.R."]
+  },
+  "Homocysteine": {
+    "unit": "umol/L",
+    "category": "inflammation",
+    "lab_range": {"male": [5, 15], "female": [5, 15]},
+    "optimal_range": {"male": [5, 9], "female": [5, 9]},
+    "description": "Amino acid linked to cardiovascular risk when elevated. B vitamins help lower it.",
+    "related_supplements": ["Methylfolate", "Vitamin B12", "Vitamin B6"],
+    "affected_by": ["MTHFR variants", "B vitamin status", "diet", "kidney function"],
+    "aliases": ["Homocysteine, Serum", "HOMOCYSTEINE", "Hcy"]
+  },
+  "Calcium": {
+    "unit": "mg/dL",
+    "category": "minerals",
+    "lab_range": {"male": [8.5, 10.5], "female": [8.5, 10.5]},
+    "optimal_range": {"male": [9.2, 10.0], "female": [9.2, 10.0]},
+    "description": "Essential for bone health, muscle function, and nerve signaling.",
+    "related_supplements": ["Calcium", "Vitamin D3", "Vitamin K2"],
+    "affected_by": ["vitamin D status", "parathyroid function", "diet", "age"],
+    "aliases": ["Serum Calcium", "CALCIUM", "Calcium, Total", "Ca"]
+  },
+  "Magnesium": {
+    "unit": "mg/dL",
+    "category": "minerals",
+    "lab_range": {"male": [1.7, 2.2], "female": [1.7, 2.2]},
+    "optimal_range": {"male": [2.0, 2.2], "female": [2.0, 2.2]},
+    "description": "Critical for 300+ enzymatic reactions. Most people are deficient.",
+    "related_supplements": ["Magnesium Glycinate", "Magnesium L-Threonate"],
+    "affected_by": ["diet", "stress", "alcohol", "medications", "gut absorption"],
+    "aliases": ["Serum Magnesium", "MAGNESIUM", "Magnesium, Serum", "Mg"]
+  },
+  "Zinc": {
+    "unit": "mcg/dL",
+    "category": "minerals",
+    "lab_range": {"male": [60, 120], "female": [60, 120]},
+    "optimal_range": {"male": [80, 110], "female": [80, 110]},
+    "description": "Essential for immune function, testosterone production, and wound healing.",
+    "related_supplements": ["Zinc Glycinate"],
+    "affected_by": ["diet", "vegetarian diet", "stress", "intense exercise"],
+    "aliases": ["Serum Zinc", "ZINC", "Zinc, Serum", "Zn"]
+  },
+  "Selenium": {
+    "unit": "mcg/L",
+    "category": "minerals",
+    "lab_range": {"male": [70, 150], "female": [70, 150]},
+    "optimal_range": {"male": [100, 140], "female": [100, 140]},
+    "description": "Important for thyroid function and antioxidant defense.",
+    "related_supplements": ["Selenium"],
+    "affected_by": ["soil selenium content", "diet", "geographic location"],
+    "aliases": ["Serum Selenium", "SELENIUM", "Selenium, Serum", "Se"]
+  }
+}

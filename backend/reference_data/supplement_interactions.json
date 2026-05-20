@@ -1,0 +1,254 @@
+{
+  "Iron Bisglycinate": {
+    "enhances_absorption": ["Vitamin C"],
+    "inhibits_absorption": ["Calcium", "Zinc Glycinate", "Coffee", "Tea"],
+    "timing_note": "Take on empty stomach or with Vitamin C. Separate from calcium and zinc by 2+ hours.",
+    "relevant_biomarkers": ["Ferritin", "Serum Iron", "Hemoglobin", "Transferrin Saturation"],
+    "expected_effect": "Ferritin should increase by 10-30 ng/mL over 3 months with consistent supplementation",
+    "common_dosages": ["25mg", "36mg", "50mg"],
+    "category": "mineral"
+  },
+  "Vitamin D3": {
+    "enhances_absorption": ["Vitamin K2", "Magnesium Glycinate"],
+    "inhibits_absorption": [],
+    "timing_note": "Take with a fat-containing meal for best absorption. Pair with K2 to direct calcium to bones.",
+    "relevant_biomarkers": ["Vitamin D (25-OH)", "Calcium"],
+    "expected_effect": "Each 1000IU daily should raise 25(OH)D by ~10 ng/mL over 2-3 months",
+    "common_dosages": ["1000IU", "2000IU", "5000IU", "10000IU"],
+    "category": "vitamin"
+  },
+  "Vitamin K2": {
+    "enhances_absorption": ["Vitamin D3", "Calcium"],
+    "inhibits_absorption": [],
+    "timing_note": "Take with Vitamin D3 and a fat-containing meal. Essential if supplementing D3 above 2000IU.",
+    "relevant_biomarkers": ["Calcium"],
+    "expected_effect": "Directs calcium to bones and teeth, preventing arterial calcification",
+    "common_dosages": ["100mcg", "200mcg"],
+    "category": "vitamin"
+  },
+  "Vitamin B12": {
+    "enhances_absorption": ["Folate"],
+    "inhibits_absorption": [],
+    "timing_note": "Take in the morning. Sublingual methylcobalamin may be better absorbed than oral cyanocobalamin.",
+    "relevant_biomarkers": ["Vitamin B12", "Homocysteine", "MCV", "MCH"],
+    "expected_effect": "B12 levels should rise within 4-8 weeks. Homocysteine may decrease.",
+    "common_dosages": ["500mcg", "1000mcg", "2000mcg", "5000mcg"],
+    "category": "vitamin"
+  },
+  "Methylfolate": {
+    "enhances_absorption": ["Vitamin B12"],
+    "inhibits_absorption": [],
+    "timing_note": "Preferred form for MTHFR variants. Take with B12 for synergistic effect on homocysteine.",
+    "relevant_biomarkers": ["Folate", "Homocysteine", "MCV"],
+    "expected_effect": "Folate and homocysteine levels should improve within 4-8 weeks",
+    "common_dosages": ["400mcg", "800mcg", "1000mcg"],
+    "category": "vitamin"
+  },
+  "Vitamin B6": {
+    "enhances_absorption": ["Magnesium Glycinate"],
+    "inhibits_absorption": [],
+    "timing_note": "Take in the morning. P-5-P (pyridoxal-5-phosphate) is the active form.",
+    "relevant_biomarkers": ["Vitamin B6", "Homocysteine"],
+    "expected_effect": "Supports homocysteine metabolism and neurotransmitter production",
+    "common_dosages": ["25mg", "50mg", "100mg"],
+    "category": "vitamin"
+  },
+  "Vitamin C": {
+    "enhances_absorption": ["Iron Bisglycinate"],
+    "inhibits_absorption": [],
+    "timing_note": "Take with iron supplements to enhance absorption. Split doses through the day for best results.",
+    "relevant_biomarkers": ["Ferritin", "Serum Iron", "CRP", "Uric Acid"],
+    "expected_effect": "Enhances iron absorption by 2-3x. May lower uric acid and CRP.",
+    "common_dosages": ["500mg", "1000mg", "2000mg"],
+    "category": "vitamin"
+  },
+  "Zinc Glycinate": {
+    "enhances_absorption": [],
+    "inhibits_absorption": ["Iron Bisglycinate", "Copper"],
+    "timing_note": "Take with food to avoid nausea. Separate from iron by 2+ hours. Long-term use may deplete copper.",
+    "relevant_biomarkers": ["Zinc", "Testosterone (Total)", "Testosterone (Free)"],
+    "expected_effect": "Zinc levels should normalize in 4-8 weeks. May support testosterone in zinc-deficient individuals.",
+    "common_dosages": ["15mg", "25mg", "30mg", "50mg"],
+    "category": "mineral"
+  },
+  "Magnesium Glycinate": {
+    "enhances_absorption": ["Vitamin D3", "Vitamin B6"],
+    "inhibits_absorption": [],
+    "timing_note": "Take in the evening for sleep support. Glycinate form is best absorbed and least likely to cause GI issues.",
+    "relevant_biomarkers": ["Magnesium"],
+    "expected_effect": "May improve sleep quality, muscle recovery, and stress resilience within 2-4 weeks",
+    "common_dosages": ["200mg", "300mg", "400mg"],
+    "category": "mineral"
+  },
+  "Magnesium L-Threonate": {
+    "enhances_absorption": [],
+    "inhibits_absorption": [],
+    "timing_note": "Best form for cognitive support. Take in the evening. Crosses blood-brain barrier effectively.",
+    "relevant_biomarkers": ["Magnesium"],
+    "expected_effect": "Primarily cognitive benefits. May not raise serum magnesium as much as other forms.",
+    "common_dosages": ["1000mg", "2000mg"],
+    "category": "mineral"
+  },
+  "Selenium": {
+    "enhances_absorption": [],
+    "inhibits_absorption": [],
+    "timing_note": "Take with food. Do not exceed 200mcg daily from supplements. Selenomethionine form preferred.",
+    "relevant_biomarkers": ["Selenium", "TSH", "Free T3", "Free T4"],
+    "expected_effect": "Supports thyroid hormone conversion (T4 to T3). May improve thyroid function in 2-3 months.",
+    "common_dosages": ["100mcg", "200mcg"],
+    "category": "mineral"
+  },
+  "Calcium": {
+    "enhances_absorption": ["Vitamin D3", "Vitamin K2"],
+    "inhibits_absorption": ["Iron Bisglycinate", "Zinc Glycinate"],
+    "timing_note": "Take with food in divided doses (max 500mg at once). Always pair with D3 and K2. Separate from iron and zinc.",
+    "relevant_biomarkers": ["Calcium"],
+    "expected_effect": "Supports bone density. Best when combined with D3 and K2.",
+    "common_dosages": ["500mg", "600mg", "1000mg"],
+    "category": "mineral"
+  },
+  "Omega-3": {
+    "enhances_absorption": [],
+    "inhibits_absorption": [],
+    "timing_note": "Take with a fat-containing meal. Look for high EPA/DHA content. Refrigerate to prevent oxidation.",
+    "relevant_biomarkers": ["Triglycerides", "HDL Cholesterol", "hs-CRP", "CRP"],
+    "expected_effect": "May reduce triglycerides by 15-30% and lower CRP over 2-3 months",
+    "common_dosages": ["1000mg", "2000mg", "3000mg"],
+    "category": "essential_fatty_acid"
+  },
+  "CoQ10": {
+    "enhances_absorption": [],
+    "inhibits_absorption": [],
+    "timing_note": "Take with a fat-containing meal. Ubiquinol form is better absorbed than ubiquinone. Essential if on statins.",
+    "relevant_biomarkers": ["LDL Cholesterol", "Total Cholesterol"],
+    "expected_effect": "Supports cellular energy production. Replenishes CoQ10 depleted by statins.",
+    "common_dosages": ["100mg", "200mg", "300mg"],
+    "category": "antioxidant"
+  },
+  "Creatine Monohydrate": {
+    "enhances_absorption": [],
+    "inhibits_absorption": [],
+    "timing_note": "Take daily with water. No need to cycle. May slightly elevate creatinine on blood tests (not harmful).",
+    "relevant_biomarkers": ["Creatinine"],
+    "expected_effect": "Creatinine may rise 10-20% due to increased creatine metabolism. This is not kidney damage.",
+    "common_dosages": ["3g", "5g"],
+    "category": "performance"
+  },
+  "Ashwagandha": {
+    "enhances_absorption": [],
+    "inhibits_absorption": [],
+    "timing_note": "Take with food. KSM-66 or Sensoril extracts are best studied. May take 4-8 weeks for full effects.",
+    "relevant_biomarkers": ["Testosterone (Total)", "DHEA-S", "TSH"],
+    "expected_effect": "May reduce cortisol by 20-30%, mildly increase testosterone, and support thyroid function",
+    "common_dosages": ["300mg", "600mg"],
+    "category": "adaptogen"
+  },
+  "Curcumin": {
+    "enhances_absorption": [],
+    "inhibits_absorption": [],
+    "timing_note": "Take with black pepper (piperine) or as a liposomal form to improve bioavailability by up to 2000%.",
+    "relevant_biomarkers": ["CRP", "hs-CRP", "ESR", "ALT", "AST"],
+    "expected_effect": "May reduce CRP and inflammatory markers over 4-8 weeks",
+    "common_dosages": ["500mg", "1000mg"],
+    "category": "anti_inflammatory"
+  },
+  "NAC": {
+    "enhances_absorption": [],
+    "inhibits_absorption": [],
+    "timing_note": "Take on an empty stomach, 30 minutes before meals. May support liver detoxification and glutathione production.",
+    "relevant_biomarkers": ["ALT", "AST", "GGT", "Homocysteine"],
+    "expected_effect": "May support liver enzymes and lower homocysteine over 2-3 months",
+    "common_dosages": ["600mg", "1200mg"],
+    "category": "antioxidant"
+  },
+  "Alpha Lipoic Acid": {
+    "enhances_absorption": [],
+    "inhibits_absorption": [],
+    "timing_note": "Take on an empty stomach. R-lipoic acid form may be more bioavailable.",
+    "relevant_biomarkers": ["Fasting Glucose", "HbA1c", "Fasting Insulin"],
+    "expected_effect": "May improve insulin sensitivity and lower fasting glucose over 2-3 months",
+    "common_dosages": ["300mg", "600mg"],
+    "category": "antioxidant"
+  },
+  "DHEA": {
+    "enhances_absorption": [],
+    "inhibits_absorption": [],
+    "timing_note": "Take in the morning to mimic natural cortisol rhythm. Start with low dose. Monitor levels regularly.",
+    "relevant_biomarkers": ["DHEA-S", "Testosterone (Total)", "Estradiol"],
+    "expected_effect": "DHEA-S levels should rise. May also increase testosterone and estradiol.",
+    "common_dosages": ["10mg", "25mg", "50mg"],
+    "category": "hormone"
+  },
+  "Berberine": {
+    "enhances_absorption": [],
+    "inhibits_absorption": [],
+    "timing_note": "Take with meals, 2-3 times daily. Can cause GI discomfort. May interact with medications.",
+    "relevant_biomarkers": ["Fasting Glucose", "HbA1c", "LDL Cholesterol", "Triglycerides"],
+    "expected_effect": "May lower fasting glucose by 10-20 mg/dL and reduce LDL/triglycerides over 2-3 months",
+    "common_dosages": ["500mg", "1000mg", "1500mg"],
+    "category": "metabolic"
+  },
+  "Quercetin": {
+    "enhances_absorption": [],
+    "inhibits_absorption": [],
+    "timing_note": "Take with meals. Often paired with bromelain for enhanced absorption.",
+    "relevant_biomarkers": ["Uric Acid", "CRP", "hs-CRP"],
+    "expected_effect": "May reduce uric acid and CRP levels. Supports immune function.",
+    "common_dosages": ["500mg", "1000mg"],
+    "category": "antioxidant"
+  },
+  "Melatonin": {
+    "enhances_absorption": [],
+    "inhibits_absorption": [],
+    "timing_note": "Take 30-60 minutes before bed. Start with lowest dose. Higher is not better.",
+    "relevant_biomarkers": [],
+    "expected_effect": "Improves sleep onset latency. May affect HRV and recovery scores positively.",
+    "common_dosages": ["0.3mg", "0.5mg", "1mg", "3mg"],
+    "category": "sleep"
+  },
+  "L-Theanine": {
+    "enhances_absorption": [],
+    "inhibits_absorption": [],
+    "timing_note": "Take in the morning with caffeine for focused calm, or in the evening for relaxation.",
+    "relevant_biomarkers": [],
+    "expected_effect": "Promotes alpha brain waves. May improve sleep quality and reduce anxiety.",
+    "common_dosages": ["100mg", "200mg"],
+    "category": "nootropic"
+  },
+  "Boron": {
+    "enhances_absorption": [],
+    "inhibits_absorption": [],
+    "timing_note": "Take with food. Small but effective mineral for hormonal support.",
+    "relevant_biomarkers": ["Testosterone (Free)", "Vitamin D (25-OH)", "Magnesium"],
+    "expected_effect": "May increase free testosterone and reduce SHBG. Supports Vitamin D metabolism.",
+    "common_dosages": ["3mg", "6mg", "9mg"],
+    "category": "mineral"
+  },
+  "Collagen Peptides": {
+    "enhances_absorption": ["Vitamin C"],
+    "inhibits_absorption": [],
+    "timing_note": "Take on an empty stomach or mix into coffee/smoothie. Vitamin C enhances collagen synthesis.",
+    "relevant_biomarkers": [],
+    "expected_effect": "Supports joint, skin, and gut health. Benefits typically seen after 4-8 weeks.",
+    "common_dosages": ["10g", "15g", "20g"],
+    "category": "protein"
+  },
+  "DIM": {
+    "enhances_absorption": [],
+    "inhibits_absorption": [],
+    "timing_note": "Take with food. Supports healthy estrogen metabolism.",
+    "relevant_biomarkers": ["Estradiol", "Testosterone (Total)"],
+    "expected_effect": "May help balance estrogen metabolism. Useful for men with elevated estradiol.",
+    "common_dosages": ["100mg", "200mg", "300mg"],
+    "category": "hormone_support"
+  },
+  "Probiotics": {
+    "enhances_absorption": [],
+    "inhibits_absorption": [],
+    "timing_note": "Take on an empty stomach or with a light meal. Look for multi-strain formulas with 10+ billion CFU.",
+    "relevant_biomarkers": ["CRP", "hs-CRP"],
+    "expected_effect": "Supports gut health and may reduce systemic inflammation markers over 4-8 weeks.",
+    "common_dosages": ["10B CFU", "25B CFU", "50B CFU"],
+    "category": "gut_health"
+  }
+}
