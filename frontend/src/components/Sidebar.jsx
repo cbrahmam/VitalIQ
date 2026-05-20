@@ -1,9 +1,10 @@
 import { NavLink } from 'react-router-dom';
-import { Activity, FlaskConical, Pill, Settings, LayoutDashboard } from 'lucide-react';
+import { Activity, FlaskConical, Pill, Settings, LayoutDashboard, Watch } from 'lucide-react';
 
 const links = [
   { to: '/', label: 'Dashboard', icon: LayoutDashboard },
   { to: '/bloodwork', label: 'Blood Work', icon: FlaskConical },
+  { to: '/wearables', label: 'Wearables', icon: Watch },
   { to: '/supplements', label: 'Supplements', icon: Pill },
   { to: '/settings', label: 'Settings', icon: Settings },
 ];

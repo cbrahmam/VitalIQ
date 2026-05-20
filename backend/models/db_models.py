@@ -190,3 +190,79 @@ def get_supplement_history(conn: sqlite3.Connection) -> list[dict]:
            ORDER BY sh.date DESC"""
     ).fetchall()
     return [row_to_dict(r) for r in rows]
+
+
+# --- Wearable Data ---
+
+def get_latest_wearable_date(conn: sqlite3.Connection, source: str) -> str | None:
+    row = conn.execute(
+        "SELECT MAX(date) as latest FROM wearable_data WHERE source = ?", (source,)
+    ).fetchone()
+    return row["latest"] if row and row["latest"] else None
+
+
+def insert_wearable_batch(conn: sqlite3.Connection, data_points: list[dict]) -> tuple[int, int]:
+    imported = 0
+    skipped = 0
+    now = now_iso()
+    for dp in data_points:
+        try:
+            changes_before = conn.total_changes
+            conn.execute(
+                """INSERT OR IGNORE INTO wearable_data (id, source, date, metric_type, value, unit, uploaded_at)
+                   VALUES (?, ?, ?, ?, ?, ?, ?)""",
+                (new_id(), dp["source"], dp["date"], dp["metric_type"],
+                 dp["value"], dp["unit"], now),
+            )
+            if conn.total_changes > changes_before:
+                imported += 1
+            else:
+                skipped += 1
+        except Exception:
+            skipped += 1
+    conn.commit()
+    return imported, skipped
+
+
+def get_wearable_latest(conn: sqlite3.Connection) -> list[dict]:
+    rows = conn.execute(
+        """SELECT w.source, w.metric_type, w.value, w.unit, w.date
+           FROM wearable_data w
+           INNER JOIN (
+               SELECT metric_type, MAX(date) as max_date
+               FROM wearable_data
+               GROUP BY metric_type
+           ) latest ON w.metric_type = latest.metric_type AND w.date = latest.max_date
+           GROUP BY w.metric_type"""
+    ).fetchall()
+    return [row_to_dict(r) for r in rows]
+
+
+def get_wearable_daily(conn: sqlite3.Connection, date: str) -> list[dict]:
+    rows = conn.execute(
+        "SELECT * FROM wearable_data WHERE date = ? ORDER BY metric_type",
+        (date,),
+    ).fetchall()
+    return [row_to_dict(r) for r in rows]
+
+
+def get_wearable_range(conn: sqlite3.Connection, metric: str, start: str, end: str) -> list[dict]:
+    rows = conn.execute(
+        """SELECT date, value, unit, source FROM wearable_data
+           WHERE metric_type = ? AND date >= ? AND date <= ?
+           ORDER BY date ASC""",
+        (metric, start, end),
+    ).fetchall()
+    return [row_to_dict(r) for r in rows]
+
+
+def get_sync_status(conn: sqlite3.Connection) -> list[dict]:
+    rows = conn.execute(
+        """SELECT source,
+                  MAX(uploaded_at) as last_sync_date,
+                  COUNT(*) as record_count,
+                  MAX(date) as latest_data_date
+           FROM wearable_data
+           GROUP BY source"""
+    ).fetchall()
+    return [row_to_dict(r) for r in rows]

@@ -64,6 +64,35 @@ const useHealthStore = create((set, get) => ({
     set({ supplementHistory: data });
   },
 
+  // Wearables
+  syncStatus: [],
+  latestMetrics: [],
+  fetchSyncStatus: async () => {
+    try {
+      const data = await api.getSyncStatus();
+      set({ syncStatus: data });
+    } catch {
+      set({ syncStatus: [] });
+    }
+  },
+  fetchLatestMetrics: async () => {
+    try {
+      const data = await api.getWearableLatest();
+      set({ latestMetrics: data });
+    } catch {
+      set({ latestMetrics: [] });
+    }
+  },
+  uploadWearable: async (source, file) => {
+    const fn = source === 'apple_health' ? api.uploadAppleHealth
+             : source === 'whoop' ? api.uploadWhoop
+             : api.uploadGarmin;
+    const result = await fn(file);
+    await get().fetchSyncStatus();
+    await get().fetchLatestMetrics();
+    return result;
+  },
+
   // UI state
   toast: null,
   showToast: (message, type = 'success') => {

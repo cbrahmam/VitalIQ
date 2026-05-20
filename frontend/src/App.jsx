@@ -3,6 +3,7 @@ import Layout from './components/Layout';
 import DashboardPage from './pages/DashboardPage';
 import BloodWorkPage from './pages/BloodWorkPage';
 import SupplementsPage from './pages/SupplementsPage';
+import WearablesPage from './pages/WearablesPage';
 import SettingsPage from './pages/SettingsPage';
 
 export default function App() {
@@ -12,6 +13,7 @@ export default function App() {
         <Route element={<Layout />}>
           <Route path="/" element={<DashboardPage />} />
           <Route path="/bloodwork" element={<BloodWorkPage />} />
+          <Route path="/wearables" element={<WearablesPage />} />
           <Route path="/supplements" element={<SupplementsPage />} />
           <Route path="/settings" element={<SettingsPage />} />
         </Route>

@@ -45,7 +45,8 @@ CREATE TABLE IF NOT EXISTS wearable_data (
     metric_type TEXT,
     value REAL,
     unit TEXT,
-    uploaded_at TEXT
+    uploaded_at TEXT,
+    UNIQUE(source, date, metric_type)
 );
 
 CREATE TABLE IF NOT EXISTS supplements (

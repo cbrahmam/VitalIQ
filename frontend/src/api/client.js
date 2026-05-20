@@ -22,3 +22,17 @@ export const addSupplement = (data) => api.post('/supplements', data).then(r => 
 export const updateSupplement = (id, data) => api.put(`/supplements/${id}`, data).then(r => r.data);
 export const deleteSupplement = (id) => api.delete(`/supplements/${id}`).then(r => r.data);
 export const getSupplementHistory = () => api.get('/supplements/history').then(r => r.data);
+
+// --- Wearables ---
+const uploadWearableFile = (endpoint, file) => {
+  const form = new FormData();
+  form.append('file', file);
+  return api.post(endpoint, form).then(r => r.data);
+};
+export const uploadAppleHealth = (file) => uploadWearableFile('/wearables/apple-health', file);
+export const uploadWhoop = (file) => uploadWearableFile('/wearables/whoop', file);
+export const uploadGarmin = (file) => uploadWearableFile('/wearables/garmin', file);
+export const getWearableLatest = () => api.get('/wearables/latest').then(r => r.data);
+export const getWearableDaily = (date) => api.get(`/wearables/daily/${date}`).then(r => r.data);
+export const getWearableRange = (metric, start, end) => api.get('/wearables/range', { params: { metric, start, end } }).then(r => r.data);
+export const getSyncStatus = () => api.get('/wearables/sync-status').then(r => r.data);

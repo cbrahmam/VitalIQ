@@ -111,3 +111,28 @@ class InteractionWarning(BaseModel):
     supplement_b: str
     interaction_type: str
     recommendation: str
+
+
+# --- Wearables ---
+
+class WearableDataPoint(BaseModel):
+    source: str
+    date: str
+    metric_type: str
+    value: float
+    unit: str
+
+
+class WearableUploadResponse(BaseModel):
+    source: str
+    records_imported: int
+    records_skipped: int
+    date_range: dict
+    metrics_found: list[str]
+
+
+class SyncStatusItem(BaseModel):
+    source: str
+    last_sync_date: Optional[str]
+    record_count: int
+    latest_data_date: Optional[str]
