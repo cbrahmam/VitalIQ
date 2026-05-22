@@ -36,3 +36,11 @@ export const getWearableLatest = () => api.get('/wearables/latest').then(r => r.
 export const getWearableDaily = (date) => api.get(`/wearables/daily/${date}`).then(r => r.data);
 export const getWearableRange = (metric, start, end) => api.get('/wearables/range', { params: { metric, start, end } }).then(r => r.data);
 export const getSyncStatus = () => api.get('/wearables/sync-status').then(r => r.data);
+
+// --- Insights ---
+export const generateInsights = (force = false) => api.post('/insights/generate', { force }).then(r => r.data);
+export const generateDailyInsights = () => api.post('/insights/daily').then(r => r.data);
+export const getLatestInsights = () => api.get('/insights/latest').then(r => r.data);
+export const getInsightHistory = (type) => api.get('/insights/history', { params: type ? { type } : {} }).then(r => r.data);
+export const dismissInsight = (id) => api.post(`/insights/dismiss/${id}`).then(r => r.data);
+export const askHealthQuestion = (question) => api.post('/insights/ask', { question }).then(r => r.data);

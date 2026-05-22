@@ -1,0 +1,110 @@
+[
+  {
+    "biomarker": "Ferritin",
+    "trigger_statuses": ["out_of_range", "critical", "suboptimal"],
+    "wearable_metric": "hrv",
+    "wearable_direction": "low",
+    "title": "Low Iron May Be Affecting Your HRV",
+    "content": "Low ferritin levels are associated with reduced heart rate variability. Iron is essential for oxygen transport, and deficiency can stress the cardiovascular system, reducing autonomic flexibility.",
+    "recommendation": "Consider Iron Bisglycinate supplementation with Vitamin C for absorption. Retest ferritin in 3 months."
+  },
+  {
+    "biomarker": "Ferritin",
+    "trigger_statuses": ["out_of_range", "critical", "suboptimal"],
+    "wearable_metric": "resting_hr",
+    "wearable_direction": "high",
+    "title": "Low Iron & Elevated Resting Heart Rate",
+    "content": "Iron deficiency forces the heart to work harder to deliver oxygen. Your low ferritin combined with elevated resting heart rate suggests your body is compensating for reduced oxygen-carrying capacity.",
+    "recommendation": "Address iron levels first. Resting HR should normalize as ferritin improves."
+  },
+  {
+    "biomarker": "Vitamin D (25-OH)",
+    "trigger_statuses": ["out_of_range", "critical", "suboptimal"],
+    "wearable_metric": "sleep_hours",
+    "wearable_direction": "low",
+    "title": "Low Vitamin D May Affect Sleep Quality",
+    "content": "Vitamin D receptors are present in brain regions that regulate sleep. Deficiency has been linked to shorter sleep duration and poorer sleep quality in multiple studies.",
+    "recommendation": "Supplement with Vitamin D3 (2000-5000 IU daily with a fat-containing meal). Take in the morning, not evening."
+  },
+  {
+    "biomarker": "Magnesium",
+    "trigger_statuses": ["out_of_range", "critical", "suboptimal"],
+    "wearable_metric": "sleep_hours",
+    "wearable_direction": "low",
+    "title": "Low Magnesium May Impair Sleep",
+    "content": "Magnesium plays a critical role in activating the parasympathetic nervous system, which helps you relax and fall asleep. Low levels are associated with insomnia and restless sleep.",
+    "recommendation": "Consider Magnesium Glycinate (200-400mg) before bed. This form has good bioavailability and a calming effect."
+  },
+  {
+    "biomarker": "Magnesium",
+    "trigger_statuses": ["out_of_range", "critical", "suboptimal"],
+    "wearable_metric": "hrv",
+    "wearable_direction": "low",
+    "title": "Low Magnesium & Reduced HRV",
+    "content": "Magnesium is essential for proper nerve and muscle function, including heart rhythm regulation. Low levels can reduce parasympathetic tone, lowering HRV.",
+    "recommendation": "Magnesium Glycinate supplementation may improve both HRV and sleep quality."
+  },
+  {
+    "biomarker": "Fasting Glucose",
+    "trigger_statuses": ["out_of_range", "suboptimal"],
+    "wearable_metric": "resting_hr",
+    "wearable_direction": "high",
+    "title": "Elevated Glucose & Heart Rate Connection",
+    "content": "Chronically elevated blood glucose can damage blood vessels and increase sympathetic nervous system activity, leading to higher resting heart rate.",
+    "recommendation": "Focus on dietary changes: reduce refined carbohydrates, increase fiber intake, and consider regular post-meal walks."
+  },
+  {
+    "biomarker": "TSH",
+    "trigger_statuses": ["out_of_range", "critical"],
+    "wearable_metric": "resting_hr",
+    "wearable_direction": "any",
+    "title": "Thyroid Function & Heart Rate",
+    "content": "TSH abnormalities directly impact heart rate. High TSH (hypothyroidism) can cause low resting HR and fatigue, while low TSH (hyperthyroidism) can cause elevated resting HR and anxiety.",
+    "recommendation": "Discuss thyroid panel results with your healthcare provider. Thyroid medication adjustments should be medically supervised."
+  },
+  {
+    "biomarker": "Hemoglobin",
+    "trigger_statuses": ["out_of_range", "critical"],
+    "wearable_metric": "resting_hr",
+    "wearable_direction": "high",
+    "title": "Low Hemoglobin & Elevated Heart Rate",
+    "content": "Low hemoglobin reduces the blood's oxygen-carrying capacity. Your heart compensates by beating faster to maintain oxygen delivery to tissues.",
+    "recommendation": "Investigate the cause of low hemoglobin. Check iron, B12, and folate levels. Discuss with your healthcare provider."
+  },
+  {
+    "biomarker": "Vitamin B12",
+    "trigger_statuses": ["out_of_range", "critical", "suboptimal"],
+    "wearable_metric": "steps",
+    "wearable_direction": "low",
+    "title": "Low B12 May Contribute to Fatigue",
+    "content": "Vitamin B12 is essential for energy production and red blood cell formation. Low levels can cause fatigue and reduced physical activity, which may explain lower step counts.",
+    "recommendation": "Supplement with methylcobalamin (B12) 1000mcg daily. If levels don't improve, consider sublingual or injectable forms."
+  },
+  {
+    "biomarker": "CRP (C-Reactive Protein)",
+    "trigger_statuses": ["out_of_range", "critical"],
+    "wearable_metric": "hrv",
+    "wearable_direction": "low",
+    "title": "Inflammation & Reduced HRV",
+    "content": "Elevated CRP indicates systemic inflammation, which suppresses vagal tone and reduces heart rate variability. This is a significant finding that warrants attention.",
+    "recommendation": "Address inflammation sources: consider omega-3 supplementation, anti-inflammatory diet, stress management, and adequate sleep."
+  },
+  {
+    "biomarker": "Cortisol",
+    "trigger_statuses": ["out_of_range", "critical"],
+    "wearable_metric": "sleep_hours",
+    "wearable_direction": "low",
+    "title": "Abnormal Cortisol & Poor Sleep",
+    "content": "Cortisol follows a diurnal rhythm. Elevated evening cortisol can impair sleep onset and quality, while low morning cortisol causes fatigue and poor energy throughout the day.",
+    "recommendation": "Practice stress management. Consider adaptogenic herbs like Ashwagandha. Maintain consistent sleep and wake times."
+  },
+  {
+    "biomarker": "Testosterone",
+    "trigger_statuses": ["out_of_range", "critical", "suboptimal"],
+    "wearable_metric": "sleep_hours",
+    "wearable_direction": "low",
+    "title": "Low Testosterone & Sleep Quality",
+    "content": "Testosterone and sleep have a bidirectional relationship. Poor sleep reduces testosterone production, and low testosterone can impair sleep quality, creating a vicious cycle.",
+    "recommendation": "Prioritize 7-9 hours of quality sleep. Ensure adequate zinc and vitamin D levels, which support testosterone production."
+  }
+]

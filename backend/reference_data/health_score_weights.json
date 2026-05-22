@@ -1,0 +1,18 @@
+{
+  "bloodwork_max": 40,
+  "wearables_max": 35,
+  "supplements_max": 25,
+  "status_weights": {
+    "optimal": 1.0,
+    "suboptimal": 0.6,
+    "out_of_range": 0.2,
+    "critical": 0.0,
+    "unknown": 0.5
+  },
+  "wearable_benchmarks": {
+    "hrv": {"excellent": 60, "good": 40, "poor": 25, "unit": "ms", "higher_is_better": true},
+    "resting_hr": {"excellent": 55, "good": 65, "poor": 80, "unit": "bpm", "higher_is_better": false},
+    "sleep_hours": {"excellent": 8, "good": 7, "poor": 5.5, "unit": "hours", "higher_is_better": true},
+    "steps": {"excellent": 10000, "good": 7000, "poor": 3000, "unit": "steps", "higher_is_better": true}
+  }
+}

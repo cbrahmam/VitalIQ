@@ -266,3 +266,102 @@ def get_sync_status(conn: sqlite3.Connection) -> list[dict]:
            GROUP BY source"""
     ).fetchall()
     return [row_to_dict(r) for r in rows]
+
+
+# --- AI Insights ---
+
+def insert_insight(conn: sqlite3.Connection, insight_type: str, title: str,
+                   content: str, severity: str, data_sources: list[str],
+                   generated_at: str) -> str:
+    import json
+    insight_id = new_id()
+    conn.execute(
+        """INSERT INTO ai_insights (id, insight_type, title, content, severity, data_sources, generated_at)
+           VALUES (?, ?, ?, ?, ?, ?, ?)""",
+        (insight_id, insight_type, title, content, severity, json.dumps(data_sources), generated_at),
+    )
+    return insight_id
+
+
+def get_latest_insights(conn: sqlite3.Connection, limit: int = 20) -> list[dict]:
+    import json
+    rows = conn.execute(
+        "SELECT * FROM ai_insights WHERE dismissed = 0 ORDER BY generated_at DESC LIMIT ?",
+        (limit,),
+    ).fetchall()
+    results = []
+    for r in rows:
+        d = row_to_dict(r)
+        d["data_sources"] = json.loads(d["data_sources"]) if d["data_sources"] else []
+        d["dismissed"] = bool(d["dismissed"])
+        results.append(d)
+    return results
+
+
+def get_insight_history(conn: sqlite3.Connection, insight_type: str | None = None,
+                        limit: int = 50) -> list[dict]:
+    import json
+    if insight_type:
+        rows = conn.execute(
+            "SELECT * FROM ai_insights WHERE insight_type = ? ORDER BY generated_at DESC LIMIT ?",
+            (insight_type, limit),
+        ).fetchall()
+    else:
+        rows = conn.execute(
+            "SELECT * FROM ai_insights ORDER BY generated_at DESC LIMIT ?", (limit,)
+        ).fetchall()
+    results = []
+    for r in rows:
+        d = row_to_dict(r)
+        d["data_sources"] = json.loads(d["data_sources"]) if d["data_sources"] else []
+        d["dismissed"] = bool(d["dismissed"])
+        results.append(d)
+    return results
+
+
+def dismiss_insight(conn: sqlite3.Connection, insight_id: str) -> bool:
+    cursor = conn.execute("UPDATE ai_insights SET dismissed = 1 WHERE id = ?", (insight_id,))
+    conn.commit()
+    return cursor.rowcount > 0
+
+
+def clear_insights_by_type(conn: sqlite3.Connection, insight_type: str) -> int:
+    cursor = conn.execute("DELETE FROM ai_insights WHERE insight_type = ?", (insight_type,))
+    return cursor.rowcount
+
+
+def get_all_biomarkers_latest(conn: sqlite3.Connection) -> list[dict]:
+    rows = conn.execute(
+        """SELECT b.* FROM biomarkers b
+           INNER JOIN (
+               SELECT name, MAX(report_date) as max_date
+               FROM biomarkers WHERE report_date IS NOT NULL
+               GROUP BY name
+           ) latest ON b.name = latest.name AND b.report_date = latest.max_date"""
+    ).fetchall()
+    return [row_to_dict(r) for r in rows]
+
+
+def get_biomarker_trend(conn: sqlite3.Connection, name: str, limit: int = 5) -> list[dict]:
+    rows = conn.execute(
+        """SELECT report_date, value, unit, status FROM biomarkers
+           WHERE name = ? AND report_date IS NOT NULL
+           ORDER BY report_date DESC LIMIT ?""",
+        (name, limit),
+    ).fetchall()
+    return [row_to_dict(r) for r in reversed(rows)]
+
+
+def get_wearable_period_averages(conn: sqlite3.Connection, metric: str,
+                                  start: str, end: str) -> dict:
+    row = conn.execute(
+        """SELECT AVG(value) as avg_val, MIN(value) as min_val,
+                  MAX(value) as max_val, COUNT(*) as count
+           FROM wearable_data
+           WHERE metric_type = ? AND date >= ? AND date <= ?""",
+        (metric, start, end),
+    ).fetchone()
+    if row and row["count"] > 0:
+        return {"avg": row["avg_val"], "min": row["min_val"],
+                "max": row["max_val"], "count": row["count"]}
+    return {"avg": None, "min": None, "max": None, "count": 0}

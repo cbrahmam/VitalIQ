@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import { FlaskConical, AlertTriangle, ChevronDown, ChevronUp } from 'lucide-react';
 import BloodWorkUpload from '../components/BloodWorkUpload';
+import SparklineChart from '../components/SparklineChart';
 import useHealthStore from '../store/healthStore';
 import { groupByCategory, getStatusStyle, categoryLabels } from '../utils/biomarkerUtils';
 import { formatValue } from '../utils/formatters';
 import { formatShort } from '../utils/dateUtils';
+import * as api from '../api/client';
 
 function StatusBadge({ status }) {
   const style = getStatusStyle(status);
@@ -12,6 +14,63 @@ function StatusBadge({ status }) {
     <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium ${style.bg} ${style.color} border ${style.border}`}>
       {style.label}
     </span>
+  );
+}
+
+function BiomarkerRow({ bm }) {
+  const [history, setHistory] = useState(null);
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    if (!loaded) {
+      api.getBiomarkerHistory(bm.name).then((data) => {
+        setHistory(data);
+        setLoaded(true);
+      }).catch(() => setLoaded(true));
+    }
+  }, [bm.name, loaded]);
+
+  const sparkData = history && history.length >= 2
+    ? history.map((h) => ({ value: h.value }))
+    : null;
+
+  const statusStyle = getStatusStyle(bm.status);
+  const sparkColor = statusStyle.color.includes('emerald') ? '#34d399'
+    : statusStyle.color.includes('blue') ? '#3b82f6'
+    : statusStyle.color.includes('amber') ? '#fbbf24'
+    : statusStyle.color.includes('red') ? '#f87171'
+    : statusStyle.color.includes('purple') ? '#a78bfa'
+    : '#3b82f6';
+
+  return (
+    <tr className="border-b border-slate-800/50 hover:bg-slate-800/30">
+      <td className="py-2.5 px-4 text-slate-200">{bm.name}</td>
+      <td className="py-2.5 px-4 text-right font-mono text-white">
+        {formatValue(bm.value, bm.unit)}
+      </td>
+      <td className="py-2.5 px-4 text-right text-slate-500 font-mono text-xs">
+        {bm.lab_reference_low != null && bm.lab_reference_high != null
+          ? `${bm.lab_reference_low} - ${bm.lab_reference_high}`
+          : '—'}
+      </td>
+      <td className="py-2.5 px-4 text-right text-slate-500 font-mono text-xs">
+        {bm.optimal_low != null && bm.optimal_high != null
+          ? `${bm.optimal_low} - ${bm.optimal_high}`
+          : '—'}
+      </td>
+      <td className="py-2.5 px-4 text-center">
+        <StatusBadge status={bm.status} />
+      </td>
+      <td className="py-2.5 px-4 text-center">
+        {sparkData ? (
+          <div className="inline-block">
+            <SparklineChart data={sparkData} color={sparkColor} width={60} height={20} />
+          </div>
+        ) : (
+          <span className="text-xs text-slate-600">—</span>
+        )}
+      </td>
+    </tr>
   );
 }
 
@@ -32,29 +91,12 @@ function BiomarkerTable({ biomarkers }) {
                   <th className="text-right py-2 px-4 font-medium">Ref Range</th>
                   <th className="text-right py-2 px-4 font-medium">Optimal</th>
                   <th className="text-center py-2 px-4 font-medium">Status</th>
+                  <th className="text-center py-2 px-4 font-medium">Trend</th>
                 </tr>
               </thead>
               <tbody>
                 {items.map((bm) => (
-                  <tr key={bm.id || bm.name} className="border-b border-slate-800/50 hover:bg-slate-800/30">
-                    <td className="py-2.5 px-4 text-slate-200">{bm.name}</td>
-                    <td className="py-2.5 px-4 text-right font-mono text-white">
-                      {formatValue(bm.value, bm.unit)}
-                    </td>
-                    <td className="py-2.5 px-4 text-right text-slate-500 font-mono text-xs">
-                      {bm.lab_reference_low != null && bm.lab_reference_high != null
-                        ? `${bm.lab_reference_low} - ${bm.lab_reference_high}`
-                        : '—'}
-                    </td>
-                    <td className="py-2.5 px-4 text-right text-slate-500 font-mono text-xs">
-                      {bm.optimal_low != null && bm.optimal_high != null
-                        ? `${bm.optimal_low} - ${bm.optimal_high}`
-                        : '—'}
-                    </td>
-                    <td className="py-2.5 px-4 text-center">
-                      <StatusBadge status={bm.status} />
-                    </td>
-                  </tr>
+                  <BiomarkerRow key={bm.id || bm.name} bm={bm} />
                 ))}
               </tbody>
             </table>

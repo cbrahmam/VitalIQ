@@ -93,6 +93,49 @@ const useHealthStore = create((set, get) => ({
     return result;
   },
 
+  // Insights
+  healthScore: null,
+  insights: [],
+  actionItems: [],
+  askAnswer: null,
+  askLoading: false,
+
+  fetchInsights: async () => {
+    try {
+      const data = await api.getLatestInsights();
+      set({ insights: data });
+    } catch {
+      set({ insights: [] });
+    }
+  },
+
+  generateInsights: async (force = false) => {
+    const data = await api.generateInsights(force);
+    set({
+      healthScore: data.health_score,
+      insights: data.insights,
+      actionItems: data.action_items,
+    });
+    return data;
+  },
+
+  dismissInsight: async (id) => {
+    await api.dismissInsight(id);
+    set((s) => ({ insights: s.insights.filter((i) => i.id !== id) }));
+  },
+
+  askQuestion: async (question) => {
+    set({ askLoading: true, askAnswer: null });
+    try {
+      const data = await api.askHealthQuestion(question);
+      set({ askAnswer: data, askLoading: false });
+      return data;
+    } catch (e) {
+      set({ askLoading: false });
+      throw e;
+    }
+  },
+
   // UI state
   toast: null,
   showToast: (message, type = 'success') => {

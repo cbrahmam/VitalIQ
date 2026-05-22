@@ -136,3 +136,50 @@ class SyncStatusItem(BaseModel):
     last_sync_date: Optional[str]
     record_count: int
     latest_data_date: Optional[str]
+
+
+# --- Insights ---
+
+class InsightResponse(BaseModel):
+    id: str
+    insight_type: str
+    title: str
+    content: str
+    severity: str
+    data_sources: list[str]
+    generated_at: str
+    dismissed: bool
+
+
+class HealthScoreBreakdown(BaseModel):
+    bloodwork: int
+    wearables: int
+    supplements: int
+
+
+class HealthScoreResponse(BaseModel):
+    score: int
+    breakdown: HealthScoreBreakdown
+    factors: list[dict]
+
+
+class HealthInsightsResponse(BaseModel):
+    health_score: HealthScoreResponse
+    insights: list[InsightResponse]
+    action_items: list[dict]
+    generated_at: str
+    disclaimer: str
+
+
+class GenerateInsightsRequest(BaseModel):
+    force: bool = False
+
+
+class AskQuestionRequest(BaseModel):
+    question: str
+
+
+class AskQuestionResponse(BaseModel):
+    answer: str
+    relevant_data: list[dict]
+    source: str
