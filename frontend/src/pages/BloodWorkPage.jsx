@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { FlaskConical, AlertTriangle, ChevronDown, ChevronUp } from 'lucide-react';
 import BloodWorkUpload from '../components/BloodWorkUpload';
 import SparklineChart from '../components/SparklineChart';
+import BiomarkerDeepDive from '../components/BiomarkerDeepDive';
 import useHealthStore from '../store/healthStore';
 import { groupByCategory, getStatusStyle, categoryLabels } from '../utils/biomarkerUtils';
 import { formatValue } from '../utils/formatters';
@@ -17,7 +18,7 @@ function StatusBadge({ status }) {
   );
 }
 
-function BiomarkerRow({ bm }) {
+function BiomarkerRow({ bm, onNameClick }) {
   const [history, setHistory] = useState(null);
   const [loaded, setLoaded] = useState(false);
 
@@ -44,7 +45,11 @@ function BiomarkerRow({ bm }) {
 
   return (
     <tr className="border-b border-slate-800/50 hover:bg-slate-800/30">
-      <td className="py-2.5 px-4 text-slate-200">{bm.name}</td>
+      <td className="py-2.5 px-4">
+        <button onClick={() => onNameClick?.(bm.name)} className="text-slate-200 hover:text-blue-400 transition-colors text-left">
+          {bm.name}
+        </button>
+      </td>
       <td className="py-2.5 px-4 text-right font-mono text-white">
         {formatValue(bm.value, bm.unit)}
       </td>
@@ -74,7 +79,7 @@ function BiomarkerRow({ bm }) {
   );
 }
 
-function BiomarkerTable({ biomarkers }) {
+function BiomarkerTable({ biomarkers, onNameClick }) {
   const groups = groupByCategory(biomarkers);
 
   return (
@@ -96,7 +101,7 @@ function BiomarkerTable({ biomarkers }) {
               </thead>
               <tbody>
                 {items.map((bm) => (
-                  <BiomarkerRow key={bm.id || bm.name} bm={bm} />
+                  <BiomarkerRow key={bm.id || bm.name} bm={bm} onNameClick={onNameClick} />
                 ))}
               </tbody>
             </table>
@@ -114,6 +119,7 @@ export default function BloodWorkPage() {
   const [latestResult, setLatestResult] = useState(null);
   const [selectedReport, setSelectedReport] = useState(null);
   const [expandedReportId, setExpandedReportId] = useState(null);
+  const [deepDiveBiomarker, setDeepDiveBiomarker] = useState(null);
 
   useEffect(() => {
     fetchReports();
@@ -172,7 +178,7 @@ export default function BloodWorkPage() {
             </div>
           )}
 
-          <BiomarkerTable biomarkers={latestResult.biomarkers} />
+          <BiomarkerTable biomarkers={latestResult.biomarkers} onNameClick={setDeepDiveBiomarker} />
         </div>
       )}
 
@@ -201,7 +207,7 @@ export default function BloodWorkPage() {
                 </button>
                 {expandedReportId === report.id && selectedReport && (
                   <div className="mt-3">
-                    <BiomarkerTable biomarkers={selectedReport.biomarkers} />
+                    <BiomarkerTable biomarkers={selectedReport.biomarkers} onNameClick={setDeepDiveBiomarker} />
                   </div>
                 )}
               </div>
@@ -209,6 +215,8 @@ export default function BloodWorkPage() {
           </div>
         </div>
       )}
+
+      <BiomarkerDeepDive name={deepDiveBiomarker} onClose={() => setDeepDiveBiomarker(null)} />
     </div>
   );
 }

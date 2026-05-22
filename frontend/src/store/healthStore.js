@@ -93,6 +93,21 @@ const useHealthStore = create((set, get) => ({
     return result;
   },
 
+  // Dashboard
+  dashboardData: null,
+  fetchDashboard: async () => {
+    try {
+      const data = await api.getDashboard();
+      set({
+        dashboardData: data,
+        healthScore: data.health_score,
+      });
+      return data;
+    } catch {
+      set({ dashboardData: null });
+    }
+  },
+
   // Insights
   healthScore: null,
   insights: [],

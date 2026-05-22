@@ -44,3 +44,10 @@ export const getLatestInsights = () => api.get('/insights/latest').then(r => r.d
 export const getInsightHistory = (type) => api.get('/insights/history', { params: type ? { type } : {} }).then(r => r.data);
 export const dismissInsight = (id) => api.post(`/insights/dismiss/${id}`).then(r => r.data);
 export const askHealthQuestion = (question) => api.post('/insights/ask', { question }).then(r => r.data);
+
+// --- Dashboard & Trends ---
+export const getDashboard = () => api.get('/dashboard').then(r => r.data);
+export const getTrend = (metric, days = 30) => api.get(`/trends/${metric}`, { params: { days } }).then(r => r.data);
+export const getCorrelations = (days = 30) => api.get('/correlations', { params: { days } }).then(r => r.data);
+export const getTimeline = (start, end) => api.get('/timeline', { params: { start, end } }).then(r => r.data);
+export const getBiomarkerDeepDive = (name) => api.get(`/biomarkers/${encodeURIComponent(name)}/deep-dive`).then(r => r.data);
