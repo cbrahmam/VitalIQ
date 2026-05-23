@@ -83,13 +83,23 @@ CREATE TABLE IF NOT EXISTS ai_insights (
 
 CREATE TABLE IF NOT EXISTS genetic_markers (
     id TEXT PRIMARY KEY,
-    rsid TEXT,
+    rsid TEXT UNIQUE,
     gene TEXT,
     genotype TEXT,
     significance TEXT,
     category TEXT,
     risk_level TEXT,
     description TEXT
+);
+
+CREATE TABLE IF NOT EXISTS health_goals (
+    id TEXT PRIMARY KEY,
+    metric_type TEXT,
+    target_value REAL,
+    target_date TEXT,
+    current_value REAL,
+    started_at TEXT,
+    status TEXT DEFAULT 'in_progress'
 );
 
 CREATE INDEX IF NOT EXISTS idx_biomarkers_report_id ON biomarkers(report_id);

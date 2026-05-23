@@ -6,6 +6,9 @@ import BloodWorkPage from './pages/BloodWorkPage';
 import SupplementsPage from './pages/SupplementsPage';
 import WearablesPage from './pages/WearablesPage';
 import TrendsPage from './pages/TrendsPage';
+import GeneticsPage from './pages/GeneticsPage';
+import GoalsPage from './pages/GoalsPage';
+import ReportPage from './pages/ReportPage';
 import SettingsPage from './pages/SettingsPage';
 
 export default function App() {
@@ -19,6 +22,9 @@ export default function App() {
           <Route path="/wearables" element={<WearablesPage />} />
           <Route path="/trends" element={<TrendsPage />} />
           <Route path="/supplements" element={<SupplementsPage />} />
+          <Route path="/genetics" element={<GeneticsPage />} />
+          <Route path="/goals" element={<GoalsPage />} />
+          <Route path="/reports" element={<ReportPage />} />
           <Route path="/settings" element={<SettingsPage />} />
         </Route>
       </Routes>

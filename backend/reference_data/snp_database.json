@@ -1,0 +1,1328 @@
+{
+  "rs1801133": {
+    "gene": "MTHFR",
+    "name": "MTHFR C677T",
+    "category": "methylation",
+    "chromosome": "1",
+    "position": 11856378,
+    "variants": {
+      "CC": {
+        "risk": "normal",
+        "description": "Normal MTHFR enzyme function. Full capacity to convert folic acid to methylfolate (5-MTHF)."
+      },
+      "CT": {
+        "risk": "moderate",
+        "description": "Approximately 35% reduction in MTHFR enzyme activity. May have mildly elevated homocysteine levels, especially with low folate intake."
+      },
+      "TT": {
+        "risk": "elevated",
+        "description": "Approximately 70% reduction in MTHFR enzyme activity. Significantly impaired conversion of folic acid to active methylfolate. Higher risk of elevated homocysteine and associated cardiovascular concerns."
+      }
+    },
+    "affected_biomarkers": ["Homocysteine", "Folate", "Vitamin B12"],
+    "supplement_implications": {
+      "elevated": "Use methylfolate (5-MTHF, 800-1000 mcg/day) instead of synthetic folic acid. Pair with methylcobalamin (B12, 1000 mcg/day) and pyridoxal-5-phosphate (P5P, 25-50 mg/day). Monitor homocysteine levels every 3-6 months. Riboflavin (B2, 25 mg/day) may further support MTHFR function.",
+      "moderate": "Methylfolate (400-800 mcg/day) preferred over folic acid. Consider methylcobalamin (500-1000 mcg/day). Check homocysteine annually. Standard multivitamins with folic acid may be less effective."
+    }
+  },
+  "rs1801131": {
+    "gene": "MTHFR",
+    "name": "MTHFR A1298C",
+    "category": "methylation",
+    "chromosome": "1",
+    "position": 11854476,
+    "variants": {
+      "AA": {
+        "risk": "normal",
+        "description": "Normal MTHFR enzyme function at the A1298C position. No impairment in BH4 (tetrahydrobiopterin) recycling."
+      },
+      "AC": {
+        "risk": "moderate",
+        "description": "Mild reduction in MTHFR activity at this position. Minimal clinical impact alone, but may compound with C677T variants or other methylation SNPs."
+      },
+      "CC": {
+        "risk": "elevated",
+        "description": "Reduced MTHFR activity affecting BH4 recycling, which is important for neurotransmitter synthesis (serotonin, dopamine, norepinephrine). More clinically significant when compound heterozygous with C677T."
+      }
+    },
+    "affected_biomarkers": ["Homocysteine", "Folate"],
+    "supplement_implications": {
+      "elevated": "Consider methylfolate (400-800 mcg/day) and SAMe (200-400 mg/day) to support methylation. BH4 recycling support may include folinic acid. If compound heterozygous (C677T CT + A1298C AC), treat as higher-risk methylation profile.",
+      "moderate": "Methylfolate (400 mcg/day) may be beneficial. Monitor homocysteine periodically. Ensure adequate B vitamin intake from diet or supplementation."
+    }
+  },
+  "rs4680": {
+    "gene": "COMT",
+    "name": "COMT V158M",
+    "category": "methylation",
+    "chromosome": "22",
+    "position": 19951271,
+    "variants": {
+      "GG": {
+        "risk": "normal",
+        "description": "Fast COMT activity (Val/Val). Rapidly breaks down catecholamines (dopamine, norepinephrine, epinephrine) and estrogen metabolites. May have higher stress resilience but lower baseline dopamine levels."
+      },
+      "AG": {
+        "risk": "moderate",
+        "description": "Intermediate COMT activity (Val/Met). Balanced catecholamine metabolism. Generally well-adapted for both cognitive performance and stress management."
+      },
+      "AA": {
+        "risk": "elevated",
+        "description": "Slow COMT activity (Met/Met). Slower breakdown of catecholamines and estrogen metabolites. Higher baseline dopamine may enhance cognitive performance under low-stress conditions but increases sensitivity to stress, pain, and stimulants."
+      }
+    },
+    "affected_biomarkers": ["Estradiol", "Homocysteine"],
+    "supplement_implications": {
+      "elevated": "Limit methyl donors if experiencing anxiety (SAMe, high-dose methylfolate). Magnesium glycinate (200-400 mg/day) supports COMT function. Avoid excessive caffeine and stimulants. Consider DIM or calcium D-glucarate for estrogen metabolism support.",
+      "moderate": "Balanced approach to methyl donors. Magnesium (200 mg/day) and B vitamins at standard doses are generally well tolerated."
+    }
+  },
+  "rs1805087": {
+    "gene": "MTR",
+    "name": "MTR A2756G",
+    "category": "methylation",
+    "chromosome": "1",
+    "position": 237048500,
+    "variants": {
+      "AA": {
+        "risk": "normal",
+        "description": "Normal methionine synthase function. Efficient conversion of homocysteine to methionine using vitamin B12 as a cofactor."
+      },
+      "AG": {
+        "risk": "moderate",
+        "description": "Mildly upregulated methionine synthase activity. May increase B12 utilization, potentially leading to functional B12 insufficiency despite normal serum levels."
+      },
+      "GG": {
+        "risk": "elevated",
+        "description": "Significantly upregulated methionine synthase activity. Increased demand for vitamin B12 and may deplete B12 stores more rapidly. Can impact methylation capacity and homocysteine regulation."
+      }
+    },
+    "affected_biomarkers": ["Vitamin B12", "Homocysteine", "Folate"],
+    "supplement_implications": {
+      "elevated": "Higher B12 requirements; consider methylcobalamin or hydroxocobalamin (1000-2000 mcg/day). Monitor B12 and homocysteine levels regularly. Ensure adequate folate intake to support the methionine cycle.",
+      "moderate": "Methylcobalamin (500-1000 mcg/day) recommended. Annual B12 monitoring advisable, especially on plant-based diets."
+    }
+  },
+  "rs762551": {
+    "gene": "CYP1A2",
+    "name": "CYP1A2 Caffeine Metabolism",
+    "category": "detoxification",
+    "chromosome": "15",
+    "position": 75041917,
+    "variants": {
+      "AA": {
+        "risk": "normal",
+        "description": "Fast caffeine metabolizer. Efficient CYP1A2 enzyme activity allows rapid caffeine clearance. Moderate coffee consumption (2-3 cups/day) may be cardiovascular-neutral or mildly protective."
+      },
+      "AC": {
+        "risk": "moderate",
+        "description": "Intermediate caffeine metabolizer. Moderate CYP1A2 activity. Caffeine is cleared at a moderate rate; consider limiting intake to 1-2 cups of coffee per day."
+      },
+      "CC": {
+        "risk": "elevated",
+        "description": "Slow caffeine metabolizer. Reduced CYP1A2 activity leads to prolonged caffeine exposure. Associated with increased cardiovascular risk from heavy coffee consumption and greater sleep disruption from caffeine."
+      }
+    },
+    "affected_biomarkers": ["hs-CRP", "Fasting Glucose"],
+    "supplement_implications": {
+      "elevated": "Limit caffeine to less than 200 mg/day (roughly one cup of coffee). Avoid caffeine after noon. Consider switching to lower-caffeine alternatives (green tea, decaf). NAC (600 mg/day) and milk thistle may support liver detoxification pathways.",
+      "moderate": "Moderate caffeine intake (200-300 mg/day) generally tolerable. Avoid late-afternoon caffeine for optimal sleep."
+    }
+  },
+  "rs4630": {
+    "gene": "GSTT1",
+    "name": "GSTT1 Glutathione S-Transferase Theta 1",
+    "category": "detoxification",
+    "chromosome": "22",
+    "position": 24376141,
+    "variants": {
+      "CC": {
+        "risk": "normal",
+        "description": "Normal GSTT1 enzyme function. Adequate phase II detoxification capacity for environmental toxins, oxidative stress byproducts, and certain drug metabolites."
+      },
+      "CT": {
+        "risk": "moderate",
+        "description": "Reduced GSTT1 enzyme activity. Mildly impaired glutathione conjugation in phase II detoxification."
+      },
+      "TT": {
+        "risk": "elevated",
+        "description": "Significantly reduced GSTT1 function. Impaired detoxification of environmental chemicals, heavy metals, and oxidative stress compounds. Increased need for antioxidant and glutathione support."
+      }
+    },
+    "affected_biomarkers": ["hs-CRP", "GGT", "ALT"],
+    "supplement_implications": {
+      "elevated": "NAC (600-1200 mg/day) to support glutathione production. Liposomal glutathione (250-500 mg/day) for direct glutathione support. Cruciferous vegetable intake (broccoli sprouts, sulforaphane) to upregulate other detoxification pathways. Selenium (200 mcg/day) and alpha lipoic acid (300 mg/day).",
+      "moderate": "NAC (600 mg/day) and increased cruciferous vegetable intake. Ensure adequate selenium from diet or supplementation."
+    }
+  },
+  "rs366631": {
+    "gene": "GSTM1",
+    "name": "GSTM1 Glutathione S-Transferase Mu 1",
+    "category": "detoxification",
+    "chromosome": "1",
+    "position": 110230418,
+    "variants": {
+      "GG": {
+        "risk": "normal",
+        "description": "Normal GSTM1 function. Effective glutathione conjugation for detoxification of polycyclic aromatic hydrocarbons, aflatoxins, and other environmental carcinogens."
+      },
+      "GA": {
+        "risk": "moderate",
+        "description": "Reduced GSTM1 activity. Partially impaired detoxification of certain environmental toxins."
+      },
+      "AA": {
+        "risk": "elevated",
+        "description": "GSTM1 null or very low activity. Significantly reduced capacity to detoxify environmental carcinogens and reactive oxygen species. Common in approximately 50% of many populations."
+      }
+    },
+    "affected_biomarkers": ["hs-CRP", "GGT"],
+    "supplement_implications": {
+      "elevated": "Sulforaphane from broccoli sprouts or supplement (30-60 mg/day) to compensate via NRF2 pathway activation. NAC (600-1200 mg/day), liposomal glutathione (250-500 mg/day). Minimize exposure to grilled/charred foods, cigarette smoke, and environmental pollutants. Alpha lipoic acid (300 mg/day).",
+      "moderate": "NAC (600 mg/day) and regular cruciferous vegetable consumption. Consider periodic glutathione support during high-toxin-exposure periods."
+    }
+  },
+  "rs1800795": {
+    "gene": "IL6",
+    "name": "IL-6 Interleukin-6",
+    "category": "inflammation",
+    "chromosome": "7",
+    "position": 22766645,
+    "variants": {
+      "GG": {
+        "risk": "normal",
+        "description": "Standard IL-6 production. Normal inflammatory response regulation."
+      },
+      "GC": {
+        "risk": "moderate",
+        "description": "Mildly increased IL-6 production tendency. May have slightly elevated baseline inflammation, particularly in response to metabolic stress or obesity."
+      },
+      "CC": {
+        "risk": "elevated",
+        "description": "Increased IL-6 production. Associated with higher baseline inflammation, greater inflammatory response to injury or infection, and increased risk for chronic inflammatory conditions. May contribute to elevated hs-CRP."
+      }
+    },
+    "affected_biomarkers": ["hs-CRP", "ESR", "Fasting Glucose", "HbA1c"],
+    "supplement_implications": {
+      "elevated": "Omega-3 fatty acids (2-4 g EPA+DHA/day) to modulate IL-6 signaling. Curcumin with piperine (500-1000 mg/day). Prioritize anti-inflammatory diet (Mediterranean pattern). Vitamin D3 (2000-5000 IU/day) if levels suboptimal. Regular moderate exercise reduces IL-6 dysregulation.",
+      "moderate": "Omega-3 (1-2 g/day), curcumin (500 mg/day). Maintain anti-inflammatory dietary pattern and regular exercise."
+    }
+  },
+  "rs1800629": {
+    "gene": "TNF",
+    "name": "TNF-alpha G-308A",
+    "category": "inflammation",
+    "chromosome": "6",
+    "position": 31543031,
+    "variants": {
+      "GG": {
+        "risk": "normal",
+        "description": "Standard TNF-alpha production. Normal innate immune and inflammatory response."
+      },
+      "GA": {
+        "risk": "moderate",
+        "description": "Moderately increased TNF-alpha production. May have heightened inflammatory responses to infections, injuries, and metabolic stress."
+      },
+      "AA": {
+        "risk": "elevated",
+        "description": "Significantly increased TNF-alpha production. Associated with stronger inflammatory reactions, increased risk of autoimmune conditions, insulin resistance, and chronic inflammatory states."
+      }
+    },
+    "affected_biomarkers": ["hs-CRP", "ESR", "Fasting Insulin", "Fasting Glucose"],
+    "supplement_implications": {
+      "elevated": "Omega-3 fatty acids (2-4 g EPA+DHA/day) shown to reduce TNF-alpha levels. Curcumin (1000 mg/day with piperine). Resveratrol (200-500 mg/day). Green tea extract or EGCG (400 mg/day). Prioritize sleep quality and stress management. Vitamin D3 optimization (target 50-80 ng/mL).",
+      "moderate": "Omega-3 (1-2 g/day), curcumin (500 mg/day). Anti-inflammatory dietary pattern with emphasis on colorful polyphenol-rich foods."
+    }
+  },
+  "rs16944": {
+    "gene": "IL1B",
+    "name": "IL-1beta",
+    "category": "inflammation",
+    "chromosome": "2",
+    "position": 113594867,
+    "variants": {
+      "AA": {
+        "risk": "normal",
+        "description": "Standard IL-1beta expression. Normal acute inflammatory response and immune signaling."
+      },
+      "AG": {
+        "risk": "moderate",
+        "description": "Mildly increased IL-1beta production. May have slightly enhanced inflammatory responses, particularly in periodontal tissues and joints."
+      },
+      "GG": {
+        "risk": "elevated",
+        "description": "Increased IL-1beta production. Associated with heightened systemic inflammation, increased periodontal disease risk, greater joint inflammation, and potentially accelerated bone loss."
+      }
+    },
+    "affected_biomarkers": ["hs-CRP", "ESR", "Calcium"],
+    "supplement_implications": {
+      "elevated": "Omega-3 fatty acids (2-3 g/day) to counteract IL-1beta signaling. Curcumin (500-1000 mg/day). Vitamin D3 (2000-4000 IU/day) for bone and immune modulation. Pay extra attention to dental hygiene and periodontal health. Boswellia (300-500 mg/day) for joint support.",
+      "moderate": "Omega-3 (1-2 g/day), maintain excellent dental health, and ensure adequate vitamin D and calcium intake."
+    }
+  },
+  "rs2228570": {
+    "gene": "VDR",
+    "name": "VDR FokI (Vitamin D Receptor)",
+    "category": "nutrient_metabolism",
+    "chromosome": "12",
+    "position": 48272895,
+    "variants": {
+      "CC": {
+        "risk": "normal",
+        "description": "Produces the longer, less active VDR protein (f allele). Slightly reduced vitamin D receptor efficiency, but this is the ancestral and common variant."
+      },
+      "CT": {
+        "risk": "moderate",
+        "description": "Heterozygous VDR FokI. Intermediate vitamin D receptor activity. May need modestly higher vitamin D levels for optimal receptor activation."
+      },
+      "TT": {
+        "risk": "elevated",
+        "description": "Produces shorter, more active VDR protein (F allele). Despite more active receptors, some individuals with this variant show altered calcium homeostasis and may have different optimal vitamin D ranges."
+      }
+    },
+    "affected_biomarkers": ["Vitamin D (25-OH)", "Calcium", "Magnesium"],
+    "supplement_implications": {
+      "elevated": "Ensure vitamin D3 levels are optimized (target 50-80 ng/mL). Higher supplementation doses may be needed (3000-5000 IU/day). Always pair with vitamin K2 (MK-7, 100-200 mcg/day) and magnesium (200-400 mg/day) for proper calcium regulation.",
+      "moderate": "Vitamin D3 (2000-4000 IU/day) with K2 (100 mcg/day). Monitor 25-OH vitamin D levels annually and adjust dose to achieve optimal range."
+    }
+  },
+  "rs601338": {
+    "gene": "FUT2",
+    "name": "FUT2 Secretor Status",
+    "category": "nutrient_metabolism",
+    "chromosome": "19",
+    "position": 49206674,
+    "variants": {
+      "GG": {
+        "risk": "normal",
+        "description": "Secretor status (functional FUT2 enzyme). Normal gut microbiome composition and vitamin B12 absorption. Produces ABH blood group antigens in secretions."
+      },
+      "GA": {
+        "risk": "moderate",
+        "description": "Secretor (carrier of one non-secretor allele). Generally normal B12 absorption and gut function, though may have mildly reduced secretor antigen expression."
+      },
+      "AA": {
+        "risk": "elevated",
+        "description": "Non-secretor (homozygous loss of FUT2 function). Associated with reduced vitamin B12 absorption, altered gut microbiome composition (lower bifidobacteria), and potentially lower baseline B12 levels. Affects approximately 20% of the population."
+      }
+    },
+    "affected_biomarkers": ["Vitamin B12", "Folate"],
+    "supplement_implications": {
+      "elevated": "Higher B12 supplementation may be necessary: methylcobalamin or hydroxocobalamin (1000-2000 mcg/day sublingual). Monitor B12 and methylmalonic acid levels regularly. Probiotic support with Bifidobacterium strains to compensate for altered gut microbiome. Consider fermented foods for gut health.",
+      "moderate": "Standard B12 supplementation (500-1000 mcg/day) if dietary intake is suboptimal. Annual B12 monitoring recommended."
+    }
+  },
+  "rs13266634": {
+    "gene": "SLC30A8",
+    "name": "SLC30A8 Zinc Transporter",
+    "category": "nutrient_metabolism",
+    "chromosome": "8",
+    "position": 118184783,
+    "variants": {
+      "CC": {
+        "risk": "normal",
+        "description": "Normal zinc transporter function in pancreatic beta cells. Standard zinc transport into insulin granules, supporting proper insulin processing and secretion."
+      },
+      "CT": {
+        "risk": "moderate",
+        "description": "Mildly altered zinc transport in beta cells. May have modest effects on insulin crystallization and secretion. Slight association with type 2 diabetes risk."
+      },
+      "TT": {
+        "risk": "elevated",
+        "description": "Reduced zinc transporter efficiency in pancreatic beta cells. Impaired zinc-dependent insulin processing and secretion. Associated with increased type 2 diabetes risk and potentially higher fasting glucose."
+      }
+    },
+    "affected_biomarkers": ["Zinc", "Fasting Glucose", "HbA1c", "Fasting Insulin"],
+    "supplement_implications": {
+      "elevated": "Zinc glycinate (15-30 mg/day) to ensure adequate zinc supply for insulin processing. Monitor fasting glucose, insulin, and HbA1c regularly. Chromium picolinate (200-400 mcg/day) for additional insulin sensitivity support. Maintain healthy body weight and regular exercise.",
+      "moderate": "Zinc (15 mg/day) from diet or supplementation. Annual metabolic panel including fasting glucose and HbA1c recommended."
+    }
+  },
+  "rs7501331": {
+    "gene": "BCMO1",
+    "name": "BCMO1 Beta-Carotene Conversion",
+    "category": "nutrient_metabolism",
+    "chromosome": "16",
+    "position": 81264597,
+    "variants": {
+      "CC": {
+        "risk": "normal",
+        "description": "Normal beta-carotene monooxygenase 1 activity. Efficient conversion of beta-carotene (provitamin A) to retinal (active vitamin A)."
+      },
+      "CT": {
+        "risk": "moderate",
+        "description": "Approximately 32% reduction in beta-carotene to vitamin A conversion efficiency. May need more preformed vitamin A (retinol) sources in addition to carotenoid-rich foods."
+      },
+      "TT": {
+        "risk": "elevated",
+        "description": "Approximately 69% reduction in beta-carotene to vitamin A conversion. Poor converter of plant-based beta-carotene to active vitamin A. Reliance on plant sources alone may lead to vitamin A insufficiency."
+      }
+    },
+    "affected_biomarkers": ["Vitamin D (25-OH)"],
+    "supplement_implications": {
+      "elevated": "Include preformed vitamin A (retinol) from animal sources (liver, eggs, dairy) or retinyl palmitate supplement (2500-5000 IU/day). Do not rely solely on beta-carotene from plant foods for vitamin A needs. Cod liver oil provides both retinol and vitamin D. Caution: do not exceed 10,000 IU/day retinol without medical supervision.",
+      "moderate": "Ensure a mix of preformed vitamin A and beta-carotene sources in diet. Consider a multivitamin containing retinyl palmitate (2500 IU) rather than beta-carotene only."
+    }
+  },
+  "rs429358": {
+    "gene": "APOE",
+    "name": "APOE (epsilon-4 determining SNP)",
+    "category": "cardiovascular",
+    "chromosome": "19",
+    "position": 45411941,
+    "variants": {
+      "TT": {
+        "risk": "normal",
+        "description": "Does not carry the APOE epsilon-4 allele at this position. Associated with standard lipoprotein metabolism (likely APOE e2 or e3 depending on rs7412 status)."
+      },
+      "TC": {
+        "risk": "moderate",
+        "description": "Heterozygous for the APOE epsilon-4 determining allele. One copy of the e4-associated variant. Moderately increased cardiovascular risk and LDL cholesterol sensitivity to saturated fat intake."
+      },
+      "CC": {
+        "risk": "elevated",
+        "description": "Homozygous for the APOE epsilon-4 determining allele. Strongly associated with elevated LDL cholesterol, increased cardiovascular risk, and enhanced sensitivity to dietary saturated fat. APOE e4/e4 status significantly impacts lipoprotein metabolism."
+      }
+    },
+    "affected_biomarkers": ["Total Cholesterol", "LDL Cholesterol", "HDL Cholesterol", "Triglycerides"],
+    "supplement_implications": {
+      "elevated": "Strict limitation of saturated fat intake (<7% of calories). Omega-3 fatty acids (2-4 g EPA+DHA/day). Consider plant sterols/stanols (2 g/day). Prioritize Mediterranean dietary pattern. Monitor lipid panel every 6 months. CoQ10 if on statin therapy. Discuss APOE status with healthcare provider for personalized cardiovascular risk management.",
+      "moderate": "Reduce saturated fat intake (<10% of calories). Omega-3 (1-2 g/day). Increase soluble fiber (10-25 g/day from oats, legumes, flaxseed). Annual lipid panel monitoring."
+    }
+  },
+  "rs7412": {
+    "gene": "APOE",
+    "name": "APOE (epsilon-2 determining SNP)",
+    "category": "cardiovascular",
+    "chromosome": "19",
+    "position": 45412079,
+    "variants": {
+      "CC": {
+        "risk": "normal",
+        "description": "Does not carry the APOE epsilon-2 allele. Standard APOE function for lipoprotein clearance (e3 or e4 depending on rs429358)."
+      },
+      "CT": {
+        "risk": "moderate",
+        "description": "Heterozygous for the APOE epsilon-2 determining allele. One copy of e2 generally lowers LDL but may alter triglyceride metabolism. Context-dependent with rs429358."
+      },
+      "TT": {
+        "risk": "elevated",
+        "description": "Homozygous APOE epsilon-2. While often associated with lower LDL cholesterol, e2/e2 can cause type III hyperlipoproteinemia in a subset, characterized by elevated triglycerides and remnant cholesterol particles."
+      }
+    },
+    "affected_biomarkers": ["Total Cholesterol", "LDL Cholesterol", "Triglycerides", "VLDL Cholesterol"],
+    "supplement_implications": {
+      "elevated": "Monitor triglycerides and remnant cholesterol closely. Omega-3 fatty acids (2-4 g/day) to manage triglycerides. Limit refined carbohydrates and alcohol. If type III hyperlipoproteinemia develops, medical management may be required. Regular lipid panel with calculated remnant cholesterol.",
+      "moderate": "Generally favorable lipid profile expected. Standard cardiovascular nutrition guidelines apply. Monitor lipids annually."
+    }
+  },
+  "rs10455872": {
+    "gene": "LPA",
+    "name": "LPA Lipoprotein(a)",
+    "category": "cardiovascular",
+    "chromosome": "6",
+    "position": 161010118,
+    "variants": {
+      "AA": {
+        "risk": "normal",
+        "description": "No risk allele for elevated Lp(a). Lipoprotein(a) levels likely within normal range. Lower genetic predisposition for Lp(a)-mediated cardiovascular risk."
+      },
+      "AG": {
+        "risk": "moderate",
+        "description": "One copy of the Lp(a)-raising allele. Moderately elevated lipoprotein(a) levels likely. Lp(a) is an independent cardiovascular risk factor not significantly affected by lifestyle changes."
+      },
+      "GG": {
+        "risk": "elevated",
+        "description": "Two copies of the Lp(a)-raising allele. Significantly elevated lipoprotein(a) expected. Strong independent risk factor for atherosclerotic cardiovascular disease and aortic stenosis. Lp(a) is primarily genetically determined."
+      }
+    },
+    "affected_biomarkers": ["LDL Cholesterol", "hs-CRP", "Total Cholesterol"],
+    "supplement_implications": {
+      "elevated": "Lp(a) is largely genetically fixed; lifestyle has limited impact. Aggressively manage all other modifiable risk factors: LDL cholesterol, blood pressure, blood sugar, body weight. Omega-3 (2-4 g/day). Niacin (1-3 g/day under medical supervision) may lower Lp(a) by 20-30%. CoQ10 (200 mg/day). Discuss Lp(a) testing and management with cardiologist.",
+      "moderate": "Manage all modifiable cardiovascular risk factors proactively. Omega-3 (1-2 g/day). Consider requesting Lp(a) blood test for baseline measurement. Standard cardiovascular prevention strategies."
+    }
+  },
+  "rs11591147": {
+    "gene": "PCSK9",
+    "name": "PCSK9 Loss-of-Function",
+    "category": "cardiovascular",
+    "chromosome": "1",
+    "position": 55505647,
+    "variants": {
+      "GG": {
+        "risk": "normal",
+        "description": "Normal PCSK9 function. Standard LDL receptor recycling and LDL cholesterol clearance from the bloodstream."
+      },
+      "GT": {
+        "risk": "moderate",
+        "description": "One copy of PCSK9 loss-of-function variant. Reduced PCSK9 activity leads to more LDL receptors on liver cells, resulting in naturally lower LDL cholesterol. This variant is cardioprotective."
+      },
+      "TT": {
+        "risk": "elevated",
+        "description": "Homozygous PCSK9 loss-of-function (very rare). Significantly reduced PCSK9 activity with very low LDL cholesterol. Strongly cardioprotective. Note: 'elevated' here refers to impact magnitude, not risk -- this variant is actually beneficial."
+      }
+    },
+    "affected_biomarkers": ["LDL Cholesterol", "Total Cholesterol"],
+    "supplement_implications": {
+      "elevated": "This is a cardioprotective variant. No specific supplementation needed to address it. Naturally lower LDL cholesterol confers reduced cardiovascular risk. Maintain standard heart-healthy lifestyle. If LDL cholesterol is very low, ensure adequate fat-soluble vitamin absorption (D, E, K, A).",
+      "moderate": "Cardioprotective variant. Standard heart-healthy nutrition. Maintain omega-3 intake (1 g/day) and balanced diet."
+    }
+  },
+  "rs1333049": {
+    "gene": "CDKN2B-AS1",
+    "name": "9p21 Cardiovascular Risk Locus",
+    "category": "cardiovascular",
+    "chromosome": "9",
+    "position": 22125503,
+    "variants": {
+      "GG": {
+        "risk": "normal",
+        "description": "No risk alleles at the 9p21 locus. Lower genetic predisposition for coronary artery disease at this well-validated cardiovascular risk locus."
+      },
+      "GC": {
+        "risk": "moderate",
+        "description": "One copy of the risk allele at 9p21. Approximately 25% increased relative risk for coronary artery disease. This locus affects vascular cell proliferation and plaque stability."
+      },
+      "CC": {
+        "risk": "elevated",
+        "description": "Homozygous risk at 9p21 locus. Approximately 50-60% increased relative risk for coronary artery disease. One of the strongest and most replicated genetic risk loci for cardiovascular disease, independent of traditional risk factors."
+      }
+    },
+    "affected_biomarkers": ["hs-CRP", "LDL Cholesterol", "HDL Cholesterol", "Triglycerides", "Fasting Glucose"],
+    "supplement_implications": {
+      "elevated": "Aggressively manage all modifiable cardiovascular risk factors. Omega-3 fatty acids (2-4 g EPA+DHA/day). CoQ10 (200 mg/day). Magnesium (300-400 mg/day). Optimize vitamin D levels (50-80 ng/mL). Regular cardiovascular screening. Increased raw fruit and vegetable intake may attenuate 9p21 risk (research-supported).",
+      "moderate": "Proactive cardiovascular health management. Omega-3 (1-2 g/day). Regular lipid and metabolic panel monitoring. Emphasize Mediterranean or plant-rich dietary patterns."
+    }
+  },
+  "rs1815739": {
+    "gene": "ACTN3",
+    "name": "ACTN3 R577X (Alpha-Actinin-3)",
+    "category": "fitness",
+    "chromosome": "11",
+    "position": 66560624,
+    "variants": {
+      "CC": {
+        "risk": "normal",
+        "description": "Full alpha-actinin-3 expression in fast-twitch muscle fibers (RR genotype). Optimal for power and sprint performance. Greater proportion of functional fast-twitch fibers for explosive movements."
+      },
+      "CT": {
+        "risk": "moderate",
+        "description": "Reduced alpha-actinin-3 expression (RX genotype). Intermediate muscle fiber composition. Versatile for both power and endurance activities. Most common genotype."
+      },
+      "TT": {
+        "risk": "elevated",
+        "description": "Complete absence of alpha-actinin-3 in fast-twitch fibers (XX genotype). Muscle fibers shift toward slower, more oxidative metabolism. Naturally better suited for endurance activities. Found in approximately 18% of the general population and overrepresented in elite endurance athletes."
+      }
+    },
+    "affected_biomarkers": ["Creatinine"],
+    "supplement_implications": {
+      "elevated": "Training should emphasize endurance-based activities where this genotype excels. Creatine monohydrate (3-5 g/day) may partially compensate for reduced fast-twitch power. Beta-alanine (3-6 g/day) for buffering capacity. For power goals, focus on neural adaptation training with progressive overload.",
+      "moderate": "Versatile training approach. Creatine monohydrate (3-5 g/day) for strength training support. Balanced program of strength and endurance training."
+    }
+  },
+  "rs1799752": {
+    "gene": "ACE",
+    "name": "ACE Insertion/Deletion",
+    "category": "fitness",
+    "chromosome": "17",
+    "position": 63488529,
+    "variants": {
+      "II": {
+        "risk": "normal",
+        "description": "Insertion/Insertion genotype. Lower ACE activity and circulating angiotensin II. Associated with enhanced endurance performance, improved muscle efficiency, and better altitude adaptation. Overrepresented in elite endurance athletes."
+      },
+      "ID": {
+        "risk": "moderate",
+        "description": "Insertion/Deletion genotype. Intermediate ACE activity. Versatile athletic profile suitable for mixed-modality sports and activities requiring both endurance and power."
+      },
+      "DD": {
+        "risk": "elevated",
+        "description": "Deletion/Deletion genotype. Higher ACE activity and circulating angiotensin II. Associated with greater strength and power gains from resistance training, faster muscle hypertrophy, but may have higher blood pressure tendency. Overrepresented in elite power/sprint athletes."
+      }
+    },
+    "affected_biomarkers": ["hs-CRP"],
+    "supplement_implications": {
+      "elevated": "Monitor blood pressure regularly due to higher ACE activity. Magnesium (300-400 mg/day) and potassium-rich foods for blood pressure support. Omega-3 (1-2 g/day). Leverage strength training potential with adequate protein (1.6-2.2 g/kg/day). Creatine monohydrate (5 g/day) for power performance.",
+      "moderate": "Balanced training approach. Standard sports nutrition with adequate protein (1.4-2.0 g/kg/day). Creatine (3-5 g/day) for strength training. Monitor blood pressure annually."
+    }
+  },
+  "rs8192678": {
+    "gene": "PPARGC1A",
+    "name": "PPARGC1A Gly482Ser (PGC-1alpha)",
+    "category": "fitness",
+    "chromosome": "4",
+    "position": 23814039,
+    "variants": {
+      "CC": {
+        "risk": "normal",
+        "description": "Normal PGC-1alpha function (Gly/Gly). Efficient mitochondrial biogenesis, oxidative phosphorylation, and aerobic energy metabolism. Supports optimal exercise-induced mitochondrial adaptation."
+      },
+      "CT": {
+        "risk": "moderate",
+        "description": "Mildly reduced PGC-1alpha activity (Gly/Ser). Slightly less efficient mitochondrial biogenesis and aerobic metabolism. May require more consistent training stimulus for mitochondrial adaptations."
+      },
+      "TT": {
+        "risk": "elevated",
+        "description": "Reduced PGC-1alpha activity (Ser/Ser). Impaired mitochondrial biogenesis and oxidative metabolism. Associated with reduced aerobic capacity improvement from training, increased type 2 diabetes risk, and less efficient fat oxidation."
+      }
+    },
+    "affected_biomarkers": ["Fasting Glucose", "HbA1c", "Fasting Insulin", "Triglycerides"],
+    "supplement_implications": {
+      "elevated": "CoQ10 (200-400 mg/day) to support mitochondrial function. PQQ (pyrroloquinoline quinone, 10-20 mg/day) to stimulate mitochondrial biogenesis. Alpha lipoic acid (300-600 mg/day). Resveratrol (200-500 mg/day) activates SIRT1 which cooperates with PGC-1alpha. Regular aerobic exercise is essential to stimulate mitochondrial adaptation. L-carnitine (1-2 g/day) for fat oxidation support.",
+      "moderate": "CoQ10 (100-200 mg/day). Regular aerobic exercise with progressive overload. Ensure adequate B vitamins and iron for mitochondrial enzyme function."
+    }
+  },
+  "rs1801260": {
+    "gene": "CLOCK",
+    "name": "CLOCK 3111T/C",
+    "category": "sleep",
+    "chromosome": "4",
+    "position": 56294068,
+    "variants": {
+      "TT": {
+        "risk": "normal",
+        "description": "Standard CLOCK gene function. Normal circadian rhythm regulation with typical sleep-wake timing preferences."
+      },
+      "TC": {
+        "risk": "moderate",
+        "description": "Mild alteration in CLOCK gene expression. May have a slight tendency toward evening chronotype (night owl) and delayed sleep onset."
+      },
+      "CC": {
+        "risk": "elevated",
+        "description": "Altered CLOCK gene expression associated with evening chronotype, delayed sleep phase, shorter sleep duration, and difficulty falling asleep at conventional times. May be more prone to circadian disruption from shift work or jet lag."
+      }
+    },
+    "affected_biomarkers": ["Fasting Glucose", "hs-CRP"],
+    "supplement_implications": {
+      "elevated": "Melatonin (0.5-3 mg, 30-60 minutes before desired bedtime) to reinforce circadian rhythm. Morning bright light exposure (10,000 lux for 20-30 minutes upon waking). Magnesium glycinate (200-400 mg before bed) for sleep quality. Limit blue light exposure 2 hours before bed. Maintain strict sleep schedule, even on weekends.",
+      "moderate": "Melatonin (0.5-1 mg) if difficulty with sleep onset. Morning light exposure to anchor circadian rhythm. Magnesium glycinate (200 mg before bed)."
+    }
+  },
+  "rs2304672": {
+    "gene": "PER2",
+    "name": "PER2 Period Circadian Clock 2",
+    "category": "sleep",
+    "chromosome": "2",
+    "position": 239153925,
+    "variants": {
+      "CC": {
+        "risk": "normal",
+        "description": "Normal PER2 function. Standard circadian period length and typical sleep-wake timing. Normal response to light-dark cycle entrainment."
+      },
+      "CG": {
+        "risk": "moderate",
+        "description": "Mild PER2 alteration. May have slightly advanced or altered sleep-phase preferences. Possible mild differences in circadian adaptation to schedule changes."
+      },
+      "GG": {
+        "risk": "elevated",
+        "description": "Altered PER2 function. Associated with advanced sleep phase (extreme early bird) or disrupted circadian rhythmicity. May experience difficulty maintaining conventional social schedules and increased sensitivity to circadian disruption."
+      }
+    },
+    "affected_biomarkers": ["Fasting Glucose", "hs-CRP"],
+    "supplement_implications": {
+      "elevated": "Work with natural chronotype rather than against it when possible. Strategic light exposure: bright light in morning, dim evening light. Melatonin timing adjusted to chronotype (may need earlier or later administration). Magnesium glycinate (200-400 mg) and L-theanine (200 mg) before bed. Consistent meal timing to support peripheral circadian clocks.",
+      "moderate": "Consistent sleep-wake schedule. Morning light exposure. L-theanine (100-200 mg) if needed for sleep onset. Maintain regular meal timing."
+    }
+  },
+  "rs73598374": {
+    "gene": "ADA",
+    "name": "ADA Adenosine Deaminase (Deep Sleep)",
+    "category": "sleep",
+    "chromosome": "20",
+    "position": 44619518,
+    "variants": {
+      "CC": {
+        "risk": "normal",
+        "description": "Normal adenosine deaminase activity. Standard adenosine metabolism and typical slow-wave (deep) sleep architecture. Normal sleep pressure accumulation during wakefulness."
+      },
+      "CT": {
+        "risk": "moderate",
+        "description": "Reduced adenosine deaminase activity. Slower adenosine breakdown leads to increased deep sleep (slow-wave sleep) duration. May experience greater subjective impact of sleep deprivation and faster sleep pressure buildup."
+      },
+      "TT": {
+        "risk": "elevated",
+        "description": "Significantly reduced adenosine deaminase activity. Notably increased deep sleep duration and intensity. Greater sensitivity to caffeine (adenosine receptor antagonist). Stronger sleep pressure accumulation during wakefulness; may feel effects of sleep deprivation more acutely."
+      }
+    },
+    "affected_biomarkers": ["hs-CRP"],
+    "supplement_implications": {
+      "elevated": "Minimize caffeine intake as adenosine system is highly sensitive (caffeine blocks adenosine receptors). Caffeine cutoff by noon or earlier. Prioritize consistent sleep of 7-9 hours to leverage enhanced deep sleep capacity. Magnesium glycinate (200-400 mg before bed) to support deep sleep quality. Avoid adenosine-disrupting substances (alcohol, certain antihistamines) close to bedtime.",
+      "moderate": "Limit caffeine to morning hours only. Leverage natural tendency for good deep sleep with consistent sleep hygiene. Magnesium (200 mg before bed) for additional sleep quality support."
+    }
+  },
+  "rs1800562": {
+    "gene": "HFE",
+    "name": "HFE C282Y",
+    "category": "iron",
+    "chromosome": "6",
+    "position": 26093141,
+    "variants": {
+      "GG": {
+        "risk": "normal",
+        "description": "Normal HFE function. Standard iron absorption regulation. No increased risk for hereditary hemochromatosis from this variant."
+      },
+      "GA": {
+        "risk": "moderate",
+        "description": "Heterozygous carrier of C282Y. Mildly increased iron absorption. Generally does not cause clinical hemochromatosis alone, but may lead to modestly elevated ferritin and iron stores. Risk increases if compound heterozygous with H63D."
+      },
+      "AA": {
+        "risk": "elevated",
+        "description": "Homozygous C282Y. High risk for hereditary hemochromatosis (HH). Significantly increased intestinal iron absorption can lead to iron overload, potentially damaging liver, heart, pancreas, and joints. Requires regular monitoring and may need therapeutic phlebotomy."
+      }
+    },
+    "affected_biomarkers": ["Ferritin", "Serum Iron", "TIBC", "Transferrin Saturation", "Hemoglobin", "ALT", "AST"],
+    "supplement_implications": {
+      "elevated": "AVOID iron supplements, iron-fortified foods, and vitamin C with iron-rich meals (enhances absorption). Monitor ferritin, serum iron, TIBC, and transferrin saturation every 3-6 months. Therapeutic phlebotomy may be needed if ferritin exceeds 200 ng/mL (females) or 300 ng/mL (males). Limit alcohol (accelerates liver damage with iron overload). Consult hematologist for management plan.",
+      "moderate": "Avoid routine iron supplementation unless deficiency is confirmed. Monitor ferritin and iron studies annually. Moderate vitamin C intake with meals. Genetic counseling recommended, especially if considering family planning."
+    }
+  },
+  "rs1799945": {
+    "gene": "HFE",
+    "name": "HFE H63D",
+    "category": "iron",
+    "chromosome": "6",
+    "position": 26091179,
+    "variants": {
+      "CC": {
+        "risk": "normal",
+        "description": "Normal HFE function at H63D position. Standard iron absorption regulation at this locus."
+      },
+      "CG": {
+        "risk": "moderate",
+        "description": "Heterozygous H63D. Mildly increased iron absorption potential. Rarely causes clinical hemochromatosis alone but contributes to risk if compound heterozygous with C282Y (one copy each of C282Y and H63D)."
+      },
+      "GG": {
+        "risk": "elevated",
+        "description": "Homozygous H63D. Modestly increased iron absorption. Lower penetrance for hemochromatosis than C282Y homozygosity, but can cause mild to moderate iron overload over time, especially in males and postmenopausal females."
+      }
+    },
+    "affected_biomarkers": ["Ferritin", "Serum Iron", "TIBC", "Transferrin Saturation"],
+    "supplement_implications": {
+      "elevated": "Avoid iron supplementation unless deficiency is documented. Monitor ferritin and iron studies annually. Check C282Y status (rs1800562) -- compound heterozygosity (C282Y/H63D) significantly increases hemochromatosis risk. Moderate red meat consumption. Limit alcohol to protect liver. Green tea with meals may reduce iron absorption if levels are trending high.",
+      "moderate": "Avoid unnecessary iron supplementation. Monitor ferritin every 1-2 years. Standard dietary guidelines; no major restrictions needed unless iron studies trend upward."
+    }
+  },
+  "rs4988235": {
+    "gene": "MCM6",
+    "name": "MCM6/LCT Lactase Persistence",
+    "category": "nutrient_metabolism",
+    "chromosome": "2",
+    "position": 136608646,
+    "variants": {
+      "GG": {
+        "risk": "elevated",
+        "description": "Lactase non-persistence (lactose intolerant genotype). Lactase enzyme production decreases after childhood, leading to difficulty digesting lactose in dairy products. Extremely common globally (65-70% of world population)."
+      },
+      "GA": {
+        "risk": "moderate",
+        "description": "Heterozygous for lactase persistence. Generally retains sufficient lactase production for moderate dairy consumption, though tolerance may decrease with age."
+      },
+      "AA": {
+        "risk": "normal",
+        "description": "Lactase persistence. Maintains lactase enzyme production into adulthood, allowing full digestion of lactose in dairy products."
+      }
+    },
+    "affected_biomarkers": ["Calcium", "Vitamin D (25-OH)"],
+    "supplement_implications": {
+      "elevated": "If avoiding dairy: calcium supplementation (500-1000 mg/day) and vitamin D3 (2000-4000 IU/day) to compensate. Ensure adequate calcium from non-dairy sources (leafy greens, sardines, fortified foods). Lactase enzyme supplements allow occasional dairy consumption. Fermented dairy (yogurt, kefir, aged cheese) is often better tolerated due to bacterial lactase.",
+      "moderate": "Monitor calcium intake. Fermented dairy products are generally well tolerated. Lactase enzyme with larger dairy servings if needed."
+    }
+  },
+  "rs1229984": {
+    "gene": "ADH1B",
+    "name": "ADH1B Alcohol Metabolism",
+    "category": "detoxification",
+    "chromosome": "4",
+    "position": 100239319,
+    "variants": {
+      "CC": {
+        "risk": "normal",
+        "description": "Standard alcohol dehydrogenase activity. Normal rate of ethanol to acetaldehyde conversion. Standard alcohol metabolism speed."
+      },
+      "CT": {
+        "risk": "moderate",
+        "description": "Faster alcohol dehydrogenase activity. More rapid conversion of ethanol to acetaldehyde. May experience more pronounced flushing or discomfort from alcohol, which can be protective against overconsumption."
+      },
+      "TT": {
+        "risk": "elevated",
+        "description": "Significantly faster alcohol metabolism to acetaldehyde. Rapid acetaldehyde accumulation causes flushing, nausea, and tachycardia (Asian flush response in some populations). Protective against alcoholism but increases acetaldehyde-related cancer risk from any alcohol consumption."
+      }
+    },
+    "affected_biomarkers": ["GGT", "ALT", "AST", "hs-CRP"],
+    "supplement_implications": {
+      "elevated": "Minimize or avoid alcohol consumption due to increased acetaldehyde exposure and associated health risks. NAC (600 mg) before any alcohol consumption may support acetaldehyde detoxification. Milk thistle (150-300 mg) for liver support. B vitamins (B1/thiamine especially) are depleted by alcohol metabolism.",
+      "moderate": "Moderate alcohol consumption (if any). NAC (600 mg) as pre-alcohol support. Ensure adequate B vitamin intake."
+    }
+  },
+  "rs4654748": {
+    "gene": "NBPF3",
+    "name": "NBPF3/ALPL Vitamin B6 Levels",
+    "category": "nutrient_metabolism",
+    "chromosome": "1",
+    "position": 22268288,
+    "variants": {
+      "CC": {
+        "risk": "normal",
+        "description": "Associated with higher circulating vitamin B6 (pyridoxal phosphate) levels. Efficient B6 metabolism and retention."
+      },
+      "CT": {
+        "risk": "moderate",
+        "description": "Intermediate circulating vitamin B6 levels. May benefit from modestly higher dietary B6 intake."
+      },
+      "TT": {
+        "risk": "elevated",
+        "description": "Associated with lower circulating vitamin B6 levels. Higher dietary or supplemental B6 requirements. B6 is essential for over 100 enzyme reactions including neurotransmitter synthesis, amino acid metabolism, and hemoglobin formation."
+      }
+    },
+    "affected_biomarkers": ["Vitamin B6", "Homocysteine"],
+    "supplement_implications": {
+      "elevated": "Pyridoxal-5-phosphate (P5P, active form of B6, 25-50 mg/day) preferred over pyridoxine. Higher dietary B6 from poultry, fish, potatoes, chickpeas, bananas. Monitor homocysteine as B6 is a cofactor in its metabolism. Consider as part of comprehensive B vitamin complex.",
+      "moderate": "P5P or pyridoxine (10-25 mg/day) or B complex supplement. Ensure adequate dietary B6 intake."
+    }
+  },
+  "rs12785878": {
+    "gene": "DHCR7/NADSYN1",
+    "name": "DHCR7 Vitamin D Synthesis",
+    "category": "nutrient_metabolism",
+    "chromosome": "11",
+    "position": 71167449,
+    "variants": {
+      "TT": {
+        "risk": "normal",
+        "description": "Normal DHCR7 function. Efficient conversion of 7-dehydrocholesterol to cholecalciferol (vitamin D3) in the skin upon UVB exposure."
+      },
+      "TG": {
+        "risk": "moderate",
+        "description": "Mildly reduced vitamin D synthesis efficiency. May have modestly lower vitamin D levels, particularly in low-sunlight environments or during winter months."
+      },
+      "GG": {
+        "risk": "elevated",
+        "description": "Reduced vitamin D synthesis capacity. Lower efficiency of cutaneous vitamin D3 production from sun exposure. Associated with lower baseline 25-OH vitamin D levels and greater supplementation requirements."
+      }
+    },
+    "affected_biomarkers": ["Vitamin D (25-OH)", "Calcium"],
+    "supplement_implications": {
+      "elevated": "Higher vitamin D3 supplementation (4000-6000 IU/day) likely needed. Monitor 25-OH vitamin D levels every 3-6 months and adjust dose to target 50-80 ng/mL. Always pair with vitamin K2 (MK-7, 100-200 mcg/day). Magnesium (200-400 mg/day) is required for vitamin D metabolism. Sun exposure alone may be insufficient.",
+      "moderate": "Vitamin D3 (2000-4000 IU/day). Annual 25-OH vitamin D monitoring. K2 (100 mcg/day) and magnesium (200 mg/day) as cofactors."
+    }
+  },
+  "rs1800497": {
+    "gene": "ANKK1/DRD2",
+    "name": "DRD2/ANKK1 Taq1A (Dopamine Receptor D2)",
+    "category": "methylation",
+    "chromosome": "11",
+    "position": 113400106,
+    "variants": {
+      "GG": {
+        "risk": "normal",
+        "description": "Normal dopamine D2 receptor density. Standard dopaminergic reward signaling and typical response to rewards, motivation, and pleasure."
+      },
+      "GA": {
+        "risk": "moderate",
+        "description": "Mildly reduced D2 receptor density (approximately 20-30% fewer receptors). May have increased reward-seeking behavior, slightly higher susceptibility to compulsive habits, and greater sensitivity to dopaminergic substances."
+      },
+      "AA": {
+        "risk": "elevated",
+        "description": "Significantly reduced D2 receptor density (up to 40% fewer receptors). Associated with reward deficiency syndrome, increased risk for addictive behaviors (sugar, caffeine, alcohol, gambling), lower baseline motivation, and altered response to dopaminergic stimuli."
+      }
+    },
+    "affected_biomarkers": ["Fasting Glucose", "HbA1c"],
+    "supplement_implications": {
+      "elevated": "Support dopamine production naturally: L-tyrosine (500-1000 mg on empty stomach, morning). Ensure adequate iron, zinc, B6, and folate as dopamine cofactors. Rhodiola rosea (200-400 mg/day) for dopamine modulation. Regular vigorous exercise strongly upregulates D2 receptors. Limit sugar and ultra-processed food to avoid reward pathway hijacking. Mindfulness practice supports dopamine homeostasis.",
+      "moderate": "L-tyrosine (500 mg/day, morning). Regular exercise for natural D2 receptor upregulation. Maintain stable blood sugar through balanced meals. Adequate sleep for dopamine receptor restoration."
+    }
+  },
+  "rs7903146": {
+    "gene": "TCF7L2",
+    "name": "TCF7L2 Transcription Factor 7-Like 2",
+    "category": "nutrient_metabolism",
+    "chromosome": "10",
+    "position": 114758349,
+    "variants": {
+      "CC": {
+        "risk": "normal",
+        "description": "Normal TCF7L2 function. Standard insulin secretion from pancreatic beta cells and incretin signaling. Lower genetic predisposition for type 2 diabetes."
+      },
+      "CT": {
+        "risk": "moderate",
+        "description": "One risk allele. Approximately 40% increased relative risk for type 2 diabetes. Reduced insulin secretion capacity and impaired incretin effect (GLP-1 response)."
+      },
+      "TT": {
+        "risk": "elevated",
+        "description": "Homozygous risk genotype. Approximately 80% increased relative risk for type 2 diabetes. The strongest common genetic risk factor for T2D. Significantly impaired beta cell insulin secretion and incretin signaling."
+      }
+    },
+    "affected_biomarkers": ["Fasting Glucose", "HbA1c", "Fasting Insulin"],
+    "supplement_implications": {
+      "elevated": "Berberine (500 mg 2-3x/day with meals) activates AMPK and improves insulin sensitivity. Chromium picolinate (400-1000 mcg/day). Alpha lipoic acid (300-600 mg/day). Prioritize low glycemic load diet. Limit refined carbohydrates. Regular exercise (both aerobic and resistance) critical for insulin sensitivity. Monitor fasting glucose, insulin, and HbA1c every 6 months.",
+      "moderate": "Berberine (500 mg/day) or chromium (200 mcg/day). Emphasize whole grains, fiber, and balanced meals. Annual metabolic panel monitoring. Regular exercise."
+    }
+  },
+  "rs1801282": {
+    "gene": "PPARG",
+    "name": "PPARG Pro12Ala",
+    "category": "nutrient_metabolism",
+    "chromosome": "3",
+    "position": 12393125,
+    "variants": {
+      "CC": {
+        "risk": "normal",
+        "description": "Standard PPARG activity (Pro/Pro). Normal adipocyte differentiation and insulin sensitivity. Most common genotype."
+      },
+      "CG": {
+        "risk": "moderate",
+        "description": "Heterozygous Pro12Ala. Mildly reduced PPARG activity. Generally associated with improved insulin sensitivity and lower type 2 diabetes risk. Particularly beneficial with high dietary polyunsaturated fat intake."
+      },
+      "GG": {
+        "risk": "elevated",
+        "description": "Homozygous Ala12Ala (rare, ~2% frequency). Reduced PPARG activity. Paradoxically protective against type 2 diabetes in some populations, but may have altered fat storage and adipocyte metabolism. Effects are highly diet-dependent."
+      }
+    },
+    "affected_biomarkers": ["Fasting Glucose", "Fasting Insulin", "HbA1c", "Triglycerides"],
+    "supplement_implications": {
+      "elevated": "Diet-gene interaction is critical: increase omega-3 and polyunsaturated fat intake (omega-3 at 2-3 g/day). Limit saturated fat (<7% of calories). Omega-6/omega-3 ratio optimization. Monitor metabolic markers annually. Berberine (500 mg/day) if glucose trends upward.",
+      "moderate": "Beneficial variant for most. Emphasize unsaturated fats in diet (olive oil, nuts, avocado, fatty fish). Omega-3 (1-2 g/day). This genotype responds well to Mediterranean dietary pattern."
+    }
+  },
+  "rs5082": {
+    "gene": "APOA2",
+    "name": "APOA2 Saturated Fat Sensitivity",
+    "category": "cardiovascular",
+    "chromosome": "1",
+    "position": 161222292,
+    "variants": {
+      "GG": {
+        "risk": "normal",
+        "description": "Standard APOA2 expression. No heightened obesity risk from saturated fat intake. Normal apolipoprotein A-II metabolism."
+      },
+      "GA": {
+        "risk": "moderate",
+        "description": "Intermediate APOA2 sensitivity to saturated fat. Mildly increased weight gain tendency with high saturated fat diets."
+      },
+      "AA": {
+        "risk": "elevated",
+        "description": "Increased APOA2 expression with high saturated fat intake. Strongly associated with obesity risk when saturated fat exceeds 22 g/day. Enhanced sensitivity to dietary saturated fat promotes visceral fat accumulation and metabolic dysfunction."
+      }
+    },
+    "affected_biomarkers": ["Total Cholesterol", "LDL Cholesterol", "Triglycerides", "Fasting Glucose", "Fasting Insulin"],
+    "supplement_implications": {
+      "elevated": "Strictly limit saturated fat to <22 g/day (ideally <15 g). Replace saturated fats with monounsaturated (olive oil, avocado) and polyunsaturated fats (nuts, seeds, fatty fish). Omega-3 (2 g/day). Monitor weight, waist circumference, and metabolic markers. Conjugated linoleic acid (CLA) may support body composition in some individuals.",
+      "moderate": "Moderate saturated fat intake (<22 g/day). Emphasize healthy fat sources. Omega-3 (1 g/day). Balanced dietary approach."
+    }
+  },
+  "rs4880": {
+    "gene": "SOD2",
+    "name": "SOD2 Ala16Val (Manganese Superoxide Dismutase)",
+    "category": "detoxification",
+    "chromosome": "6",
+    "position": 160113872,
+    "variants": {
+      "TT": {
+        "risk": "normal",
+        "description": "Val/Val genotype. Normal SOD2 enzyme targeting to mitochondria but slightly lower enzymatic activity. Standard mitochondrial antioxidant defense."
+      },
+      "CT": {
+        "risk": "moderate",
+        "description": "Ala/Val genotype. Intermediate SOD2 activity and mitochondrial targeting. Balanced oxidative stress defense."
+      },
+      "CC": {
+        "risk": "elevated",
+        "description": "Ala/Ala genotype. Higher SOD2 enzyme activity with efficient mitochondrial targeting. However, excessive hydrogen peroxide production from SOD2 may increase oxidative stress if downstream antioxidant enzymes (catalase, GPX) are insufficient. Requires adequate selenium, zinc, and manganese as cofactors."
+      }
+    },
+    "affected_biomarkers": ["hs-CRP"],
+    "supplement_implications": {
+      "elevated": "Support downstream antioxidant enzymes: selenium (100-200 mcg/day for glutathione peroxidase), NAC (600 mg/day for glutathione), and manganese from diet (nuts, seeds, whole grains). CoQ10 (100-200 mg/day) for mitochondrial support. Vitamin C (500-1000 mg/day) and vitamin E (mixed tocopherols, 200 IU/day) to buffer oxidative stress. Avoid excessive high-dose antioxidant megadosing.",
+      "moderate": "Balanced antioxidant support: selenium (100 mcg/day), vitamin C (500 mg/day). Ensure adequate manganese intake. CoQ10 (100 mg/day)."
+    }
+  },
+  "rs6311": {
+    "gene": "HTR2A",
+    "name": "HTR2A Serotonin Receptor 2A",
+    "category": "methylation",
+    "chromosome": "13",
+    "position": 47471478,
+    "variants": {
+      "CC": {
+        "risk": "normal",
+        "description": "Standard serotonin 2A receptor expression. Normal serotonergic signaling in the brain, supporting mood regulation, appetite control, and sleep architecture."
+      },
+      "CT": {
+        "risk": "moderate",
+        "description": "Altered serotonin 2A receptor expression. Mildly modified serotonergic signaling. May have subtle differences in mood regulation and stress response."
+      },
+      "TT": {
+        "risk": "elevated",
+        "description": "Significantly altered serotonin 2A receptor density. Associated with increased susceptibility to mood changes, altered stress response, and differences in sleep quality. May influence appetite regulation and eating behaviors."
+      }
+    },
+    "affected_biomarkers": ["Homocysteine", "Vitamin B6"],
+    "supplement_implications": {
+      "elevated": "5-HTP (100-200 mg/day, not with SSRIs) or L-tryptophan (500-1000 mg at bedtime) to support serotonin synthesis. Vitamin B6 (P5P, 25 mg/day) as serotonin synthesis cofactor. Magnesium glycinate (200-400 mg/day). Omega-3 (1-2 g/day) supports serotonin receptor function. Regular exercise strongly supports serotonergic tone. St. John's Wort (300 mg 3x/day, not with medications) may be considered.",
+      "moderate": "L-tryptophan (500 mg at bedtime) or serotonin-supporting foods (turkey, eggs, nuts, seeds). B6 (25 mg/day). Regular exercise and stress management."
+    }
+  },
+  "rs53576": {
+    "gene": "OXTR",
+    "name": "OXTR Oxytocin Receptor",
+    "category": "methylation",
+    "chromosome": "3",
+    "position": 8804371,
+    "variants": {
+      "GG": {
+        "risk": "normal",
+        "description": "Higher oxytocin receptor expression. Associated with greater empathy, social bonding capacity, and stress resilience through social support. More responsive to positive social interactions."
+      },
+      "AG": {
+        "risk": "moderate",
+        "description": "Intermediate oxytocin receptor expression. Moderate social bonding and empathy characteristics. Adequate stress buffering from social support."
+      },
+      "AA": {
+        "risk": "elevated",
+        "description": "Lower oxytocin receptor expression. May have reduced capacity for social stress buffering, lower dispositional empathy, and greater stress reactivity. Social support may be less effective at reducing cortisol levels."
+      }
+    },
+    "affected_biomarkers": ["hs-CRP", "Magnesium"],
+    "supplement_implications": {
+      "elevated": "Prioritize stress management: magnesium glycinate (300-400 mg/day), ashwagandha (300-600 mg/day) for cortisol modulation. L-theanine (200-400 mg/day) for calming without sedation. Regular physical exercise reduces cortisol. Intentional social engagement and community participation support oxytocin pathways. Mindfulness and meditation practices recommended.",
+      "moderate": "Magnesium (200 mg/day), adaptogenic herbs (ashwagandha 300 mg/day). Maintain strong social connections and regular exercise routine."
+    }
+  },
+  "rs9939609": {
+    "gene": "FTO",
+    "name": "FTO Fat Mass and Obesity-Associated Gene",
+    "category": "nutrient_metabolism",
+    "chromosome": "16",
+    "position": 53820527,
+    "variants": {
+      "TT": {
+        "risk": "normal",
+        "description": "No FTO risk alleles. Standard appetite regulation, energy expenditure, and body composition tendencies. Lower genetic predisposition for obesity."
+      },
+      "TA": {
+        "risk": "moderate",
+        "description": "One FTO risk allele. Associated with approximately 1.2 kg higher average body weight, mildly increased appetite and caloric intake, and slightly reduced satiety signaling."
+      },
+      "AA": {
+        "risk": "elevated",
+        "description": "Homozygous FTO risk. Associated with approximately 3 kg higher average body weight, significantly increased appetite and reduced satiety, preference for calorie-dense foods, and increased obesity risk. Effects can be substantially attenuated with physical activity."
+      }
+    },
+    "affected_biomarkers": ["Fasting Glucose", "Fasting Insulin", "HbA1c", "Triglycerides", "hs-CRP"],
+    "supplement_implications": {
+      "elevated": "Physical activity is the strongest modifier of FTO risk (60+ minutes/day substantially attenuates effect). Protein-rich meals (25-30 g protein per meal) enhance satiety signaling. Fiber supplementation (psyllium, glucomannan, 5-10 g before meals) aids satiety. Green tea extract (EGCG, 400-500 mg/day) may support thermogenesis. Chromium (200-400 mcg/day) for blood sugar stability. Mindful eating practices to counteract increased appetite drive.",
+      "moderate": "Regular exercise (150+ minutes/week). High-protein, high-fiber dietary pattern. Adequate sleep (7-9 hours) as sleep deprivation amplifies FTO effects on appetite. Chromium (200 mcg/day)."
+    }
+  },
+  "rs174547": {
+    "gene": "FADS1",
+    "name": "FADS1 Fatty Acid Desaturase 1",
+    "category": "nutrient_metabolism",
+    "chromosome": "11",
+    "position": 61570783,
+    "variants": {
+      "CC": {
+        "risk": "elevated",
+        "description": "Reduced FADS1 enzyme activity. Lower conversion of plant-based omega-3 (ALA) to EPA and DHA. May have lower arachidonic acid production from linoleic acid. Individuals on vegetarian/vegan diets are particularly affected."
+      },
+      "CT": {
+        "risk": "moderate",
+        "description": "Intermediate FADS1 activity. Moderate conversion of short-chain to long-chain polyunsaturated fatty acids."
+      },
+      "TT": {
+        "risk": "normal",
+        "description": "Normal FADS1 activity. Efficient conversion of ALA to EPA/DHA and linoleic acid to arachidonic acid. Standard long-chain polyunsaturated fatty acid synthesis."
+      }
+    },
+    "affected_biomarkers": ["Triglycerides", "Total Cholesterol", "LDL Cholesterol", "hs-CRP"],
+    "supplement_implications": {
+      "elevated": "Direct EPA+DHA supplementation essential (fish oil or algal oil 2-3 g/day) since conversion from ALA (flax, chia, walnuts) is impaired. Algal DHA (500-1000 mg/day) especially critical for vegetarians/vegans with this genotype. Monitor omega-3 index if available. Evening primrose oil or borage oil (GLA, 500 mg/day) may compensate for reduced delta-6 desaturase pathway activity.",
+      "moderate": "EPA+DHA from fish oil or algal oil (1-2 g/day). Do not rely solely on ALA sources for omega-3 needs. Balanced omega-6/omega-3 ratio."
+    }
+  },
+  "rs1695": {
+    "gene": "GSTP1",
+    "name": "GSTP1 Ile105Val (Glutathione S-Transferase Pi)",
+    "category": "detoxification",
+    "chromosome": "11",
+    "position": 67352689,
+    "variants": {
+      "AA": {
+        "risk": "normal",
+        "description": "Normal GSTP1 enzyme function (Ile/Ile). Effective phase II detoxification conjugation of electrophilic compounds including some chemotherapeutic agents, environmental toxins, and oxidative stress byproducts."
+      },
+      "AG": {
+        "risk": "moderate",
+        "description": "Reduced GSTP1 activity (Ile/Val). Moderately impaired detoxification of certain environmental carcinogens and reactive oxygen species."
+      },
+      "GG": {
+        "risk": "elevated",
+        "description": "Significantly reduced GSTP1 activity (Val/Val). Lower capacity to conjugate and eliminate environmental toxins, heavy metals, and oxidative stress compounds. May increase susceptibility to oxidative damage."
+      }
+    },
+    "affected_biomarkers": ["hs-CRP", "GGT"],
+    "supplement_implications": {
+      "elevated": "NAC (600-1200 mg/day) for glutathione support. Alpha lipoic acid (300-600 mg/day). Cruciferous vegetables and sulforaphane (broccoli sprout extract, 30-50 mg/day) to upregulate phase II detoxification. Selenium (200 mcg/day). Reduce exposure to environmental toxins, pesticides, and heavy metals. Consider periodic sauna use for additional detoxification support.",
+      "moderate": "NAC (600 mg/day). Increase cruciferous vegetable intake. Selenium (100-200 mcg/day). General environmental toxin exposure minimization."
+    }
+  },
+  "rs4588": {
+    "gene": "GC",
+    "name": "GC/VDBP Vitamin D Binding Protein",
+    "category": "nutrient_metabolism",
+    "chromosome": "4",
+    "position": 72618334,
+    "variants": {
+      "GG": {
+        "risk": "normal",
+        "description": "Normal vitamin D binding protein (VDBP) levels. Standard vitamin D transport and bioavailability. 25-OH vitamin D levels accurately reflect vitamin D status."
+      },
+      "GT": {
+        "risk": "moderate",
+        "description": "Mildly reduced VDBP levels. Slightly lower total 25-OH vitamin D but potentially adequate free/bioavailable vitamin D. Standard serum measurements may underestimate true vitamin D status."
+      },
+      "TT": {
+        "risk": "elevated",
+        "description": "Significantly reduced VDBP levels. Lower total 25-OH vitamin D on standard tests, but free/bioavailable vitamin D may be relatively preserved. Complex interpretation: low total vitamin D may not indicate true deficiency. Supplementation targets may need adjustment."
+      }
+    },
+    "affected_biomarkers": ["Vitamin D (25-OH)", "Calcium"],
+    "supplement_implications": {
+      "elevated": "Standard 25-OH vitamin D test may underestimate true vitamin D availability. Consider free 25-OH vitamin D testing for more accurate assessment. Moderate vitamin D3 supplementation (2000-4000 IU/day) is generally appropriate. Avoid over-supplementing based on total 25-OH levels alone. Pair with K2 (100 mcg/day) and magnesium (200 mg/day).",
+      "moderate": "Standard vitamin D3 supplementation (2000-3000 IU/day). Annual monitoring of 25-OH vitamin D. Be aware that total levels may appear slightly lower than true functional status."
+    }
+  },
+  "rs2187668": {
+    "gene": "HLA-DQ2.5",
+    "name": "HLA-DQ2.5 Celiac Disease Risk",
+    "category": "inflammation",
+    "chromosome": "6",
+    "position": 32605884,
+    "variants": {
+      "CC": {
+        "risk": "normal",
+        "description": "Does not carry HLA-DQ2.5 haplotype. Very low risk for celiac disease from this locus (though HLA-DQ8 should also be checked). Gluten tolerance is expected."
+      },
+      "CT": {
+        "risk": "moderate",
+        "description": "Heterozygous for HLA-DQ2.5 risk allele. Carries genetic susceptibility for celiac disease (necessary but not sufficient condition). Approximately 3% of carriers develop celiac disease. Monitor for symptoms of gluten sensitivity."
+      },
+      "TT": {
+        "risk": "elevated",
+        "description": "Homozygous HLA-DQ2.5 risk. Highest genetic risk for celiac disease. Approximately 5-10% lifetime risk. Should be screened for celiac antibodies (tTG-IgA) if experiencing GI symptoms, unexplained anemia, nutrient malabsorption, or fatigue."
+      }
+    },
+    "affected_biomarkers": ["Ferritin", "Vitamin B12", "Folate", "Vitamin D (25-OH)", "Calcium", "Hemoglobin"],
+    "supplement_implications": {
+      "elevated": "Screen for celiac disease with tissue transglutaminase IgA (tTG-IgA) antibody test. If celiac-positive, strict gluten-free diet is mandatory. Supplement key nutrients commonly depleted in celiac disease: iron bisglycinate, vitamin D3 (2000-5000 IU/day), calcium (1000 mg/day), B12 (1000 mcg/day), folate (800 mcg/day), zinc (15-30 mg/day). Even if celiac-negative, monitor for symptoms over time as celiac can develop at any age.",
+      "moderate": "Consider celiac antibody screening, especially if experiencing digestive issues, unexplained nutrient deficiencies, or fatigue. Monitor iron, B12, folate, and vitamin D levels annually."
+    }
+  },
+  "rs1800896": {
+    "gene": "IL10",
+    "name": "IL-10 Interleukin-10",
+    "category": "inflammation",
+    "chromosome": "1",
+    "position": 206946897,
+    "variants": {
+      "TT": {
+        "risk": "elevated",
+        "description": "Lower IL-10 production. Reduced anti-inflammatory signaling. IL-10 is a key anti-inflammatory cytokine; lower levels may impair resolution of inflammation and increase susceptibility to chronic inflammatory conditions."
+      },
+      "CT": {
+        "risk": "moderate",
+        "description": "Intermediate IL-10 production. Moderate anti-inflammatory capacity. May have slightly prolonged inflammatory responses."
+      },
+      "CC": {
+        "risk": "normal",
+        "description": "Higher IL-10 production. Robust anti-inflammatory signaling. Better capacity to resolve inflammation and maintain immune homeostasis."
+      }
+    },
+    "affected_biomarkers": ["hs-CRP", "ESR"],
+    "supplement_implications": {
+      "elevated": "Proactively support anti-inflammatory pathways: omega-3 fatty acids (2-3 g/day), curcumin (500-1000 mg/day with piperine), and resveratrol (200 mg/day). Probiotics with anti-inflammatory strains (Lactobacillus rhamnosus, Bifidobacterium longum). Vitamin D3 (2000-4000 IU/day) promotes IL-10 production. Regular moderate exercise enhances anti-inflammatory IL-10 release.",
+      "moderate": "Omega-3 (1-2 g/day), curcumin (500 mg/day). Anti-inflammatory dietary pattern. Regular moderate exercise."
+    }
+  },
+  "rs662": {
+    "gene": "PON1",
+    "name": "PON1 Q192R (Paraoxonase 1)",
+    "category": "cardiovascular",
+    "chromosome": "7",
+    "position": 95308134,
+    "variants": {
+      "AA": {
+        "risk": "normal",
+        "description": "QQ genotype. Lower paraoxonase activity toward some substrates but higher activity toward others (including some organophosphates). Provides effective HDL-associated antioxidant protection."
+      },
+      "AG": {
+        "risk": "moderate",
+        "description": "QR genotype. Intermediate paraoxonase activity. Moderate HDL antioxidant protection and organophosphate detoxification capacity."
+      },
+      "GG": {
+        "risk": "elevated",
+        "description": "RR genotype. Altered paraoxonase substrate specificity. May have reduced HDL antioxidant function and increased LDL oxidation susceptibility. Associated with increased cardiovascular risk in some populations, particularly with high oxidative stress exposure."
+      }
+    },
+    "affected_biomarkers": ["HDL Cholesterol", "LDL Cholesterol", "hs-CRP"],
+    "supplement_implications": {
+      "elevated": "Support HDL antioxidant function: omega-3 (2 g/day), pomegranate extract (500 mg/day, shown to increase PON1 activity). Coenzyme Q10 (200 mg/day). Limit exposure to organophosphate pesticides (choose organic produce). Polyphenol-rich foods (berries, dark chocolate, green tea) support PON1 activity. Vitamin E (mixed tocopherols, 200 IU/day).",
+      "moderate": "Omega-3 (1 g/day), antioxidant-rich diet with emphasis on polyphenols. CoQ10 (100 mg/day). Minimize pesticide exposure."
+    }
+  },
+  "rs6025": {
+    "gene": "F5",
+    "name": "Factor V Leiden",
+    "category": "cardiovascular",
+    "chromosome": "1",
+    "position": 169519049,
+    "variants": {
+      "CC": {
+        "risk": "normal",
+        "description": "Normal Factor V. Standard coagulation cascade function. No increased genetic risk for venous thromboembolism from this variant."
+      },
+      "CT": {
+        "risk": "moderate",
+        "description": "Heterozygous Factor V Leiden. Approximately 3-8x increased risk for venous thromboembolism (deep vein thrombosis, pulmonary embolism). Factor V is resistant to inactivation by activated protein C, leading to a hypercoagulable state."
+      },
+      "TT": {
+        "risk": "elevated",
+        "description": "Homozygous Factor V Leiden. Approximately 50-80x increased risk for venous thromboembolism. Significantly increased risk of DVT, PE, and other thrombotic events. Requires careful management, especially during high-risk situations (surgery, immobility, pregnancy, estrogen use)."
+      }
+    },
+    "affected_biomarkers": ["hs-CRP", "Hemoglobin"],
+    "supplement_implications": {
+      "elevated": "Consult hematologist for personalized thrombosis prevention plan. Nattokinase (2000 FU/day, with medical approval only) has fibrinolytic properties. Omega-3 (2 g/day) has mild antiplatelet effects. AVOID high-dose vitamin E and fish oil without medical guidance if on anticoagulants. Stay well hydrated. Avoid prolonged immobility. Compression stockings during travel. Women should discuss risks of estrogen-containing contraceptives/HRT with physician.",
+      "moderate": "Discuss with healthcare provider, especially before surgery, long travel, or hormonal therapy. Omega-3 (1-2 g/day). Adequate hydration and regular movement. Avoid smoking (compounding risk factor)."
+    }
+  },
+  "rs1050450": {
+    "gene": "GPX1",
+    "name": "GPX1 Pro198Leu (Glutathione Peroxidase 1)",
+    "category": "detoxification",
+    "chromosome": "3",
+    "position": 49394834,
+    "variants": {
+      "CC": {
+        "risk": "normal",
+        "description": "Normal glutathione peroxidase 1 activity (Pro/Pro). Efficient reduction of hydrogen peroxide and lipid hydroperoxides using selenium as a cofactor. Standard antioxidant defense."
+      },
+      "CT": {
+        "risk": "moderate",
+        "description": "Reduced GPX1 activity (Pro/Leu). Moderately impaired selenium-dependent antioxidant defense. May have increased susceptibility to oxidative stress, particularly with low selenium status."
+      },
+      "TT": {
+        "risk": "elevated",
+        "description": "Significantly reduced GPX1 activity (Leu/Leu). Substantially impaired hydrogen peroxide detoxification. Higher oxidative stress susceptibility. Selenium supplementation is particularly important to maximize residual enzyme function."
+      }
+    },
+    "affected_biomarkers": ["hs-CRP", "Selenium"],
+    "supplement_implications": {
+      "elevated": "Selenium (200 mcg/day, selenomethionine form) is critical for maximizing GPX1 activity. NAC (600-1200 mg/day) to boost glutathione (GPX1 substrate). Vitamin C (500-1000 mg/day) and vitamin E (mixed tocopherols, 200 IU/day) as complementary antioxidants. CoQ10 (100-200 mg/day). Alpha lipoic acid (300 mg/day). Monitor selenium levels to avoid toxicity (target 100-140 mcg/L).",
+      "moderate": "Selenium (100-200 mcg/day). NAC (600 mg/day). Balanced antioxidant intake from diet (Brazil nuts for selenium, colorful fruits and vegetables for polyphenols)."
+    }
+  },
+  "rs4149056": {
+    "gene": "SLCO1B1",
+    "name": "SLCO1B1 Statin Transporter",
+    "category": "cardiovascular",
+    "chromosome": "12",
+    "position": 21331549,
+    "variants": {
+      "TT": {
+        "risk": "normal",
+        "description": "Normal SLCO1B1 transporter function. Standard hepatic uptake of statins and other medications. Low risk for statin-induced myopathy at conventional doses."
+      },
+      "TC": {
+        "risk": "moderate",
+        "description": "Reduced SLCO1B1 transporter activity. Intermediate risk for statin-related muscle side effects (myalgia, myopathy). Higher systemic statin exposure due to reduced liver uptake."
+      },
+      "CC": {
+        "risk": "elevated",
+        "description": "Significantly reduced SLCO1B1 transporter function. High risk for statin-induced myopathy, particularly with simvastatin. Statins accumulate in blood rather than being efficiently taken up by the liver, increasing muscle toxicity risk."
+      }
+    },
+    "affected_biomarkers": ["LDL Cholesterol", "Total Cholesterol", "ALT", "AST", "Creatinine"],
+    "supplement_implications": {
+      "elevated": "If on statins, discuss pharmacogenomic results with prescriber. CoQ10 (200-400 mg/day) essential as statins deplete CoQ10 and this genotype increases myopathy risk. Consider natural LDL-lowering alternatives: berberine (500 mg 2-3x/day), red yeast rice (with CoQ10), plant sterols (2 g/day), soluble fiber (10-25 g/day). Omega-3 (2-4 g/day). Monitor CK, ALT, and AST if on statin therapy.",
+      "moderate": "CoQ10 (200 mg/day) if taking statins. Report any muscle pain or weakness to prescriber promptly. Lower statin doses may be appropriate. Omega-3 (1-2 g/day) for additional lipid support."
+    }
+  },
+  "rs1801394": {
+    "gene": "MTRR",
+    "name": "MTRR A66G (Methionine Synthase Reductase)",
+    "category": "methylation",
+    "chromosome": "5",
+    "position": 7870973,
+    "variants": {
+      "AA": {
+        "risk": "normal",
+        "description": "Normal methionine synthase reductase function. Efficient regeneration of methylcobalamin (active B12), which is required by methionine synthase (MTR) to convert homocysteine to methionine."
+      },
+      "AG": {
+        "risk": "moderate",
+        "description": "Mildly reduced MTRR activity. Slightly less efficient regeneration of methylcobalamin. May contribute to functional B12 insufficiency and mildly elevated homocysteine, particularly when combined with MTR or MTHFR variants."
+      },
+      "GG": {
+        "risk": "elevated",
+        "description": "Significantly reduced MTRR activity. Impaired regeneration of methylcobalamin leading to reduced methionine synthase function. Can contribute to elevated homocysteine, impaired methylation, and increased B12 requirements. Effects are compounded by concurrent MTHFR or MTR variants."
+      }
+    },
+    "affected_biomarkers": ["Vitamin B12", "Homocysteine", "Folate"],
+    "supplement_implications": {
+      "elevated": "Methylcobalamin or hydroxocobalamin (1000-2000 mcg/day) to compensate for impaired B12 recycling. Riboflavin (B2, 25 mg/day) as MTRR cofactor. Methylfolate (800-1000 mcg/day). Monitor homocysteine every 6 months. Assess for compound risk with MTHFR (rs1801133) and MTR (rs1805087) variants.",
+      "moderate": "Methylcobalamin (500-1000 mcg/day). B-complex with methylated forms. Annual homocysteine monitoring."
+    }
+  },
+  "rs4363657": {
+    "gene": "CYP2D6",
+    "name": "CYP2D6 Drug Metabolism",
+    "category": "detoxification",
+    "chromosome": "22",
+    "position": 42522613,
+    "variants": {
+      "CC": {
+        "risk": "normal",
+        "description": "Normal CYP2D6 metabolizer status. Standard metabolism of approximately 25% of all prescription medications including many antidepressants, beta-blockers, opioids, and tamoxifen."
+      },
+      "CT": {
+        "risk": "moderate",
+        "description": "Intermediate CYP2D6 metabolizer. Reduced metabolism of CYP2D6-dependent drugs. May require dose adjustments for affected medications. Standard doses may produce higher-than-expected drug levels."
+      },
+      "TT": {
+        "risk": "elevated",
+        "description": "Poor CYP2D6 metabolizer. Significantly reduced or absent CYP2D6 activity. Poor metabolism of many common medications leading to increased drug levels, prolonged effects, and higher side effect risk. Conversely, prodrugs requiring CYP2D6 activation (e.g., codeine to morphine) may be ineffective."
+      }
+    },
+    "affected_biomarkers": ["ALT", "AST", "GGT"],
+    "supplement_implications": {
+      "elevated": "Pharmacogenomic awareness is critical: share CYP2D6 status with all prescribers. Avoid codeine and tramadol (prodrugs that require CYP2D6 activation). NAC (600 mg/day) for liver support during medication use. Milk thistle (150-300 mg/day) for hepatoprotection. Turmeric, St. John's Wort, and grapefruit can interact with CYP enzymes -- use with caution.",
+      "moderate": "Inform prescribers of intermediate metabolizer status. Standard doses may need reduction for CYP2D6-dependent medications. NAC (600 mg/day) for liver support. Monitor liver enzymes periodically when on multiple medications."
+    }
+  },
+  "rs12255372": {
+    "gene": "TCF7L2",
+    "name": "TCF7L2 rs12255372 (Diabetes Risk)",
+    "category": "nutrient_metabolism",
+    "chromosome": "10",
+    "position": 114808902,
+    "variants": {
+      "GG": {
+        "risk": "normal",
+        "description": "No risk allele at this TCF7L2 locus. Standard incretin signaling and insulin secretion. Lower genetic predisposition for type 2 diabetes from this variant."
+      },
+      "GT": {
+        "risk": "moderate",
+        "description": "One risk allele. Independently associated with increased type 2 diabetes risk. Additive effect with rs7903146 when both risk alleles are present. Reduced GLP-1-mediated insulin secretion."
+      },
+      "TT": {
+        "risk": "elevated",
+        "description": "Homozygous risk genotype. Significantly increased type 2 diabetes risk. Impaired incretin signaling and beta cell function. Combined with rs7903146 risk alleles, creates one of the highest polygenic diabetes risk profiles."
+      }
+    },
+    "affected_biomarkers": ["Fasting Glucose", "HbA1c", "Fasting Insulin"],
+    "supplement_implications": {
+      "elevated": "Berberine (500 mg 2-3x/day) for AMPK activation and insulin sensitization. Chromium picolinate (400-1000 mcg/day). Cinnamon extract (ceylon, 1-3 g/day) may modestly improve insulin sensitivity. Low glycemic index diet is particularly important. Monitor metabolic markers every 6 months. Consider continuous glucose monitor for personalized dietary optimization. Regular exercise (150+ minutes/week moderate or 75+ minutes vigorous).",
+      "moderate": "Chromium (200-400 mcg/day). Berberine (500 mg/day). Focus on low glycemic load meals and regular physical activity. Annual metabolic panel."
+    }
+  }
+}

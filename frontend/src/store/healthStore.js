@@ -151,6 +151,57 @@ const useHealthStore = create((set, get) => ({
     }
   },
 
+  // Genetics
+  geneticMarkers: [],
+  geneticImplications: [],
+  geneticDisclaimer: '',
+  fetchGeneticMarkers: async () => {
+    try {
+      const data = await api.getGeneticMarkers();
+      set({ geneticMarkers: data.markers || [], geneticDisclaimer: data.disclaimer || '' });
+    } catch {
+      set({ geneticMarkers: [] });
+    }
+  },
+  fetchGeneticImplications: async () => {
+    try {
+      const data = await api.getGeneticImplications();
+      set({ geneticImplications: data.implications || [], geneticDisclaimer: data.disclaimer || '' });
+    } catch {
+      set({ geneticImplications: [] });
+    }
+  },
+  uploadGenetics: async (file) => {
+    const result = await api.uploadGenetics(file);
+    await get().fetchGeneticMarkers();
+    return result;
+  },
+
+  // Goals
+  goals: [],
+  fetchGoals: async (status) => {
+    try {
+      const data = await api.getGoals(status);
+      set({ goals: data });
+    } catch {
+      set({ goals: [] });
+    }
+  },
+  createGoal: async (data) => {
+    const result = await api.createGoal(data);
+    await get().fetchGoals();
+    return result;
+  },
+  updateGoal: async (id, data) => {
+    const result = await api.updateGoal(id, data);
+    await get().fetchGoals();
+    return result;
+  },
+  deleteGoal: async (id) => {
+    await api.deleteGoal(id);
+    await get().fetchGoals();
+  },
+
   // UI state
   toast: null,
   showToast: (message, type = 'success') => {

@@ -365,3 +365,86 @@ def get_wearable_period_averages(conn: sqlite3.Connection, metric: str,
         return {"avg": row["avg_val"], "min": row["min_val"],
                 "max": row["max_val"], "count": row["count"]}
     return {"avg": None, "min": None, "max": None, "count": 0}
+
+
+# --- Genetic Markers ---
+
+def upsert_genetic_marker(conn: sqlite3.Connection, rsid: str, gene: str,
+                           genotype: str, significance: str, category: str,
+                           risk_level: str, description: str) -> str:
+    existing = conn.execute("SELECT id FROM genetic_markers WHERE rsid = ?", (rsid,)).fetchone()
+    if existing:
+        conn.execute(
+            """UPDATE genetic_markers SET gene=?, genotype=?, significance=?, category=?,
+               risk_level=?, description=? WHERE rsid=?""",
+            (gene, genotype, significance, category, risk_level, description, rsid),
+        )
+        return existing["id"]
+    marker_id = new_id()
+    conn.execute(
+        """INSERT INTO genetic_markers (id, rsid, gene, genotype, significance, category, risk_level, description)
+           VALUES (?, ?, ?, ?, ?, ?, ?, ?)""",
+        (marker_id, rsid, gene, genotype, significance, category, risk_level, description),
+    )
+    return marker_id
+
+
+def get_genetic_markers(conn: sqlite3.Connection) -> list[dict]:
+    rows = conn.execute("SELECT * FROM genetic_markers ORDER BY category, gene").fetchall()
+    return [row_to_dict(r) for r in rows]
+
+
+def clear_genetic_markers(conn: sqlite3.Connection) -> int:
+    cursor = conn.execute("DELETE FROM genetic_markers")
+    conn.commit()
+    return cursor.rowcount
+
+
+# --- Health Goals ---
+
+def insert_goal(conn: sqlite3.Connection, data: dict) -> str:
+    goal_id = new_id()
+    conn.execute(
+        """INSERT INTO health_goals (id, metric_type, target_value, target_date, current_value, started_at, status)
+           VALUES (?, ?, ?, ?, ?, ?, 'in_progress')""",
+        (goal_id, data["metric_type"], data["target_value"],
+         data.get("target_date"), data.get("current_value"), now_iso()),
+    )
+    conn.commit()
+    return goal_id
+
+
+def get_goals(conn: sqlite3.Connection, status: str | None = None) -> list[dict]:
+    if status:
+        rows = conn.execute("SELECT * FROM health_goals WHERE status = ? ORDER BY started_at DESC", (status,)).fetchall()
+    else:
+        rows = conn.execute("SELECT * FROM health_goals ORDER BY started_at DESC").fetchall()
+    return [row_to_dict(r) for r in rows]
+
+
+def get_goal_by_id(conn: sqlite3.Connection, goal_id: str) -> dict | None:
+    row = conn.execute("SELECT * FROM health_goals WHERE id = ?", (goal_id,)).fetchone()
+    return row_to_dict(row) if row else None
+
+
+def update_goal(conn: sqlite3.Connection, goal_id: str, data: dict) -> dict | None:
+    existing = get_goal_by_id(conn, goal_id)
+    if not existing:
+        return None
+    fields = {}
+    for f in ("target_value", "target_date", "current_value", "status"):
+        if data.get(f) is not None:
+            fields[f] = data[f]
+    if not fields:
+        return existing
+    set_clause = ", ".join(f"{k} = ?" for k in fields)
+    values = list(fields.values()) + [goal_id]
+    conn.execute(f"UPDATE health_goals SET {set_clause} WHERE id = ?", values)
+    conn.commit()
+    return get_goal_by_id(conn, goal_id)
+
+
+def delete_goal(conn: sqlite3.Connection, goal_id: str) -> bool:
+    cursor = conn.execute("DELETE FROM health_goals WHERE id = ?", (goal_id,))
+    conn.commit()
+    return cursor.rowcount > 0

@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { Activity, FlaskConical, Pill, Settings, LayoutDashboard, Watch, Brain, BarChart3 } from 'lucide-react';
+import { Activity, FlaskConical, Pill, Settings, LayoutDashboard, Watch, Brain, BarChart3, Dna, Target, FileText } from 'lucide-react';
 
 const links = [
   { to: '/', label: 'Dashboard', icon: LayoutDashboard },
@@ -8,6 +8,9 @@ const links = [
   { to: '/bloodwork', label: 'Blood Work', icon: FlaskConical },
   { to: '/wearables', label: 'Wearables', icon: Watch },
   { to: '/supplements', label: 'Supplements', icon: Pill },
+  { to: '/genetics', label: 'Genetics', icon: Dna },
+  { to: '/goals', label: 'Goals', icon: Target },
+  { to: '/reports', label: 'Reports', icon: FileText },
   { to: '/settings', label: 'Settings', icon: Settings },
 ];
 

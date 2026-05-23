@@ -51,3 +51,22 @@ export const getTrend = (metric, days = 30) => api.get(`/trends/${metric}`, { pa
 export const getCorrelations = (days = 30) => api.get('/correlations', { params: { days } }).then(r => r.data);
 export const getTimeline = (start, end) => api.get('/timeline', { params: { start, end } }).then(r => r.data);
 export const getBiomarkerDeepDive = (name) => api.get(`/biomarkers/${encodeURIComponent(name)}/deep-dive`).then(r => r.data);
+
+// --- Genetics ---
+export const uploadGenetics = (file) => {
+  const form = new FormData();
+  form.append('file', file);
+  return api.post('/genetics/upload', form).then(r => r.data);
+};
+export const getGeneticMarkers = () => api.get('/genetics').then(r => r.data);
+export const getGeneticImplications = () => api.get('/genetics/implications').then(r => r.data);
+
+// --- Goals ---
+export const getGoals = (status) => api.get('/goals', { params: status ? { status } : {} }).then(r => r.data);
+export const createGoal = (data) => api.post('/goals', data).then(r => r.data);
+export const updateGoal = (id, data) => api.put(`/goals/${id}`, data).then(r => r.data);
+export const deleteGoal = (id) => api.delete(`/goals/${id}`).then(r => r.data);
+
+// --- Reports ---
+export const generateReport = () => api.post('/report/generate').then(r => r.data);
+export const getDoctorSummary = () => api.get('/report/doctor-summary').then(r => r.data);

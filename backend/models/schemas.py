@@ -183,3 +183,54 @@ class AskQuestionResponse(BaseModel):
     answer: str
     relevant_data: list[dict]
     source: str
+
+
+# --- Genetics ---
+
+class GeneticMarkerResponse(BaseModel):
+    id: str
+    rsid: str
+    gene: str
+    genotype: str
+    significance: str
+    category: str
+    risk_level: str
+    description: str
+
+
+class GeneticImplication(BaseModel):
+    rsid: str
+    gene: str
+    genotype: str
+    risk_level: str
+    biomarker: Optional[str] = None
+    biomarker_value: Optional[float] = None
+    biomarker_status: Optional[str] = None
+    implication: str
+    supplement_recommendation: Optional[str] = None
+
+
+# --- Goals ---
+
+class GoalCreate(BaseModel):
+    metric_type: str
+    target_value: float
+    target_date: Optional[str] = None
+    current_value: Optional[float] = None
+
+
+class GoalUpdate(BaseModel):
+    target_value: Optional[float] = None
+    target_date: Optional[str] = None
+    current_value: Optional[float] = None
+    status: Optional[str] = None
+
+
+class GoalResponse(BaseModel):
+    id: str
+    metric_type: str
+    target_value: float
+    target_date: Optional[str]
+    current_value: Optional[float]
+    started_at: str
+    status: str
