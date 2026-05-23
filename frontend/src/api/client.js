@@ -70,3 +70,10 @@ export const deleteGoal = (id) => api.delete(`/goals/${id}`).then(r => r.data);
 // --- Reports ---
 export const generateReport = () => api.post('/report/generate').then(r => r.data);
 export const getDoctorSummary = () => api.get('/report/doctor-summary').then(r => r.data);
+
+// --- Data Management ---
+export const loadSampleData = () => api.post('/data/load-sample').then(r => r.data);
+export const exportAllData = () => api.get('/data/export').then(r => r.data);
+export const clearAllData = () => api.delete('/data/clear').then(r => r.data);
+export const clearSourceData = (source) => api.delete(`/data/clear/${source}`).then(r => r.data);
+export const checkHasData = () => api.get('/data/has-data').then(r => r.data);

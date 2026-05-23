@@ -14,9 +14,9 @@ const links = [
   { to: '/settings', label: 'Settings', icon: Settings },
 ];
 
-export default function Sidebar() {
+export default function Sidebar({ onNavigate }) {
   return (
-    <aside className="w-60 bg-slate-900 border-r border-slate-800 flex flex-col shrink-0">
+    <aside className="w-60 h-full bg-slate-900 border-r border-slate-800 flex flex-col shrink-0">
       <div className="p-5 border-b border-slate-800">
         <div className="flex items-center gap-2">
           <Activity className="w-6 h-6 text-emerald-400" />
@@ -24,11 +24,12 @@ export default function Sidebar() {
         </div>
         <p className="text-xs text-slate-500 mt-1">AI Health Intelligence</p>
       </div>
-      <nav className="flex-1 p-3 space-y-1">
+      <nav className="flex-1 p-3 space-y-1 overflow-y-auto">
         {links.map(({ to, label, icon: Icon }) => (
           <NavLink
             key={to}
             to={to}
+            onClick={onNavigate}
             className={({ isActive }) =>
               `flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors
               ${isActive
