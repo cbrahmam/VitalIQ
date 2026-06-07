@@ -234,3 +234,47 @@ class GoalResponse(BaseModel):
     current_value: Optional[float]
     started_at: str
     status: str
+
+
+# --- Medications ---
+
+class MedicationCreate(BaseModel):
+    name: str
+    dosage: Optional[str] = None
+    frequency: str = "daily"
+    prescriber: Optional[str] = None
+    started_date: Optional[str] = None
+    notes: Optional[str] = None
+
+
+class MedicationUpdate(BaseModel):
+    name: Optional[str] = None
+    dosage: Optional[str] = None
+    frequency: Optional[str] = None
+    prescriber: Optional[str] = None
+    notes: Optional[str] = None
+
+
+# --- Symptom Journal ---
+
+class SymptomCreate(BaseModel):
+    date: str
+    symptom: str
+    severity: int
+    time_of_day: Optional[str] = None
+    notes: Optional[str] = None
+
+
+# --- Food Log ---
+
+class FoodEntryCreate(BaseModel):
+    date: str
+    meal_type: str
+    food_name: str
+    portion: Optional[str] = None
+    calories: Optional[float] = None
+    protein_g: Optional[float] = None
+    carbs_g: Optional[float] = None
+    fat_g: Optional[float] = None
+    fiber_g: Optional[float] = None
+    notes: Optional[str] = None

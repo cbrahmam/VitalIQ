@@ -202,6 +202,96 @@ const useHealthStore = create((set, get) => ({
     await get().fetchGoals();
   },
 
+  // Medications
+  medications: [],
+  medicationInteractions: {},
+  fetchMedications: async () => {
+    try {
+      const data = await api.getMedications();
+      set({ medications: data.medications, medicationInteractions: data.interactions });
+    } catch {
+      set({ medications: [] });
+    }
+  },
+  addMedication: async (data) => {
+    const result = await api.addMedication(data);
+    await get().fetchMedications();
+    return result;
+  },
+  updateMedication: async (id, data) => {
+    const result = await api.updateMedication(id, data);
+    await get().fetchMedications();
+    return result;
+  },
+  deleteMedication: async (id) => {
+    await api.deleteMedication(id);
+    await get().fetchMedications();
+  },
+
+  // Symptoms
+  symptoms: [],
+  symptomSummary: [],
+  symptomCorrelations: null,
+  fetchSymptoms: async (params) => {
+    try {
+      const data = await api.getSymptoms(params);
+      set({ symptoms: data });
+    } catch {
+      set({ symptoms: [] });
+    }
+  },
+  addSymptom: async (data) => {
+    await api.addSymptom(data);
+    await get().fetchSymptoms();
+  },
+  deleteSymptom: async (id) => {
+    await api.deleteSymptom(id);
+    await get().fetchSymptoms();
+  },
+  fetchSymptomSummary: async (days = 30) => {
+    try {
+      const data = await api.getSymptomSummary(days);
+      set({ symptomSummary: data });
+    } catch {
+      set({ symptomSummary: [] });
+    }
+  },
+  fetchSymptomCorrelations: async (days = 30) => {
+    try {
+      const data = await api.getSymptomCorrelations(days);
+      set({ symptomCorrelations: data });
+    } catch {
+      set({ symptomCorrelations: null });
+    }
+  },
+
+  // Food Log
+  foodLog: [],
+  foodSummary: null,
+  foodTrends: null,
+  fetchFoodLog: async (params) => {
+    try {
+      const data = await api.getFoodLog(params);
+      set({ foodLog: data.entries || data, foodSummary: data.summary || null });
+    } catch {
+      set({ foodLog: [] });
+    }
+  },
+  addFood: async (data) => {
+    await api.addFood(data);
+  },
+  deleteFood: async (id) => {
+    await api.deleteFood(id);
+  },
+  fetchFoodTrends: async (days = 7) => {
+    try {
+      const data = await api.getFoodTrends(days);
+      set({ foodTrends: data });
+    } catch {
+      set({ foodTrends: null });
+    }
+  },
+
   // UI state
   toast: null,
   showToast: (message, type = 'success') => {

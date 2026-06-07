@@ -11,6 +11,10 @@ import TrendsPage from './pages/TrendsPage';
 import GeneticsPage from './pages/GeneticsPage';
 import GoalsPage from './pages/GoalsPage';
 import ReportPage from './pages/ReportPage';
+import MedicationsPage from './pages/MedicationsPage';
+import SymptomsPage from './pages/SymptomsPage';
+import FoodLogPage from './pages/FoodLogPage';
+import TimelinePage from './pages/TimelinePage';
 import SettingsPage from './pages/SettingsPage';
 import * as api from './api/client';
 
@@ -48,6 +52,10 @@ export default function App() {
           <Route path="/genetics" element={<GeneticsPage />} />
           <Route path="/goals" element={<GoalsPage />} />
           <Route path="/reports" element={<ReportPage />} />
+          <Route path="/medications" element={<MedicationsPage />} />
+          <Route path="/symptoms" element={<SymptomsPage />} />
+          <Route path="/food" element={<FoodLogPage />} />
+          <Route path="/timeline" element={<TimelinePage />} />
           <Route path="/settings" element={<SettingsPage />} />
         </Route>
       </Routes>

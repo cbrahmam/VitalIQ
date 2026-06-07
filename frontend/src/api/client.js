@@ -49,7 +49,7 @@ export const askHealthQuestion = (question) => api.post('/insights/ask', { quest
 export const getDashboard = () => api.get('/dashboard').then(r => r.data);
 export const getTrend = (metric, days = 30) => api.get(`/trends/${metric}`, { params: { days } }).then(r => r.data);
 export const getCorrelations = (days = 30) => api.get('/correlations', { params: { days } }).then(r => r.data);
-export const getTimeline = (start, end) => api.get('/timeline', { params: { start, end } }).then(r => r.data);
+export const getTimeline = (start, end) => api.get('/timeline', { params: { start, end } }).then(r => r.data.events || r.data);
 export const getBiomarkerDeepDive = (name) => api.get(`/biomarkers/${encodeURIComponent(name)}/deep-dive`).then(r => r.data);
 
 // --- Genetics ---
@@ -70,6 +70,35 @@ export const deleteGoal = (id) => api.delete(`/goals/${id}`).then(r => r.data);
 // --- Reports ---
 export const generateReport = () => api.post('/report/generate').then(r => r.data);
 export const getDoctorSummary = () => api.get('/report/doctor-summary').then(r => r.data);
+
+// --- Medications ---
+export const getMedications = (includeInactive = false) => api.get('/medications', { params: includeInactive ? { include_inactive: true } : {} }).then(r => r.data);
+export const addMedication = (data) => api.post('/medications', data).then(r => r.data);
+export const updateMedication = (id, data) => api.put(`/medications/${id}`, data).then(r => r.data);
+export const deleteMedication = (id) => api.delete(`/medications/${id}`).then(r => r.data);
+export const getMedicationHistory = () => api.get('/medications/history').then(r => r.data);
+export const getMedicationInteractions = () => api.get('/medications/interactions').then(r => r.data);
+export const getKnownMedications = () => api.get('/medications/known').then(r => r.data);
+
+// --- Symptoms ---
+export const addSymptom = (data) => api.post('/symptoms', data).then(r => r.data);
+export const getSymptoms = (params) => api.get('/symptoms', { params }).then(r => r.data);
+export const deleteSymptom = (id) => api.delete(`/symptoms/${id}`).then(r => r.data);
+export const getSymptomSummary = (days = 30) => api.get('/symptoms/summary', { params: { days } }).then(r => r.data);
+export const getCommonSymptoms = () => api.get('/symptoms/common').then(r => r.data);
+export const getSymptomCorrelations = (days = 30) => api.get('/symptoms/correlations', { params: { days } }).then(r => r.data);
+
+// --- Food Log ---
+export const addFood = (data) => api.post('/food', data).then(r => r.data);
+export const getFoodLog = (params) => api.get('/food', { params }).then(r => r.data);
+export const deleteFood = (id) => api.delete(`/food/${id}`).then(r => r.data);
+export const getFoodSummary = (date) => api.get(`/food/summary/${date}`).then(r => r.data);
+export const getFoodTrends = (days = 7) => api.get('/food/trends', { params: { days } }).then(r => r.data);
+export const searchFoods = (q) => api.get('/food/search', { params: { q } }).then(r => r.data);
+export const getFoodCategories = () => api.get('/food/categories').then(r => r.data);
+
+// --- Timeline ---
+export const getFullTimeline = (start, end, types) => api.get('/timeline', { params: { start, end, types } }).then(r => r.data);
 
 // --- Data Management ---
 export const loadSampleData = () => api.post('/data/load-sample').then(r => r.data);

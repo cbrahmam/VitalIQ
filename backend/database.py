@@ -102,12 +102,66 @@ CREATE TABLE IF NOT EXISTS health_goals (
     status TEXT DEFAULT 'in_progress'
 );
 
+CREATE TABLE IF NOT EXISTS medications (
+    id TEXT PRIMARY KEY,
+    name TEXT NOT NULL,
+    dosage TEXT,
+    frequency TEXT,
+    prescriber TEXT,
+    started_date TEXT,
+    active INTEGER DEFAULT 1,
+    notes TEXT,
+    created_at TEXT,
+    updated_at TEXT
+);
+
+CREATE TABLE IF NOT EXISTS medication_history (
+    id TEXT PRIMARY KEY,
+    medication_id TEXT,
+    action TEXT,
+    old_value TEXT,
+    new_value TEXT,
+    date TEXT,
+    FOREIGN KEY (medication_id) REFERENCES medications(id)
+);
+
+CREATE TABLE IF NOT EXISTS symptom_entries (
+    id TEXT PRIMARY KEY,
+    date TEXT NOT NULL,
+    symptom TEXT NOT NULL,
+    severity INTEGER NOT NULL,
+    time_of_day TEXT,
+    notes TEXT,
+    created_at TEXT
+);
+
+CREATE TABLE IF NOT EXISTS food_log (
+    id TEXT PRIMARY KEY,
+    date TEXT NOT NULL,
+    meal_type TEXT NOT NULL,
+    food_name TEXT NOT NULL,
+    portion TEXT,
+    calories REAL,
+    protein_g REAL,
+    carbs_g REAL,
+    fat_g REAL,
+    fiber_g REAL,
+    notes TEXT,
+    created_at TEXT
+);
+
 CREATE INDEX IF NOT EXISTS idx_biomarkers_report_id ON biomarkers(report_id);
 CREATE INDEX IF NOT EXISTS idx_biomarkers_name ON biomarkers(name);
 CREATE INDEX IF NOT EXISTS idx_biomarkers_report_date ON biomarkers(report_date);
 CREATE INDEX IF NOT EXISTS idx_wearable_data_lookup ON wearable_data(source, date, metric_type);
 CREATE INDEX IF NOT EXISTS idx_supplements_active ON supplements(active);
 CREATE INDEX IF NOT EXISTS idx_supplement_history_supplement_id ON supplement_history(supplement_id);
+CREATE INDEX IF NOT EXISTS idx_medications_active ON medications(active);
+CREATE INDEX IF NOT EXISTS idx_medication_history_medication_id ON medication_history(medication_id);
+CREATE INDEX IF NOT EXISTS idx_symptom_entries_date ON symptom_entries(date);
+CREATE INDEX IF NOT EXISTS idx_symptom_entries_symptom ON symptom_entries(symptom);
+CREATE INDEX IF NOT EXISTS idx_food_log_date ON food_log(date);
+CREATE INDEX IF NOT EXISTS idx_food_log_meal_type ON food_log(meal_type);
 """
 
 

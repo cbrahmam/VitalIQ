@@ -1,0 +1,173 @@
+{
+  "Metformin": {
+    "category": "diabetes",
+    "depletes": ["Vitamin B12", "Folate", "Magnesium"],
+    "interacts_with_supplements": [
+      {"supplement": "Berberine", "severity": "warning", "note": "Both lower blood sugar. Combined use may cause hypoglycemia."},
+      {"supplement": "Alpha Lipoic Acid", "severity": "info", "note": "Both improve insulin sensitivity. Monitor blood sugar closely."}
+    ],
+    "affected_biomarkers": {
+      "Fasting Glucose": "decrease",
+      "HbA1c": "decrease",
+      "Vitamin B12": "decrease",
+      "Folate": "decrease"
+    },
+    "monitoring_note": "Check B12 and folate annually. Watch for numbness/tingling (neuropathy from B12 depletion)."
+  },
+  "Atorvastatin": {
+    "category": "cholesterol",
+    "depletes": ["CoQ10"],
+    "interacts_with_supplements": [
+      {"supplement": "CoQ10", "severity": "positive", "note": "Statins deplete CoQ10. Supplementing 100-200mg CoQ10 recommended."},
+      {"supplement": "Omega-3", "severity": "positive", "note": "Complementary lipid-lowering effects. Safe combination."},
+      {"supplement": "Berberine", "severity": "warning", "note": "Both lower LDL. Combined effect may be too aggressive."},
+      {"supplement": "Curcumin", "severity": "info", "note": "Curcumin may enhance statin absorption. Monitor liver enzymes."}
+    ],
+    "affected_biomarkers": {
+      "LDL Cholesterol": "decrease",
+      "Total Cholesterol": "decrease",
+      "HDL Cholesterol": "increase",
+      "Triglycerides": "decrease",
+      "ALT": "may_increase",
+      "AST": "may_increase"
+    },
+    "monitoring_note": "Check liver enzymes (ALT, AST) and lipid panel every 6-12 months."
+  },
+  "Levothyroxine": {
+    "category": "thyroid",
+    "depletes": [],
+    "interacts_with_supplements": [
+      {"supplement": "Iron Bisglycinate", "severity": "warning", "note": "Iron reduces levothyroxine absorption. Separate by 4+ hours."},
+      {"supplement": "Calcium", "severity": "warning", "note": "Calcium reduces absorption. Separate by 4+ hours."},
+      {"supplement": "Magnesium Glycinate", "severity": "warning", "note": "Magnesium reduces absorption. Separate by 4+ hours."},
+      {"supplement": "Selenium", "severity": "positive", "note": "Selenium supports T4 to T3 conversion. May improve thyroid function."}
+    ],
+    "affected_biomarkers": {
+      "TSH": "decrease",
+      "Free T4": "increase",
+      "Free T3": "may_increase"
+    },
+    "monitoring_note": "Take on empty stomach 30-60 min before food. Check TSH every 6-8 weeks after dose changes."
+  },
+  "Lisinopril": {
+    "category": "blood_pressure",
+    "depletes": ["Zinc"],
+    "interacts_with_supplements": [
+      {"supplement": "Zinc Glycinate", "severity": "positive", "note": "ACE inhibitors deplete zinc. Consider supplementing 15-30mg."},
+      {"supplement": "Magnesium Glycinate", "severity": "info", "note": "May enhance blood pressure lowering. Monitor BP."}
+    ],
+    "affected_biomarkers": {
+      "Creatinine": "may_increase",
+      "Potassium": "may_increase"
+    },
+    "monitoring_note": "Monitor potassium and kidney function (creatinine, BUN). Avoid potassium supplements."
+  },
+  "Omeprazole": {
+    "category": "acid_reflux",
+    "depletes": ["Vitamin B12", "Magnesium", "Calcium", "Iron Bisglycinate", "Zinc"],
+    "interacts_with_supplements": [
+      {"supplement": "Vitamin B12", "severity": "warning", "note": "PPIs reduce B12 absorption. Use sublingual or injection form."},
+      {"supplement": "Magnesium Glycinate", "severity": "info", "note": "Long-term PPI use depletes magnesium. Supplement recommended."},
+      {"supplement": "Iron Bisglycinate", "severity": "warning", "note": "Reduced stomach acid impairs iron absorption. Take iron separately."},
+      {"supplement": "Probiotics", "severity": "positive", "note": "PPIs alter gut microbiome. Probiotics may help maintain balance."}
+    ],
+    "affected_biomarkers": {
+      "Vitamin B12": "decrease",
+      "Magnesium": "decrease"
+    },
+    "monitoring_note": "Check B12 and magnesium annually with long-term use. Consider periodic taper attempts."
+  },
+  "Losartan": {
+    "category": "blood_pressure",
+    "depletes": [],
+    "interacts_with_supplements": [
+      {"supplement": "Magnesium Glycinate", "severity": "info", "note": "May enhance blood pressure lowering. Monitor BP."}
+    ],
+    "affected_biomarkers": {
+      "Creatinine": "may_increase",
+      "Potassium": "may_increase",
+      "Uric Acid": "decrease"
+    },
+    "monitoring_note": "Monitor potassium and kidney function. Losartan uniquely lowers uric acid among ARBs."
+  },
+  "Amlodipine": {
+    "category": "blood_pressure",
+    "depletes": [],
+    "interacts_with_supplements": [
+      {"supplement": "Magnesium Glycinate", "severity": "info", "note": "Additive blood pressure lowering. Monitor BP when starting magnesium."}
+    ],
+    "affected_biomarkers": {},
+    "monitoring_note": "Check blood pressure regularly. Watch for ankle swelling (common side effect)."
+  },
+  "Sertraline": {
+    "category": "antidepressant",
+    "depletes": [],
+    "interacts_with_supplements": [
+      {"supplement": "Ashwagandha", "severity": "info", "note": "Both affect serotonin. Use caution and discuss with provider."},
+      {"supplement": "L-Theanine", "severity": "positive", "note": "L-Theanine may complement SSRI effects for anxiety. Generally safe."},
+      {"supplement": "Omega-3", "severity": "positive", "note": "Omega-3 may enhance antidepressant effects. Well-studied combination."}
+    ],
+    "affected_biomarkers": {},
+    "monitoring_note": "Monitor mood and side effects. Weight, sleep, and libido changes are common."
+  },
+  "Aspirin": {
+    "category": "cardiovascular",
+    "depletes": ["Vitamin C", "Iron Bisglycinate"],
+    "interacts_with_supplements": [
+      {"supplement": "Omega-3", "severity": "info", "note": "Both have antiplatelet effects. May increase bleeding risk at high omega-3 doses."},
+      {"supplement": "Vitamin C", "severity": "positive", "note": "Aspirin depletes vitamin C. Consider supplementing."},
+      {"supplement": "Curcumin", "severity": "warning", "note": "Both thin blood. Combined use may increase bleeding risk."}
+    ],
+    "affected_biomarkers": {
+      "Ferritin": "may_decrease",
+      "Hemoglobin": "may_decrease"
+    },
+    "monitoring_note": "Monitor for GI bleeding signs. Check CBC annually."
+  },
+  "Vitamin D3 (Rx)": {
+    "category": "vitamin_prescription",
+    "depletes": [],
+    "interacts_with_supplements": [
+      {"supplement": "Vitamin D3", "severity": "warning", "note": "Do not take OTC D3 while on prescription D3 without provider guidance."},
+      {"supplement": "Vitamin K2", "severity": "positive", "note": "K2 directs calcium to bones, important with high-dose D3."},
+      {"supplement": "Calcium", "severity": "info", "note": "High-dose D3 increases calcium absorption. Monitor serum calcium."}
+    ],
+    "affected_biomarkers": {
+      "Vitamin D (25-OH)": "increase",
+      "Calcium": "may_increase"
+    },
+    "monitoring_note": "Recheck 25(OH)D in 8-12 weeks. Watch for hypercalcemia symptoms."
+  },
+  "Prednisone": {
+    "category": "steroid",
+    "depletes": ["Calcium", "Vitamin D3", "Magnesium", "Zinc", "Vitamin C", "Vitamin B6"],
+    "interacts_with_supplements": [
+      {"supplement": "Calcium", "severity": "positive", "note": "Steroids accelerate bone loss. Calcium + D3 + K2 recommended."},
+      {"supplement": "Vitamin D3", "severity": "positive", "note": "Steroids impair vitamin D metabolism. Higher D3 doses often needed."},
+      {"supplement": "Zinc Glycinate", "severity": "positive", "note": "Steroids deplete zinc. Consider supplementing."},
+      {"supplement": "Berberine", "severity": "warning", "note": "Both affect blood sugar. Steroids raise glucose; berberine lowers it."}
+    ],
+    "affected_biomarkers": {
+      "Fasting Glucose": "increase",
+      "Calcium": "may_decrease",
+      "Vitamin D (25-OH)": "may_decrease",
+      "WBC": "increase",
+      "Potassium": "may_decrease"
+    },
+    "monitoring_note": "Monitor blood sugar, bone density, potassium, and adrenal function with prolonged use."
+  },
+  "Metoprolol": {
+    "category": "blood_pressure",
+    "depletes": ["CoQ10", "Melatonin"],
+    "interacts_with_supplements": [
+      {"supplement": "CoQ10", "severity": "positive", "note": "Beta-blockers deplete CoQ10. Consider supplementing 100-200mg."},
+      {"supplement": "Melatonin", "severity": "positive", "note": "Beta-blockers suppress melatonin production. Low-dose melatonin may help sleep."},
+      {"supplement": "Magnesium Glycinate", "severity": "info", "note": "Both lower heart rate. Monitor for excessive bradycardia."}
+    ],
+    "affected_biomarkers": {
+      "Triglycerides": "may_increase",
+      "HDL Cholesterol": "may_decrease"
+    },
+    "monitoring_note": "Monitor heart rate and blood pressure. Check lipid panel periodically."
+  }
+}

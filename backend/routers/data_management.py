@@ -147,7 +147,8 @@ def load_sample_data(conn: sqlite3.Connection = Depends(get_db_connection)):
 def export_all_data(conn: sqlite3.Connection = Depends(get_db_connection)):
     tables = ["health_profile", "blood_work_reports", "biomarkers",
               "wearable_data", "supplements", "supplement_history",
-              "ai_insights", "genetic_markers", "health_goals"]
+              "ai_insights", "genetic_markers", "health_goals",
+              "medications", "medication_history", "symptom_entries", "food_log"]
     data = {}
     for table in tables:
         rows = conn.execute(f"SELECT * FROM {table}").fetchall()
@@ -159,7 +160,8 @@ def export_all_data(conn: sqlite3.Connection = Depends(get_db_connection)):
 def clear_all_data(conn: sqlite3.Connection = Depends(get_db_connection)):
     tables = ["ai_insights", "health_goals", "genetic_markers",
               "supplement_history", "supplements", "biomarkers",
-              "blood_work_reports", "wearable_data", "health_profile"]
+              "blood_work_reports", "wearable_data", "health_profile",
+              "medication_history", "medications", "symptom_entries", "food_log"]
     for table in tables:
         conn.execute(f"DELETE FROM {table}")
     conn.commit()
@@ -182,6 +184,13 @@ def clear_source_data(source: str, conn: sqlite3.Connection = Depends(get_db_con
         conn.execute("DELETE FROM ai_insights")
     elif source == "goals":
         conn.execute("DELETE FROM health_goals")
+    elif source == "medications":
+        conn.execute("DELETE FROM medication_history")
+        conn.execute("DELETE FROM medications")
+    elif source == "symptoms":
+        conn.execute("DELETE FROM symptom_entries")
+    elif source == "food":
+        conn.execute("DELETE FROM food_log")
     else:
         raise HTTPException(status_code=400, detail=f"Unknown source: {source}")
     conn.commit()
@@ -195,11 +204,17 @@ def check_has_data(conn: sqlite3.Connection = Depends(get_db_connection)):
     w_count = conn.execute("SELECT COUNT(*) FROM wearable_data").fetchone()[0]
     s_count = conn.execute("SELECT COUNT(*) FROM supplements WHERE active = 1").fetchone()[0]
     g_count = conn.execute("SELECT COUNT(*) FROM genetic_markers").fetchone()[0]
+    m_count = conn.execute("SELECT COUNT(*) FROM medications WHERE active = 1").fetchone()[0]
+    sy_count = conn.execute("SELECT COUNT(*) FROM symptom_entries").fetchone()[0]
+    f_count = conn.execute("SELECT COUNT(*) FROM food_log").fetchone()[0]
     return {
         "has_profile": profile is not None,
         "has_bloodwork": bm_count > 0,
         "has_wearables": w_count > 0,
         "has_supplements": s_count > 0,
         "has_genetics": g_count > 0,
-        "has_any": any([profile, bm_count, w_count, s_count, g_count]),
+        "has_medications": m_count > 0,
+        "has_symptoms": sy_count > 0,
+        "has_food": f_count > 0,
+        "has_any": any([profile, bm_count, w_count, s_count, g_count, m_count, sy_count, f_count]),
     }

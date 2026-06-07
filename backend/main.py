@@ -4,7 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from config import CORS_ORIGINS, ensure_directories
 from database import init_db
-from routers import bloodwork, supplements, profile, wearables, insights, dashboard, genetics, goals, report, data_management
+from routers import bloodwork, supplements, profile, wearables, insights, dashboard, genetics, goals, report, data_management, medications, symptoms, food, timeline
 
 
 @asynccontextmanager
@@ -34,6 +34,10 @@ app.include_router(genetics.router)
 app.include_router(goals.router)
 app.include_router(report.router)
 app.include_router(data_management.router)
+app.include_router(medications.router)
+app.include_router(symptoms.router)
+app.include_router(food.router)
+app.include_router(timeline.router)
 
 
 @app.get("/api/health")

@@ -1,13 +1,17 @@
 import { NavLink } from 'react-router-dom';
-import { Activity, FlaskConical, Pill, Settings, LayoutDashboard, Watch, Brain, BarChart3, Dna, Target, FileText } from 'lucide-react';
+import { Activity, FlaskConical, Pill, Settings, LayoutDashboard, Watch, Brain, BarChart3, Dna, Target, FileText, PillBottle, Thermometer, Utensils, Calendar } from 'lucide-react';
 
 const links = [
   { to: '/', label: 'Dashboard', icon: LayoutDashboard },
   { to: '/insights', label: 'Insights', icon: Brain },
   { to: '/trends', label: 'Trends', icon: BarChart3 },
+  { to: '/timeline', label: 'Timeline', icon: Calendar },
   { to: '/bloodwork', label: 'Blood Work', icon: FlaskConical },
   { to: '/wearables', label: 'Wearables', icon: Watch },
   { to: '/supplements', label: 'Supplements', icon: Pill },
+  { to: '/medications', label: 'Medications', icon: PillBottle },
+  { to: '/symptoms', label: 'Symptoms', icon: Thermometer },
+  { to: '/food', label: 'Nutrition', icon: Utensils },
   { to: '/genetics', label: 'Genetics', icon: Dna },
   { to: '/goals', label: 'Goals', icon: Target },
   { to: '/reports', label: 'Reports', icon: FileText },

@@ -448,3 +448,208 @@ def delete_goal(conn: sqlite3.Connection, goal_id: str) -> bool:
     cursor = conn.execute("DELETE FROM health_goals WHERE id = ?", (goal_id,))
     conn.commit()
     return cursor.rowcount > 0
+
+
+# --- Medications ---
+
+def insert_medication(conn: sqlite3.Connection, data: dict) -> str:
+    med_id = new_id()
+    now = now_iso()
+    conn.execute(
+        """INSERT INTO medications (id, name, dosage, frequency, prescriber, started_date, active, notes, created_at, updated_at)
+           VALUES (?, ?, ?, ?, ?, ?, 1, ?, ?, ?)""",
+        (med_id, data["name"], data.get("dosage"), data.get("frequency"),
+         data.get("prescriber"), data.get("started_date", now), data.get("notes"), now, now),
+    )
+    conn.execute(
+        """INSERT INTO medication_history (id, medication_id, action, old_value, new_value, date)
+           VALUES (?, ?, 'started', NULL, ?, ?)""",
+        (new_id(), med_id, f"{data['name']} {data.get('dosage', '')}", now),
+    )
+    conn.commit()
+    return med_id
+
+
+def get_active_medications(conn: sqlite3.Connection) -> list[dict]:
+    rows = conn.execute("SELECT * FROM medications WHERE active = 1 ORDER BY name").fetchall()
+    return [row_to_dict(r) for r in rows]
+
+
+def get_all_medications(conn: sqlite3.Connection) -> list[dict]:
+    rows = conn.execute("SELECT * FROM medications ORDER BY active DESC, name").fetchall()
+    return [row_to_dict(r) for r in rows]
+
+
+def get_medication_by_id(conn: sqlite3.Connection, med_id: str) -> dict | None:
+    row = conn.execute("SELECT * FROM medications WHERE id = ?", (med_id,)).fetchone()
+    return row_to_dict(row) if row else None
+
+
+def update_medication(conn: sqlite3.Connection, med_id: str, data: dict) -> dict | None:
+    existing = get_medication_by_id(conn, med_id)
+    if not existing:
+        return None
+    now = now_iso()
+    fields = {}
+    for f in ("name", "dosage", "frequency", "prescriber", "notes"):
+        if data.get(f) is not None:
+            fields[f] = data[f]
+    if not fields:
+        return existing
+    if "dosage" in fields and fields["dosage"] != existing["dosage"]:
+        conn.execute(
+            """INSERT INTO medication_history (id, medication_id, action, old_value, new_value, date)
+               VALUES (?, ?, 'changed_dose', ?, ?, ?)""",
+            (new_id(), med_id, existing["dosage"], fields["dosage"], now),
+        )
+    fields["updated_at"] = now
+    set_clause = ", ".join(f"{k} = ?" for k in fields)
+    values = list(fields.values()) + [med_id]
+    conn.execute(f"UPDATE medications SET {set_clause} WHERE id = ?", values)
+    conn.commit()
+    return get_medication_by_id(conn, med_id)
+
+
+def deactivate_medication(conn: sqlite3.Connection, med_id: str) -> bool:
+    existing = get_medication_by_id(conn, med_id)
+    if not existing:
+        return False
+    now = now_iso()
+    conn.execute("UPDATE medications SET active = 0, updated_at = ? WHERE id = ?", (now, med_id))
+    conn.execute(
+        """INSERT INTO medication_history (id, medication_id, action, old_value, new_value, date)
+           VALUES (?, ?, 'stopped', ?, NULL, ?)""",
+        (new_id(), med_id, f"{existing['name']} {existing.get('dosage', '')}", now),
+    )
+    conn.commit()
+    return True
+
+
+def get_medication_history(conn: sqlite3.Connection) -> list[dict]:
+    rows = conn.execute(
+        """SELECT mh.id, mh.medication_id, m.name as medication_name,
+                  mh.action, mh.old_value, mh.new_value, mh.date
+           FROM medication_history mh
+           JOIN medications m ON m.id = mh.medication_id
+           ORDER BY mh.date DESC"""
+    ).fetchall()
+    return [row_to_dict(r) for r in rows]
+
+
+# --- Symptom Journal ---
+
+def insert_symptom(conn: sqlite3.Connection, data: dict) -> str:
+    symptom_id = new_id()
+    conn.execute(
+        """INSERT INTO symptom_entries (id, date, symptom, severity, time_of_day, notes, created_at)
+           VALUES (?, ?, ?, ?, ?, ?, ?)""",
+        (symptom_id, data["date"], data["symptom"], data["severity"],
+         data.get("time_of_day"), data.get("notes"), now_iso()),
+    )
+    conn.commit()
+    return symptom_id
+
+
+def get_symptoms_by_date(conn: sqlite3.Connection, date: str) -> list[dict]:
+    rows = conn.execute(
+        "SELECT * FROM symptom_entries WHERE date = ? ORDER BY created_at DESC", (date,)
+    ).fetchall()
+    return [row_to_dict(r) for r in rows]
+
+
+def get_symptoms_range(conn: sqlite3.Connection, start: str, end: str) -> list[dict]:
+    rows = conn.execute(
+        "SELECT * FROM symptom_entries WHERE date >= ? AND date <= ? ORDER BY date DESC, created_at DESC",
+        (start, end),
+    ).fetchall()
+    return [row_to_dict(r) for r in rows]
+
+
+def get_symptom_summary(conn: sqlite3.Connection, days: int = 30) -> list[dict]:
+    rows = conn.execute(
+        """SELECT symptom, COUNT(*) as occurrences,
+                  ROUND(AVG(severity), 1) as avg_severity,
+                  MAX(severity) as max_severity,
+                  MIN(date) as first_date, MAX(date) as last_date
+           FROM symptom_entries
+           WHERE date >= date('now', ?)
+           GROUP BY symptom
+           ORDER BY occurrences DESC""",
+        (f"-{days} days",),
+    ).fetchall()
+    return [row_to_dict(r) for r in rows]
+
+
+def delete_symptom(conn: sqlite3.Connection, symptom_id: str) -> bool:
+    cursor = conn.execute("DELETE FROM symptom_entries WHERE id = ?", (symptom_id,))
+    conn.commit()
+    return cursor.rowcount > 0
+
+
+# --- Food Log ---
+
+def insert_food_entry(conn: sqlite3.Connection, data: dict) -> str:
+    entry_id = new_id()
+    conn.execute(
+        """INSERT INTO food_log (id, date, meal_type, food_name, portion, calories, protein_g, carbs_g, fat_g, fiber_g, notes, created_at)
+           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+        (entry_id, data["date"], data["meal_type"], data["food_name"],
+         data.get("portion"), data.get("calories"), data.get("protein_g"),
+         data.get("carbs_g"), data.get("fat_g"), data.get("fiber_g"),
+         data.get("notes"), now_iso()),
+    )
+    conn.commit()
+    return entry_id
+
+
+def get_food_log_by_date(conn: sqlite3.Connection, date: str) -> list[dict]:
+    rows = conn.execute(
+        "SELECT * FROM food_log WHERE date = ? ORDER BY meal_type, created_at", (date,)
+    ).fetchall()
+    return [row_to_dict(r) for r in rows]
+
+
+def get_food_log_range(conn: sqlite3.Connection, start: str, end: str) -> list[dict]:
+    rows = conn.execute(
+        "SELECT * FROM food_log WHERE date >= ? AND date <= ? ORDER BY date DESC, meal_type, created_at",
+        (start, end),
+    ).fetchall()
+    return [row_to_dict(r) for r in rows]
+
+
+def get_daily_nutrition_summary(conn: sqlite3.Connection, date: str) -> dict:
+    row = conn.execute(
+        """SELECT COALESCE(SUM(calories), 0) as total_calories,
+                  COALESCE(SUM(protein_g), 0) as total_protein,
+                  COALESCE(SUM(carbs_g), 0) as total_carbs,
+                  COALESCE(SUM(fat_g), 0) as total_fat,
+                  COALESCE(SUM(fiber_g), 0) as total_fiber,
+                  COUNT(*) as items
+           FROM food_log WHERE date = ?""",
+        (date,),
+    ).fetchone()
+    return row_to_dict(row) if row else {}
+
+
+def get_nutrition_trend(conn: sqlite3.Connection, days: int = 7) -> list[dict]:
+    rows = conn.execute(
+        """SELECT date,
+                  SUM(calories) as total_calories,
+                  SUM(protein_g) as total_protein,
+                  SUM(carbs_g) as total_carbs,
+                  SUM(fat_g) as total_fat,
+                  SUM(fiber_g) as total_fiber,
+                  COUNT(*) as items
+           FROM food_log
+           WHERE date >= date('now', ?)
+           GROUP BY date
+           ORDER BY date ASC""",
+        (f"-{days} days",),
+    ).fetchall()
+    return [row_to_dict(r) for r in rows]
+
+
+def delete_food_entry(conn: sqlite3.Connection, entry_id: str) -> bool:
+    cursor = conn.execute("DELETE FROM food_log WHERE id = ?", (entry_id,))
+    conn.commit()
+    return cursor.rowcount > 0
